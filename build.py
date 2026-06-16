@@ -73,6 +73,30 @@ DESC = {
  'opencode.ai':"An open-source AI coding agent for the terminal. Developer-first, dark, monospaced and minimal.",
 }
 
+# real source website per system (slug-with-tld used as-is; overrides for known non-.com; else .com)
+SRC_OVERRIDE={'steam':'store.steampowered.com','notion':'notion.so','flyio':'fly.io','deno':'deno.com',
+ 'vercel':'vercel.com','railway':'railway.com','render':'render.com','retool':'retool.com','neon':'neon.tech',
+ 'supabase':'supabase.com','planetscale':'planetscale.com','turso':'turso.tech','convex':'convex.dev',
+ 'clerk':'clerk.com','resend':'resend.com','raycast':'raycast.com','linear.app':'linear.app','expo':'expo.dev',
+ 'replit':'replit.com','posthog':'posthog.com','sentry':'sentry.io','grafana':'grafana.com','sonar':'sonarsource.com',
+ 'theverge':'theverge.com','x':'x.com','threads':'threads.net','mastodon':'joinmastodon.org','medium':'medium.com',
+ 'substack':'substack.com','bmw-m':'bmw-m.com','dell-1996':'dell.com','nintendo-2001':'nintendo.com',
+ 'opencode.ai':'opencode.ai','x.ai':'x.ai','mistral.ai':'mistral.ai','together.ai':'together.ai',
+ 'huggingface':'huggingface.co','characterai':'character.ai','runwayml':'runwayml.com','runway':'runwayml.com',
+ 'aiven':'aiven.io','crowdstrike':'crowdstrike.com','paloaltonetworks':'paloaltonetworks.com','duckduckgo':'duckduckgo.com',
+ 'proton':'proton.me','1password':'1password.com','godaddy':'godaddy.com','mcdonalds':'mcdonalds.com',
+ 'cal':'cal.com','kaggle':'kaggle.com','databricks':'databricks.com','digitalocean':'digitalocean.com',
+ 'doppler':'doppler.com','launchdarkly':'launchdarkly.com','gitbook':'gitbook.com','mintlify':'mintlify.com',
+ 'storyblok':'storyblok.com','contentful':'contentful.com','sanity':'sanity.io','algolia':'algolia.com',
+ 'cloudinary':'cloudinary.com','temporal':'temporal.io','confluent':'confluent.io','clickhouse':'clickhouse.com',
+ 'cohere':'cohere.com','composio':'composio.dev','lovable':'lovable.dev','elevenlabs':'elevenlabs.io',
+ 'perplexity':'perplexity.ai','deepmind':'deepmind.google','ollama':'ollama.com','replicate':'replicate.com',
+ 'minimax':'minimax.io','voltagent':'voltagent.dev'}
+def source_url(slug):
+    if slug in SRC_OVERRIDE: return SRC_OVERRIDE[slug]
+    if '.' in slug: return slug          # already a domain (e.g. linear.app)
+    return slug+'.com'
+
 def lum(h):
     h=h.lstrip('#')
     if len(h)==3: h=''.join(c*2 for c in h)
@@ -221,6 +245,7 @@ for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
     entries.append({
         'slug':slug, 'name':prettify(slug),
         'category':SLUG2CAT.get(slug,'Other'),
+        'source':source_url(slug),
         'description':_d[:240],
         'colors':parsed['colors'],
         'displayFont':parsed['displayFont'],

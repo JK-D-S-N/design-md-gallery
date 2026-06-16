@@ -337,9 +337,25 @@ const overlay=document.getElementById('overlay');
 const modal=document.getElementById('modal');
 let mdCache='';
 
+// Flagship overrides — hand-tuned for brand fidelity (the generic renderer can't capture these).
+const FLAGSHIP={
+  steam:{
+    bg:'#1b2838', ink:'#c7d5e0', accent:'#66c0f4',
+    font:'"Motiva Sans", Arial, Helvetica, sans-serif',
+    navBg:'#171a21', wordmark:'STEAM',
+    navItems:['STORE','COMMUNITY','ABOUT','SUPPORT'], navActive:'ABOUT',
+    navCta:{label:'Install Steam', bg:'linear-gradient(to bottom,#a1cd44,#799b2c)', color:'#e5f3c6'},
+    heroBg:'radial-gradient(120% 140% at 70% 10%, #2a475e 0%, #1b2838 45%, #16202d 100%)',
+    heroHead:'Steam is the ultimate destination for playing, discussing, and creating games.',
+    heroSub:'Also available on Windows, macOS, Linux.',
+    heroCta:{label:'INSTALL STEAM', bg:'linear-gradient(to right,#06bfff,#2d73ff)', color:'#fff'},
+  },
+};
+
 async function openDetail(d){
-  const bg=d.bg||'#101014', ink=d.ink||readable(bg), accent=d.accent||'#888';
-  const ff=(d.displayFont||'inherit').replace(/"/g,'');
+  const fl=FLAGSHIP[d.slug]||null;
+  const bg=fl?fl.bg:(d.bg||'#101014'), ink=fl?fl.ink:(d.ink||readable(d.bg||'#101014')), accent=fl?fl.accent:(d.accent||'#888');
+  const ff=fl?fl.font:((d.displayFont||'inherit').replace(/"/g,''));
   const chips=Object.entries(d.colors||{}).filter(([,v])=>String(v).startsWith('#')).map(([k,v])=>
     `<div class="chip" data-copy="${v}"><div class="sw" style="background:${v}"></div><div class="lab"><span>${k}</span><b>${v}</b></div></div>`).join('');
   const onAccent=readable(accent), hair=d.hairline||'rgba(127,127,127,.3)';
@@ -347,12 +363,25 @@ async function openDetail(d){
   const m=d.metrics||{tokens:0,sections:0,feats:0};
   const dw=d.displayWeight||'700', dt=d.displayTracking||'-0.02em', fam=(d.displayFont||'system-ui').split(',')[0].replace(/"/g,'');
 
-  const navBlock=`<div class="block sp-nav" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+  const navBlock = fl ? `<div class="block sp-nav" style="background:${fl.navBg};color:#fff;border-color:rgba(255,255,255,.05);font-family:${ff}">
+      <span class="sp-logo" style="letter-spacing:.05em">${fl.wordmark}</span>
+      <span class="sp-links" style="opacity:1;gap:24px;text-transform:uppercase;font-size:12px;letter-spacing:.06em;font-weight:700">${fl.navItems.map(i=>`<span style="${i===fl.navActive?`color:${fl.accent};border-bottom:2px solid ${fl.accent};padding-bottom:4px`:'color:#fff;opacity:.8'}">${i}</span>`).join('')}</span>
+      <span class="sp-cta" style="background:${fl.navCta.bg};color:${fl.navCta.color};border-radius:2px;font-weight:500">${fl.navCta.label}</span>
+    </div>`
+    : `<div class="block sp-nav" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
       <span class="sp-logo">${d.name}</span>
       <span class="sp-links"><span>Product</span><span>Pricing</span><span>Docs</span><span>Company</span></span>
       <span class="sp-cta" style="background:${accent};color:${onAccent};border-radius:${br}">Get started</span>
     </div>`;
-  const heroBlock=`<div class="block sp-hero" style="background:${bg};color:${ink};font-family:${ff}">
+  const heroBlock = fl ? `<div class="block sp-hero" style="background:${fl.heroBg};color:${fl.ink};font-family:${ff}">
+      <span class="sp-logo" style="font-size:36px;letter-spacing:.06em;color:#fff">${fl.wordmark}</span>
+      <p style="font-size:23px;line-height:1.4;color:#fff;opacity:.95;max-width:30ch;margin:20px 0 0;font-weight:400">${fl.heroHead}</p>
+      <div class="sp-actions">
+        <span class="cbtn" style="background:${fl.heroCta.bg};color:${fl.heroCta.color};border-radius:2px;text-transform:uppercase;letter-spacing:.05em;padding:13px 26px;font-weight:700">${fl.heroCta.label}</span>
+      </div>
+      <p style="font-size:12px;opacity:.5;margin-top:14px;font-family:Inter,sans-serif">${fl.heroSub}</p>
+    </div>`
+    : `<div class="block sp-hero" style="background:${bg};color:${ink};font-family:${ff}">
       <span class="sp-eyebrow" style="color:${accent}">New · ${d.category}</span>
       <h3 class="sp-display" style="font-weight:${dw};letter-spacing:${dt}">Build with a point of view.</h3>
       <p class="sp-lead">Supporting copy sits beneath the display face. The contrast in scale, weight and rhythm between the two is the heart of the system's voice.</p>
@@ -383,6 +412,7 @@ async function openDetail(d){
         <div class="hero-actions">
           <button class="hbtn" id="copyBtn" style="background:${accent};color:${onAccent}">Copy DESIGN.md</button>
           <a class="hbtn" href="design-md/${d.slug}/DESIGN.md" download style="border-color:${hair};color:${ink}">Download</a>
+          ${d.source?`<a class="hbtn" href="https://${d.source}" target="_blank" rel="noopener" style="border-color:${hair};color:${ink}">Visit ${d.source.replace(/^store\.|^www\./,'')} ↗</a>`:''}
         </div>
       </div>
     </div>

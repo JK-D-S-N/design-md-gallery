@@ -11198,51 +11198,6 @@
   }
  },
  {
-  "slug": "voltagent",
-  "name": "VoltAgent",
-  "category": "AI",
-  "description": "An inspired interpretation of Voltagent's design language \u2014 a developer-focused AI agent engineering platform whose surface is an unrelenting near-black canvas broken only by a single electric-green brand accent, code-editor mockups inside ",
-  "colors": {
-   "primary": "#00d992",
-   "primary-soft": "#2fd6a1",
-   "primary-deep": "#10b981",
-   "on-primary": "#101010",
-   "ink": "#f2f2f2",
-   "ink-strong": "#ffffff",
-   "body": "#bdbdbd",
-   "mute": "#8b949e",
-   "hairline": "#3d3a39",
-   "hairline-soft": "#b8b3b0",
-   "canvas": "#101010",
-   "canvas-soft": "#1a1a1a",
-   "canvas-text-soft": "#f5f6f7"
-  },
-  "displayFont": "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-  "displayWeight": "400",
-  "displayTracking": "-0.65px",
-  "btnRadius": "999px",
-  "bg": "#101010",
-  "ink": "#f2f2f2",
-  "accent": "#00d992",
-  "muted": "",
-  "hairline": "#3d3a39",
-  "swatches": [
-   "#00d992",
-   "#2fd6a1",
-   "#10b981",
-   "#101010",
-   "#f2f2f2",
-   "#ffffff"
-  ],
-  "score": 32,
-  "stars": 1.5,
-  "metrics": {
-   "tokens": 12,
-   "sections": 29,
-   "feats": 9
-  }
- },
- {
   "slug": "walmart",
   "name": "Walmart",
   "category": "Retail & E-commerce",

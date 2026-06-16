@@ -50,6 +50,23 @@ Packaged as a skill: `/design-extract <url>`. This is how the flagship tier scal
 - "Paste a URL → get a design.md" works in under a minute and looks like the site.
 - The library is something you scroll and think "yes, I'll use that for this project."
 
+## Differentiators — what makes this defensible (thinking, 2026-06-17)
+
+The gallery alone is **not** a differentiator. Scraped design.md repos already exist (voltagent, Khalidabdi), designmd.app has 454, Google Stitch coined the format. A catalogue is a commodity. So the moat has to be elsewhere. Three layers, in order of defensibility:
+
+**1. The extractor is the product; the gallery is the demo.**
+"Paste any URL → get a design.md that rebuilds that look." Generation, not curation. Turning *any* live site into an accurate, AI-buildable spec is genuinely useful and not commoditised. The gallery exists to *prove* the extractor works and to seed trust. Reframe accordingly: we're not building a catalogue, we're building a converter, and showing its output.
+
+**2. Verified fidelity — the closed loop nobody does.**
+The real moat: don't just generate a spec, **prove it reproduces the brand.** Extract → author design.md → have an agent build a sample screen *from the spec alone* → screenshot it → diff against the source → score the fidelity → iterate until it matches. A design.md that's *verified to rebuild the look*, with a fidelity score, is something no repo or gallery offers. (This is the same diff-loop discipline as the Mission Control creative agent, applied to brand fidelity.) Trust is the product. "94% match to the source" beats "here's a token file."
+
+**3. Taste + the right six things.**
+A designer's judgment about *which six things make a brand the brand* (canvas, signature colour, typeface, primary button, nav, hero) and rendering only those, faithfully, beats a 454-entry costume box. Curated, opinionated, high-craft. The forward-deployed-creative voice. Quality and trust over quantity.
+
+**Format as a minor moat:** the atomic, AI-native schema (atoms→organisms→templates + source + guardrails) is more buildable than raw token dumps. Worth owning as "the way to write a design.md for agents," but it's copyable, so it's reinforcement, not the moat.
+
+**The honest synthesis:** the differentiator is **fidelity you can trust, generated on demand.** Not a bigger catalogue. The build order that follows: (a) screenshot-fed extractor that pulls the six things accurately, (b) the build→diff→score verification loop, (c) the gallery as the showcase of verified results.
+
 ## Open questions
 
 - Name: keep `design.md`, or brand it (Specimen)?

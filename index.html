@@ -447,13 +447,7 @@ async function openDetail(d){
   const footerBlock = (fl&&fl.footer) ? `<div class="block sp-footer" style="background:${fl.footer.bg};color:${fl.footer.light?'#1a1a18':'#fff'};border-color:${fl.footer.light?'rgba(0,0,0,.08)':'rgba(255,255,255,.05)'};font-family:${ff}">
       <div class="sp-fcol" style="min-width:200px"><span class="sp-logo">${fl.wordmark||d.name}</span><span class="sp-fine" style="max-width:30ch">${fl.footer.fine}</span></div>
       ${fl.footer.cols.map(c=>`<div class="sp-fcol"><b>${c.h}</b>${c.links.map(l=>`<span>${l}</span>`).join('')}</div>`).join('')}
-    </div>`
-    : `<div class="block sp-footer" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
-      <div class="sp-fcol" style="min-width:160px"><span class="sp-logo">${d.name}</span><span class="sp-fine">© 2026 · built with design.md</span></div>
-      <div class="sp-fcol"><b>Product</b><span>Overview</span><span>Pricing</span><span>Changelog</span></div>
-      <div class="sp-fcol"><b>Company</b><span>About</span><span>Careers</span><span>Contact</span></div>
-      <div class="sp-fcol"><b>Resources</b><span>Docs</span><span>Blog</span><span>Support</span></div>
-    </div>`;
+    </div>` : '';
   const pairingBlock=`<div class="block" style="background:${bg};color:${ink};font-family:${ff};padding:28px 32px">
       <span class="pair-lab">Display · ${fam}</span>
       <h3 class="pair-display" style="font-weight:${dw};letter-spacing:${dt}">Great products start with a point of view.</h3>
@@ -493,15 +487,14 @@ async function openDetail(d){
       <p class="sect">Palette · click any swatch to copy</p>
       <div class="pal">${chips}</div>
 
-      <p class="grouphdr">Signature blocks — the system in use</p>
+      ${fl?`<p class="grouphdr">Signature blocks — the system in use</p>
       <p class="sect">Navigation</p>
       ${navBlock}
       <p class="sect">Hero</p>
       ${heroBlock}
-      <p class="sect">Footer</p>
-      ${footerBlock}
+      ${footerBlock?`<p class="sect">Footer</p>${footerBlock}`:''}`:''}
 
-      <p class="grouphdr">Components</p>
+      <p class="grouphdr">Components</p>`
       <p class="sect">Button hierarchy</p>
       <div class="specimen">
         <div class="comp-row">

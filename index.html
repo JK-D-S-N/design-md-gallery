@@ -101,6 +101,8 @@
   @keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
   .hero{padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;position:relative}
   .hero h2{margin:0;font-size:44px;letter-spacing:-.02em;font-weight:600}
+  .hero-top{max-width:90%}
+  .hero-desc{font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.55;opacity:.82;margin:12px 0 0;max-width:60ch}
   .hero .x{position:absolute;top:18px;right:20px;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
     font-size:17px;background:rgba(127,127,127,.22);color:inherit}
   .body{padding:30px 40px 40px}
@@ -132,6 +134,22 @@
   .bigscore span{font-size:14px;color:var(--faint);font-weight:500}
   .why{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6;max-width:60ch}
   .why b{color:var(--text);font-weight:600}
+  /* atomic spec specimens — rendered in each system's own tokens */
+  .specimen{border:1px solid;border-radius:12px;padding:22px;margin:0 0 16px}
+  .type-row{display:flex;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid}
+  .type-row:last-child{border-bottom:none;padding-bottom:0}
+  .type-lab{font-family:Inter,sans-serif;font-size:10px;opacity:.5;width:62px;flex:none;
+    text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+  .type-sample{line-height:1.1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .space-row{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+  .space-lab{font-family:Inter,sans-serif;font-size:11px;opacity:.6;margin-top:8px;text-align:center}
+  .comp-grid{display:flex;flex-direction:column;gap:16px}
+  .comp-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .cbtn{font-family:Inter,sans-serif;font-size:13px;font-weight:600;padding:9px 16px;cursor:default}
+  .field{font-family:Inter,sans-serif;font-size:13px;padding:10px 12px;border:1px solid;max-width:300px;opacity:.85}
+  .cbadge{font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:5px 11px}
+  .ccard{border:1px solid;padding:16px;max-width:340px}
+  .grouphdr{font-size:15px;font-weight:600;letter-spacing:-.01em;margin:30px 0 14px;color:var(--text)}
   @media(max-width:560px){.hero,.body{padding:24px}.hero h2{font-size:32px}}
 </style>
 </head>
@@ -184,6 +202,11 @@ function readable(hex){ // pick black/white text for a bg colour
 }
 
 function isLight(hex){ return readable(hex)==='#111'; }
+function tint(hex,a){
+  if(!/^#([0-9a-f]{6})$/i.test(hex||'')) return `rgba(127,127,127,${a})`;
+  const h=hex.slice(1); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
 
 // ---- ratings (local) ----
 const RKEY='dmg-ratings';
@@ -256,6 +279,8 @@ fetch('data.json').then(r=>r.json()).then(d=>{
   document.getElementById('total').textContent=d.length;
   renderCats();
   apply();
+  const h=decodeURIComponent(location.hash.replace('#',''));
+  if(h){ const f=DATA.find(x=>x.slug===h); if(f) openDetail(f); }
 });
 
 q.addEventListener('input', apply);
@@ -272,11 +297,15 @@ async function openDetail(d){
   const chips=Object.entries(d.colors||{}).filter(([,v])=>String(v).startsWith('#')).map(([k,v])=>
     `<div class="chip" data-copy="${v}"><div class="sw" style="background:${v}"></div><div class="lab"><span>${k}</span><b>${v}</b></div></div>`).join('');
   const onAccent=readable(accent), hair=d.hairline||'rgba(127,127,127,.3)';
+  const br=d.btnRadius||'10px';
   const m=d.metrics||{tokens:0,sections:0,feats:0};
   modal.innerHTML=`
     <div class="hero ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
       <button class="x" id="closeX">✕</button>
-      <h2>${d.name}</h2>
+      <div class="hero-top">
+        <h2>${d.name}</h2>
+        <p class="hero-desc">${d.description||''}</p>
+      </div>
       <div class="hero-foot">
         <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:34px;height:34px;display:inline-block"></i>`).join('')}</div>
         <div class="hero-actions">
@@ -290,14 +319,56 @@ async function openDetail(d){
         <div><p class="sect" style="margin:0 0 6px">Spec completeness</p><div class="bigscore">${d.score}<span>/100</span></div></div>
         <p class="why">How thorough this DESIGN.md is. Scored on <b>${m.tokens}</b> colour tokens, <b>${m.sections}</b> spec sections and <b>${m.feats}/12</b> depth signals (typography, components, guardrails, responsive, spacing, motion, accessibility). A richer spec gives an AI agent more to build from, so it renders more faithfully.</p>
       </div>
-      <p class="descfull">${d.description||''}</p>
-      <p class="sect">Palette · click any swatch to copy</p>
+      <p class="grouphdr">Foundations</p>
+      <p class="sect">Colour · click any swatch to copy</p>
       <div class="pal">${chips}</div>
+
+      <p class="sect">Typography · ${(d.displayFont||'system-ui').split(',')[0].replace(/"/g,'')}</p>
+      <div class="specimen" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+        ${[['Display','38px',d.displayWeight||'700'],['Heading','27px','700'],['Title','20px','600'],['Body','15px','400'],['Caption','12px','500']].map(([l,s,w])=>
+          `<div class="type-row" style="border-color:${hair}"><span class="type-lab">${l}</span><span class="type-sample" style="font-size:${s};font-weight:${w};letter-spacing:${d.displayTracking||'-0.01em'}">${d.name}</span></div>`).join('')}
+        <div class="type-row" style="border-color:${hair}"><span class="type-lab">Mono</span><span class="type-sample" style="font-family:ui-monospace,Menlo,monospace;font-size:13px">const build = designMd();</span></div>
+      </div>
+
+      <p class="sect">Spacing · 4px base</p>
+      <div class="specimen" style="background:${bg};border-color:${hair}">
+        <div class="space-row">${[4,8,12,16,24,32,48].map(n=>`<div><div style="width:${n}px;height:${n}px;background:${accent};border-radius:2px;margin:0 auto"></div><div class="space-lab" style="color:${ink}">${n}</div></div>`).join('')}</div>
+      </div>
+
+      <p class="sect">Radius</p>
+      <div class="specimen" style="background:${bg};border-color:${hair}">
+        <div class="space-row">${[['sm','8px'],['md',d.btnRadius||'10px'],['lg','16px'],['xl','24px'],['full','999px']].map(([l,r])=>`<div><div style="width:58px;height:40px;background:${accent};border-radius:${r}"></div><div class="space-lab" style="color:${ink}">${l}</div></div>`).join('')}</div>
+      </div>
+
+      <p class="grouphdr">Components</p>
+      <div class="specimen" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+        <div class="comp-grid">
+          <div class="comp-row">
+            <span class="cbtn" style="background:${accent};color:${onAccent};border-radius:${br}">Primary</span>
+            <span class="cbtn" style="background:transparent;color:${ink};border:1px solid ${hair};border-radius:${br}">Secondary</span>
+            <span class="cbtn" style="background:transparent;color:${accent};border-radius:${br}">Ghost</span>
+          </div>
+          <div class="field" style="border-color:${hair};color:${ink};border-radius:${br}">name@company.com</div>
+          <div class="comp-row">
+            <span class="cbadge" style="background:${tint(accent,.16)};color:${accent};border-radius:999px">Brand</span>
+            <span class="cbadge" style="background:${tint('#16A34A',.16)};color:#15803D;border-radius:999px">Success</span>
+            <span class="cbadge" style="background:${tint('#F59E0B',.18)};color:#B45309;border-radius:999px">Warning</span>
+            <span class="cbadge" style="background:${tint('#DC2626',.14)};color:#DC2626;border-radius:999px">Error</span>
+          </div>
+          <div class="ccard" style="border-color:${hair};border-radius:${br}">
+            <div style="font-weight:600;margin-bottom:5px">Card title</div>
+            <div style="opacity:.7;font-size:13px;font-family:Inter,sans-serif">A surface rendered live in this system's own tokens.</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="grouphdr">Source</p>
       <p class="sect">DESIGN.md</p>
       <pre class="code" id="code">Loading…</pre>
     </div>`;
   overlay.classList.add('open');
   document.body.style.overflow='hidden';
+  history.replaceState(null,'','#'+d.slug);
   // load the markdown
   mdCache='';
   try{
@@ -316,7 +387,7 @@ async function openDetail(d){
   });
 }
 function flash(id,msg){ const b=document.getElementById(id); const o=b.textContent; b.textContent=msg; setTimeout(()=>b.textContent=o,1400); }
-function closeDetail(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+function closeDetail(){ overlay.classList.remove('open'); document.body.style.overflow=''; history.replaceState(null,'',location.pathname); }
 overlay.addEventListener('click', e=>{ if(e.target===overlay) closeDetail(); });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDetail(); });
 </script>

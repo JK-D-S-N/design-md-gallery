@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>design.md — a gallery of AI-readable design systems</title>
+<style>
+  :root{
+    --bg:#0a0a0c; --bg-2:#111114; --card:#141417; --line:#222227;
+    --text:#f4f4f5; --muted:#9a9aa3; --faint:#6a6a73; --accent:#e8e8ea;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 28px}
+
+  header{padding:72px 0 28px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+  h1{font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.025em;margin:0;font-weight:600}
+  h1 .dot{color:var(--faint)}
+  .lede{max-width:620px;color:var(--muted);font-size:17px;line-height:1.6;margin:20px 0 0}
+
+  .bar{position:sticky;top:0;z-index:20;background:rgba(10,10,12,.82);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:16px 0;margin-top:40px}
+  .bar .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .search{flex:1;min-width:220px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
+    padding:11px 14px;color:var(--text);font-size:15px;outline:none}
+  .search:focus{border-color:#33333a}
+  .count{color:var(--faint);font-size:13px;white-space:nowrap}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px;padding:34px 0 90px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);border-color:#33333a}
+
+  /* the preview is a rendered specimen, in the system's OWN colours + type */
+  .preview{aspect-ratio:16/10;padding:26px 26px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+  .preview.light{box-shadow:inset 0 0 0 1px rgba(0,0,0,.10)}
+  .spec{display:flex;flex-direction:column;gap:9px;transform:translateY(1px)}
+  .spec .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin:0}
+  .spec .pname{font-size:27px;line-height:1.04;letter-spacing:-.02em;margin:0;font-weight:600}
+  .spec .body{font-size:12.5px;line-height:1.45;opacity:.72;margin:0;max-width:92%;
+    font-family:Inter,system-ui,sans-serif}
+  .spec .controls{display:flex;align-items:center;gap:9px;padding-bottom:22px}
+  .spec .btn-p{font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px}
+  .spec .chip{font-size:11px;font-weight:500;padding:7px 12px;border-radius:8px;background:transparent}
+  .spec .dots{display:flex;gap:5px;margin-left:auto}
+  .spec .dots i{width:9px;height:9px;border-radius:50%;display:block}
+
+  .swatches{display:flex;gap:0;height:34px;border-radius:8px;overflow:hidden;width:fit-content}
+  .swatches i{display:block;width:34px;height:34px}
+  .meta{padding:18px 20px 20px;border-top:1px solid var(--line)}
+  .meta .row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .meta h3{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em}
+  .dl{font-size:12px;color:var(--faint);border:1px solid var(--line);border-radius:8px;padding:6px 10px;transition:.15s}
+  .dl:hover{color:var(--text);border-color:#3a3a42}
+  .desc{margin:10px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .stars{display:inline-flex;gap:2px}
+  .stars button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;line-height:1;color:#3a3a42;transition:.12s}
+  .stars button.on{color:#e8b341}
+  .stars button:hover{transform:scale(1.15)}
+  .raterow{display:flex;align-items:center;gap:8px;margin-top:12px}
+  .ratenum{font-size:12px;color:var(--faint)}
+  select.sort{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;color:var(--text);
+    padding:11px 12px;font-size:14px;outline:none;cursor:pointer}
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--faint);font-size:13px}
+  .empty{padding:80px 0;text-align:center;color:var(--faint)}
+
+  /* detail modal */
+  .overlay{position:fixed;inset:0;z-index:50;background:rgba(5,5,7,.72);backdrop-filter:blur(8px);
+    display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:48px 20px}
+  .overlay.open{display:flex}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:18px;max-width:980px;width:100%;
+    overflow:hidden;animation:rise .22s ease}
+  @keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+  .hero{padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;position:relative}
+  .hero h2{margin:0;font-size:44px;letter-spacing:-.02em;font-weight:600}
+  .hero .x{position:absolute;top:18px;right:20px;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    font-size:17px;background:rgba(127,127,127,.22);color:inherit}
+  .body{padding:30px 40px 40px}
+  .sect{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+  .pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:30px}
+  .chip{border:1px solid var(--line);border-radius:9px;overflow:hidden;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:#44444c}
+  .chip .sw{height:46px}
+  .chip .lab{padding:7px 9px;font-size:11px;display:flex;justify-content:space-between;color:var(--muted)}
+  .chip .lab b{color:var(--text);font-weight:500}
+  .actions{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+  .btn{font-size:14px;font-weight:600;padding:11px 18px;border-radius:10px;border:1px solid var(--line);
+    background:var(--bg-2);color:var(--text);cursor:pointer;transition:.15s}
+  .btn:hover{border-color:#44444c}
+  .btn.primary{background:#f4f4f5;color:#0a0a0c;border-color:#f4f4f5}
+  .btn.primary:hover{background:#fff}
+  .descfull{color:var(--muted);font-size:15px;line-height:1.65;margin:0 0 26px;max-width:70ch}
+  pre.code{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:20px;overflow:auto;
+    max-height:440px;font-size:12.5px;line-height:1.6;color:#cfcfd6;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;margin:0}
+  @media(max-width:560px){.hero,.body{padding:24px}.hero h2{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">A curated gallery</p>
+    <h1>design<span class="dot">.</span>md</h1>
+    <p class="lede">Browsable, AI-readable design systems. Each one is a single markdown file an AI agent reads to build every screen in that style. Find a look, grab the file, drop it in your project, build.</p>
+  </header>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <input class="search" id="q" placeholder="Search systems, aesthetics, brands…" autocomplete="off" />
+    <select class="sort" id="sort">
+      <option value="az">A–Z</option>
+      <option value="rated">Top rated</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>Nothing matches that. Try another word.</div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div class="wrap"><footer>
+  <span id="total"></span> systems. Source files from <a href="https://github.com/voltagent/awesome-design-md" style="color:var(--muted)">voltagent/awesome-design-md</a>. A working prototype.
+</footer></div>
+
+<script>
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const countEl = document.getElementById('count');
+let DATA = [];
+
+function readable(hex){ // pick black/white text for a bg colour
+  if(!/^#([0-9a-f]{6}|[0-9a-f]{3})$/i.test(hex)) return '#111';
+  let h=hex.slice(1); if(h.length===3) h=h.split('').map(c=>c+c).join('');
+  const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  return (0.299*r+0.587*g+0.114*b)>150 ? '#111' : '#fff';
+}
+
+function isLight(hex){ return readable(hex)==='#111'; }
+
+// ---- ratings (local) ----
+const RKEY='dmg-ratings';
+const ratings = JSON.parse(localStorage.getItem(RKEY)||'{}');
+function getRating(slug){ return ratings[slug]||0; }
+function setRating(slug,n){ ratings[slug]=n; localStorage.setItem(RKEY,JSON.stringify(ratings)); }
+function starsHTML(slug){
+  const v=getRating(slug);
+  let s='<span class="stars" data-slug="'+slug+'">';
+  for(let i=1;i<=5;i++) s+=`<button data-n="${i}" class="${i<=v?'on':''}" aria-label="${i} stars">★</button>`;
+  s+='</span>';
+  return s;
+}
+
+function card(d,i){
+  const bg=d.bg||'#101014', ink=d.ink||readable(bg), accent=d.accent||'#888';
+  const onAccent=readable(accent);
+  const dots=(d.swatches||[]).filter(Boolean).slice(0,4);
+  const ff=(d.displayFont||'inherit').replace(/"/g,'');
+  return `<div class="card" data-i="${i}">
+    <div class="preview ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
+      <div class="spec">
+        <p class="eyebrow">Design system</p>
+        <h2 class="pname">${d.name}</h2>
+        <p class="body">The quick brown fox jumps over the lazy dog.</p>
+        <div class="controls">
+          <span class="btn-p" style="background:${accent};color:${onAccent}">Get started</span>
+          <span class="chip" style="border:1px solid ${d.hairline||'rgba(127,127,127,.3)'};color:${ink}">Learn more</span>
+          <span class="dots">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</span>
+        </div>
+      </div>
+    </div>
+    <div class="meta">
+      <div class="row"><h3>${d.name}</h3><span class="dl">View →</span></div>
+      <p class="desc">${d.description||''}</p>
+      <div class="raterow">${starsHTML(d.slug)}<span class="ratenum"></span></div>
+    </div>
+  </div>`;
+}
+
+let VIEW=[];
+function render(list){
+  VIEW=list;
+  grid.innerHTML = list.map(card).join('');
+  document.getElementById('empty').hidden = list.length>0;
+  countEl.textContent = `${list.length} of ${DATA.length}`;
+}
+function apply(){
+  const t=q.value.trim().toLowerCase();
+  let list = t ? DATA.filter(d=>(d.name+' '+d.description+' '+d.slug).toLowerCase().includes(t)) : DATA.slice();
+  if(document.getElementById('sort').value==='rated')
+    list.sort((a,b)=> getRating(b.slug)-getRating(a.slug) || a.name.localeCompare(b.name));
+  else list.sort((a,b)=> a.name.localeCompare(b.name));
+  render(list);
+}
+grid.addEventListener('click', e=>{
+  const star=e.target.closest('.stars button');
+  if(star){
+    e.stopPropagation();
+    const wrap=star.closest('.stars'); const slug=wrap.dataset.slug; const n=+star.dataset.n;
+    setRating(slug, n===getRating(slug)?0:n);   // click same star again to clear
+    [...wrap.children].forEach((b,idx)=>b.classList.toggle('on', idx<getRating(slug)));
+    return;
+  }
+  const c=e.target.closest('.card'); if(!c) return;
+  openDetail(VIEW[+c.dataset.i]);
+});
+
+fetch('data.json').then(r=>r.json()).then(d=>{
+  DATA=d;
+  document.getElementById('total').textContent=d.length;
+  apply();
+});
+
+q.addEventListener('input', apply);
+document.getElementById('sort').addEventListener('change', apply);
+
+// ---- detail modal ----
+const overlay=document.getElementById('overlay');
+const modal=document.getElementById('modal');
+let mdCache='';
+
+async function openDetail(d){
+  const bg=d.bg||'#101014', ink=d.ink||readable(bg), accent=d.accent||'#888';
+  const ff=(d.displayFont||'inherit').replace(/"/g,'');
+  const chips=Object.entries(d.colors||{}).filter(([,v])=>String(v).startsWith('#')).map(([k,v])=>
+    `<div class="chip" data-copy="${v}"><div class="sw" style="background:${v}"></div><div class="lab"><span>${k}</span><b>${v}</b></div></div>`).join('');
+  modal.innerHTML=`
+    <div class="hero ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
+      <button class="x" id="closeX">✕</button>
+      <h2>${d.name}</h2>
+      <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:38px;height:38px;display:inline-block"></i>`).join('')}</div>
+    </div>
+    <div class="body">
+      <p class="descfull">${d.description||''}</p>
+      <div class="actions">
+        <button class="btn primary" id="copyBtn">Copy DESIGN.md</button>
+        <a class="btn" href="design-md/${d.slug}/DESIGN.md" download>Download .md</a>
+        <a class="btn" href="design-md/${d.slug}/DESIGN.md" target="_blank">Open raw</a>
+      </div>
+      <p class="sect">Palette · click any swatch to copy</p>
+      <div class="pal">${chips}</div>
+      <p class="sect">DESIGN.md</p>
+      <pre class="code" id="code">Loading…</pre>
+    </div>`;
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  // load the markdown
+  mdCache='';
+  try{
+    const r=await fetch(`design-md/${d.slug}/DESIGN.md`);
+    mdCache=await r.text();
+    document.getElementById('code').textContent=mdCache;
+  }catch(e){ document.getElementById('code').textContent='Could not load DESIGN.md'; }
+
+  document.getElementById('closeX').onclick=closeDetail;
+  document.getElementById('copyBtn').onclick=async()=>{
+    try{ await navigator.clipboard.writeText(mdCache||''); flash('copyBtn','Copied ✓'); }
+    catch(e){ flash('copyBtn','Copy failed'); }
+  };
+  modal.querySelectorAll('.chip').forEach(ch=>ch.onclick=async()=>{
+    try{ await navigator.clipboard.writeText(ch.dataset.copy); const b=ch.querySelector('b'); const o=b.textContent; b.textContent='copied'; setTimeout(()=>b.textContent=o,900);}catch(e){}
+  });
+}
+function flash(id,msg){ const b=document.getElementById(id); const o=b.textContent; b.textContent=msg; setTimeout(()=>b.textContent=o,1400); }
+function closeDetail(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+overlay.addEventListener('click', e=>{ if(e.target===overlay) closeDetail(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDetail(); });
+</script>
+</body>
+</html>

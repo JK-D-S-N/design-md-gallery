@@ -6880,7 +6880,7 @@
   "slug": "nike",
   "name": "Nike",
   "category": "Retail & E-commerce",
-  "description": "The global sportswear leader. Monochrome and high-contrast, bold uppercase type, full-bleed imagery, the swoosh as the only ornament.",
+  "description": "A photography-first commerce system built on extreme typographic contrast \u2014 towering uppercase Futura display lockups burned into editorial campaign imagery, sitting above a dense, neutral, near-monochrome retail chrome of pill-shaped black",
   "colors": {
    "primary": "#111111",
    "on-primary": "#ffffff",
@@ -7154,7 +7154,7 @@
   "slug": "nvidia",
   "name": "NVIDIA",
   "category": "Hardware & Devices",
-  "description": "",
+  "description": "An engineering-grade marketing system organized around two surface modes \u2014 a deep black canvas for hero and footer chapters and a flat paper-white canvas for body content \u2014 connected by a single, almost violently saturated NVIDIA Green acce",
   "colors": {
    "primary": "#76b900",
    "on-primary": "#000000",
@@ -7258,7 +7258,7 @@
   "slug": "ollama",
   "name": "Ollama",
   "category": "AI",
-  "description": "Run open large language models locally. A clean, terminal-first developer aesthetic, monochrome with minimal chrome.",
+  "description": "An almost defiantly minimal documentation-first system that treats the home page like a Markdown README \u2014 paper-white canvas, 36px center-aligned heading, a single black pill CTA, an inline terminal install snippet, and a hand-drawn llama m",
   "colors": {
    "primary": "#000000",
    "on-primary": "#ffffff",
@@ -7422,7 +7422,7 @@
   "slug": "opencode.ai",
   "name": "OpenCode",
   "category": "AI",
-  "description": "An open-source AI coding agent for the terminal. Developer-first, dark, monospaced and minimal.",
+  "description": "A terminal-native marketing system rendered entirely in Berkeley Mono \u2014 every word on the page, from the hero headline down to the footer fine print, is monospaced. The page itself reads like a manpage or a static-site README: warm cream ca",
   "colors": {
    "primary": "#201d1d",
    "on-primary": "#fdfcfc",
@@ -7814,7 +7814,7 @@
   "slug": "pinterest",
   "name": "Pinterest",
   "category": "Social & Media",
-  "description": "",
+  "description": "A photography-first discovery system organized around the Pinterest Red CTA, the masonry pin grid, and a soft warm-cream chrome that gets out of the imagery's way. The home page is a content-discovery tool wearing the chrome of a magazine p",
   "colors": {
    "primary": "#e60023",
    "on-primary": "#ffffff",
@@ -7964,7 +7964,7 @@
   "slug": "playstation",
   "name": "PlayStation",
   "category": "Gaming",
-  "description": "",
+  "description": "A three-surface marketing system organized around alternating black, white, and PlayStation Blue chapters that scroll past the viewer like a console launch trailer. Each section has a single editorial purpose \u2014 hero photography, console pro",
   "colors": {
    "primary": "#0070d1",
    "primary-pressed": "#0064b7",
@@ -8026,7 +8026,7 @@
   "slug": "posthog",
   "name": "PostHog",
   "category": "Dev Tools",
-  "description": "",
+  "description": "A playful developer-tools system rendered on a warm cream canvas with hand-drawn hedgehog mascots dotted across every page like marginalia in a sketchbook. The chrome reads like a friendly engineering blog: olive-gray ink (#4d4f46) for body",
   "colors": {
    "primary": "#f7a501",
    "primary-pressed": "#dd9001",
@@ -8301,7 +8301,7 @@
   "slug": "raycast",
   "name": "Raycast",
   "category": "Dev Tools",
-  "description": "",
+  "description": "Raycast's marketing system reads like an extended product screenshot. The chrome IS the in-product chrome at marketing scale: pure-near-black canvas, hairline 1px borders, command-palette-style cards, Inter typography with the ss03 stylisti",
   "colors": {
    "primary": "#ffffff",
    "primary-pressed": "#e8e8e8",
@@ -8549,7 +8549,7 @@
   "slug": "renault",
   "name": "Renault",
   "category": "Automotive",
-  "description": "",
+  "description": "Renault's web presence pairs the freshly-modernised Renault diamond (the 2021 flat-line rhombus mark) with a stark black-and-white canvas, a signature Sunlight Yellow accent, and the proprietary NouvelR display typeface. The system reads as",
   "colors": {
    "primary": "#ffed00",
    "primary-deep": "#e6d200",
@@ -8644,7 +8644,7 @@
   "slug": "replicate",
   "name": "Replicate",
   "category": "AI",
-  "description": "",
+  "description": "Replicate's marketing surfaces pair the warm-cream developer-tools aesthetic of an indie ML playground with a confident hot-orange brand accent and a signature display typeface (rb-freigeist-neue) sized aggressively large at 72px+. The syst",
   "colors": {
    "primary": "#ea2804",
    "primary-deep": "#c01f00",
@@ -8740,7 +8740,7 @@
   "slug": "resend",
   "name": "Resend",
   "category": "Dev Tools",
-  "description": "",
+  "description": "Resend's marketing surfaces sit on a near-pure black canvas with off-white text and a single signature color \u2014 the deep editorial-serif Domaine Display headline mark \u2014 that gives an otherwise utilitarian developer-tool brand its print-magaz",
   "colors": {
    "primary": "#fcfdff",
    "primary-on": "#000000",
@@ -8834,7 +8834,7 @@
   "slug": "revolut",
   "name": "Revolut",
   "category": "Fintech",
-  "description": "",
+  "description": "Revolut's marketing surfaces pair a stark black canvas with the brand's cobalt-violet (`#494fdf`) and a wide accent palette of deep, fully-saturated product colours \u2014 teal, light-blue, deep pink, light-green, warning orange. The system read",
   "colors": {
    "primary": "#494fdf",
    "primary-bright": "#4f55f1",

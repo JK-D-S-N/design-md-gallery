@@ -135,11 +135,20 @@ def parse_yaml(text):
         mm=re.match(r'\s+([a-z0-9-]+):\s*"?(#[0-9a-fA-F]{3,8})"?', ln)
         if mm: colors[mm.group(1)]=mm.group(2)
     if not colors: return None
-    desc=re.search(r'^description:\s*(.+)$', block, re.M)
+    # description: handle both inline and `description: |` block scalars
+    desc=''
+    m1=re.search(r'^description:\s*(.*)$', block, re.M)
+    if m1:
+        inline=m1.group(1).strip().strip('"').strip("'")
+        if inline and inline not in ('|','>','|-','>-','|+','>+'):
+            desc=inline
+        else:
+            bm=re.search(r'^description:\s*[|>][+-]?\s*\n((?:[ \t]+\S.*\n?)+)', block, re.M)
+            if bm: desc=' '.join(l.strip() for l in bm.group(1).splitlines() if l.strip())
     ff=re.search(r'fontFamily:\s*"?([^"\n]+)"?', block)
     return {
         'colors':colors,
-        'description':(desc.group(1).strip().strip('"').strip("'") if desc else ''),
+        'description':desc,
         'displayFont':(ff.group(1).strip() if ff else 'system-ui'),
         'bg':colors.get('canvas') or colors.get('canvas-soft') or colors.get('surface-soft') or '',
         'ink':colors.get('ink') or colors.get('body-strong') or '',

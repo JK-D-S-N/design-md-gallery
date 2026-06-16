@@ -14,6 +14,62 @@ def prettify(slug):
         'crowdstrike':'CrowdStrike','aiven':'Aiven','confluent':'Confluent','kaggle':'Kaggle'}
     return fixes.get(slug, ' '.join(w.capitalize() for w in s.split()))
 
+# ---- categories: single primary category per system ----
+CATS = {
+ 'AI': ['anthropic','claude','openai','deepmind','mistral','mistral.ai','perplexity','huggingface',
+   'characterai','cohere','elevenlabs','runway','runwayml','assemblyai','together.ai','replicate',
+   'minimax','ollama','opencode.ai','composio','lovable','voltagent','x.ai'],
+ 'Dev Tools': ['github','gitlab','gitbook','vercel','netlify','cursor','replit','docker','deno','flyio',
+   'railway','render','heroku','digitalocean','cloudflare','fastly','postman','circleci','jetbrains',
+   'sentry','datadog','grafana','launchdarkly','snyk','sonar','doppler','neon','planetscale','turso',
+   'supabase','redis','mongodb','elastic','convex','clickhouse','confluent','retool','raycast','warp',
+   'tailscale','clerk','pagerduty','hashicorp','redhat','segment','mixpanel','amplitude','posthog',
+   'algolia','cloudinary','twilio','storyblok','contentful','sanity','databricks','snowflake','linear','linear.app'],
+ 'Fintech': ['stripe','paypal','square','venmo','klarna','affirm','robinhood','coinbase','kraken','binance',
+   'metamask','brex','wise','revolut','monzo','n26','sofi','chime','betterment','carta','capitalone',
+   'mastercard','plaid','intuit','xero','adp','deel','rippling','bloomberg'],
+ 'Retail & E-commerce': ['amazon','shopify','etsy','ebay','walmart','target','costco','bestbuy','homedepot',
+   'lowes','ikea','wayfair','instacart','doordash'],
+ 'Travel & Food': ['airbnb','booking','expedia','tripadvisor','starbucks','mcdonalds','zillow','lyft','uber'],
+ 'Productivity': ['notion','asana','trello','monday','clickup','coda','airtable','calendly','cal','loom',
+   'miro','dropbox','box','slack','zoom','hubspot','salesforce','zendesk','intercom','drift','mailchimp',
+   'buffer','typeform','qualtrics','grammarly','workday','servicenow','atlassian','coursera','udemy',
+   'duolingo','clay','gitbook'],
+ 'Design & Creative': ['figma','canva','adobe','dribbble','behance','framer','webflow','squarespace','wix','autodesk'],
+ 'Social & Media': ['x','threads','mastodon','reddit','linkedin','pinterest','snapchat','tiktok','bytedance',
+   'medium','substack','patreon','netflix','spotify','twitch','discord','telegram','wired','theverge','google'],
+ 'Hardware & Devices': ['apple','samsung','lg','sony','xiaomi','oneplus','realme','huawei','nokia','lenovo',
+   'hp','dell','dell-1996','acer','asus','arm','intel','amd','qualcomm','nvidia','vodafone'],
+ 'Browsers & Privacy': ['brave','opera','zenbrowser','duckduckgo','proton','1password','bitwarden'],
+ 'Security & Enterprise': ['okta','crowdstrike','paloaltonetworks','drata','cisco','vmware','nutanix',
+   'palantir','oracle','ibm','sap','microsoft'],
+ 'Automotive': ['bmw','bmw-m','ferrari','lamborghini','bugatti','tesla','renault'],
+ 'Gaming': ['steam','epicgames','xbox','playstation','nintendo-2001','unity','applovin'],
+}
+SLUG2CAT = {s:c for c,ss in CATS.items() for s in ss}
+SLUG2CAT.update({'aiven':'Dev Tools','expo':'Dev Tools','mintlify':'Dev Tools','resend':'Dev Tools',
+ 'temporal':'Dev Tools','kaggle':'AI','meta':'Social & Media','mozilla':'Browsers & Privacy',
+ 'nike':'Retail & E-commerce','spacex':'Hardware & Devices','superhuman':'Productivity',
+ 'zapier':'Productivity','godaddy':'Productivity'})
+
+# factual one-liners for entries whose DESIGN.md carries no prose description
+DESC = {
+ 'amazon':"The world's largest online marketplace. A dense, utilitarian commerce UI on Amazon Orange over deep navy, tuned for scale and conversion.",
+ 'booking':"The global travel-booking platform. A trust-driven, information-dense interface in Booking blue, built to convert at scale.",
+ 'doordash':"On-demand food and grocery delivery. A bright, friendly consumer marketplace anchored on DoorDash red.",
+ 'etsy':"A global marketplace for handmade and vintage goods. Warm orange, editorial and craft-forward.",
+ 'lamborghini':"Italian high-performance supercars. A bold, aggressive dark-luxury aesthetic with hexagonal motifs.",
+ 'linkedin':"The professional network. A clean, trustworthy enterprise-blue system built for content and connection at scale.",
+ 'lovable':"An AI app builder that turns prompts into full-stack apps. A modern, friendly developer-product aesthetic.",
+ 'runwayml':"Generative AI tools for video and media creation. A sleek, dark, creative-pro interface.",
+ 'sanity':"A composable content platform and headless CMS for developers. Clean, technical and brand-flexible.",
+ 'spotify':"The world's largest music-streaming service. Dark-first UI with signature Spotify green and bold imagery.",
+ 'target':"Major US retail chain. A bright, friendly commerce UI on Target red with generous white space.",
+ 'theverge':"Technology, science and culture publication. A bold editorial system with strong type and vivid accents.",
+ 'tiktok':"Short-form video platform. A dark, high-energy, mobile-first UI with cyan and magenta brand accents.",
+ 'walmart':"The world's largest retailer. A clean, trust-led commerce UI on Walmart blue with the spark mark.",
+}
+
 def lum(h):
     h=h.lstrip('#')
     if len(h)==3: h=''.join(c*2 for c in h)
@@ -149,7 +205,8 @@ for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
     dw,dt=display_type(text)
     entries.append({
         'slug':slug, 'name':prettify(slug),
-        'description':parsed['description'][:240],
+        'category':SLUG2CAT.get(slug,'Other'),
+        'description':(parsed['description'].strip() or DESC.get(slug,''))[:240],
         'colors':parsed['colors'],
         'displayFont':parsed['displayFont'],
         'displayWeight':dw, 'displayTracking':dt,
@@ -172,6 +229,7 @@ for e in entries:
     score=sum(W[k]*norms[k](e['_m'][k]) for k in W)*100
     e['score']=round(score)
     e['stars']=max(1,min(5,round(score/20*2)/2))   # 1–5, half-steps
+    e['metrics']={'tokens':e['_m']['hexes'],'sections':e['_m']['sections'],'feats':e['_m']['feats']}
     del e['_m']
 
 json.dump(entries, open(os.path.join(ROOT,'data.json'),'w'), indent=1)

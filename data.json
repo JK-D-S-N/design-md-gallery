@@ -2,6 +2,7 @@
  {
   "slug": "1password",
   "name": "1password",
+  "category": "Browsers & Privacy",
   "description": "Identity and access security with a calm, premium SaaS frame. 1Password's public site uses deep indigo and blue gradients, white surfaces, rounded cards, and a modern sans stack to make security feel approachable and controlled.",
   "colors": {
    "c0": "#13233A",
@@ -31,11 +32,17 @@
    "#667085"
   ],
   "score": 18,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 25,
+   "feats": 9
+  }
  },
  {
   "slug": "acer",
   "name": "Acer",
+  "category": "Hardware & Devices",
   "description": "Accessible performance technology with sharp retail clarity. Acer's current public site combines deep charcoal framing, bright green accents, white commerce surfaces, and product-family storytelling around AI PCs, gaming, business, and sust",
   "colors": {
    "c0": "#111111",
@@ -71,11 +78,17 @@
    "#83B81A"
   ],
   "score": 43,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 34,
+   "feats": 11
+  }
  },
  {
   "slug": "adobe",
   "name": "Adobe",
+  "category": "Design & Creative",
   "description": "Creative software and digital experience tooling with a bold brand spine. Adobe's current public site uses `Adobe Clean`, relying on black (`#000000`), white (`#FFFFFF`), soft gray (`#F5F5F5`), deep charcoal (`#2C2C2C`), and Adobe red (`#FA",
   "colors": {
    "c0": "#000000",
@@ -107,11 +120,17 @@
    "#FA0F00"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "adp",
   "name": "Adp",
+  "category": "Fintech",
   "description": "Workforce and payroll software design with approachable professionalism and direct conversion focus. ADP\u2019s current site uses a clean HR-tech structure, strong red accents, light neutral surfaces, and high-trust layouts to make payroll and p",
   "colors": {
    "c0": "#D91F26",
@@ -145,11 +164,17 @@
    "#6B7280"
   ],
   "score": 20,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "affirm",
   "name": "Affirm",
+  "category": "Fintech",
   "description": "Buy-now-pay-later fintech with deep blue trust, consumer-retail clarity, and installment-friendly messaging. Affirm's public site uses navy and blue accents, white surfaces, rounded cards, and purchase-focused financial education.",
   "colors": {
    "c0": "#1A5CFF",
@@ -177,11 +202,17 @@
    "#DCE5F5"
   ],
   "score": 15,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 21,
+   "feats": 9
+  }
  },
  {
   "slug": "airbnb",
   "name": "Airbnb",
+  "category": "Travel & Food",
   "description": "A warm, generous consumer marketplace anchored on a clean white canvas and Airbnb Rausch (#ff385c), the single brand voltage that carries every primary CTA, search-button orb, and rating dot. Type runs Airbnb Cereal VF at modest weights \u2014 d",
   "colors": {
    "primary": "#ff385c",
@@ -226,11 +257,17 @@
    "#460479"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 19,
+   "sections": 31,
+   "feats": 8
+  }
  },
  {
   "slug": "airtable",
   "name": "Airtable",
+  "category": "Productivity",
   "description": "A sober, editorial workflow-software interface anchored on white canvas and dark-ink type, where brand voltage comes from full-bleed signature cards in coral, dark green, peach, and dark navy that punctuate long-scroll explainer pages. Prim",
   "colors": {
    "primary": "#181d26",
@@ -280,11 +317,17 @@
    "#dddddd"
   ],
   "score": 47,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 23,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "aiven",
   "name": "Aiven",
+  "category": "Dev Tools",
   "description": "Open source data infrastructure design with practical cloud clarity, warm orange accents, and production-ready service management surfaces.",
   "colors": {
    "c0": "#FF6B00",
@@ -315,11 +358,17 @@
    "#F8FAFC"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "algolia",
   "name": "Algolia",
+  "category": "Dev Tools",
   "description": "AI search and discovery design with deep navy trust, electric blue action, and fast, relevance-first product structure.",
   "colors": {
    "c0": "#050F2C",
@@ -351,12 +400,18 @@
    "#2DDE98"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "amazon",
   "name": "Amazon",
-  "description": "",
+  "category": "Retail & E-commerce",
+  "description": "The world's largest online marketplace. A dense, utilitarian commerce UI on Amazon Orange over deep navy, tuned for scale and conversion.",
   "colors": {
    "c0": "#FF9900",
    "c1": "#131921",
@@ -402,11 +457,17 @@
    "#F3F3F3"
   ],
   "score": 77,
-  "stars": 4.0
+  "stars": 4.0,
+  "metrics": {
+   "tokens": 49,
+   "sections": 62,
+   "feats": 10
+  }
  },
  {
   "slug": "amd",
   "name": "Amd",
+  "category": "Hardware & Devices",
   "description": "High-performance computing with sharp technical confidence. AMD's current public site combines deep charcoal foundations, bright white sections, signature red accents, angular hardware imagery, and product-forward storytelling to make CPUs,",
   "colors": {
    "c0": "#000000",
@@ -441,11 +502,17 @@
    "#ED1C24"
   ],
   "score": 29,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "amplitude",
   "name": "Amplitude",
+  "category": "Dev Tools",
   "description": "Product analytics design with bold blue identity, data-dense dashboards, Inter typography, and insight-first surfaces.",
   "colors": {
    "c0": "#2962FF",
@@ -478,11 +545,17 @@
    "#EF4444"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "anthropic",
   "name": "Anthropic",
+  "category": "AI",
   "description": "AI safety research company with warm editorial elegance. Cream backgrounds (#FAF9F5) and warm terracotta accents (#DA7756, #C4553D), dark charcoal text (#1F1915), Styrene typeface with clean letter-spacing, research paper aesthetic meets th",
   "colors": {
    "c0": "#FAF9F5",
@@ -540,11 +613,17 @@
    "#DA7756"
   ],
   "score": 68,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 47,
+   "sections": 56,
+   "feats": 9
+  }
  },
  {
   "slug": "apple",
   "name": "Apple",
+  "category": "Hardware & Devices",
   "description": "A photography-first interface that turns marketing into a museum gallery. Edge-to-edge product tiles alternate light and dark canvases, framed by SF Pro Display headlines with negative letter-spacing and a single Action Blue (#0066cc) inter",
   "colors": {
    "primary": "#0066cc",
@@ -587,11 +666,17 @@
    "#ffffff"
   ],
   "score": 45,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 37,
+   "feats": 9
+  }
  },
  {
   "slug": "applovin",
   "name": "Applovin",
+  "category": "Gaming",
   "description": "Mobile growth design with vivid coral identity, performance-first dashboards, bold typography, and ad-tech surfaces.",
   "colors": {
    "c0": "#FF4757",
@@ -623,11 +708,17 @@
    "#8B5CF6"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "arm",
   "name": "Arm",
+  "category": "Hardware & Devices",
   "description": "AI-era semiconductor branding with deep compute minimalism, luminous gradients, and efficiency-first storytelling. Arm\u2019s current visual language combines dark navy foundations, bright futuristic highlights, and refined enterprise typography",
   "colors": {
    "c0": "#0E1625",
@@ -661,11 +752,17 @@
    "#4DA3FF"
   ],
   "score": 21,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 13,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "asana",
   "name": "Asana",
+  "category": "Productivity",
   "description": "Work management with a polished, AI-forward enterprise feel. Asana's current public site combines a refined neo-grotesk display system with clean sans UI text, using coral (`#FC636B`) as the historic brand anchor alongside white (`#FFFFFF`)",
   "colors": {
    "c0": "#FC636B",
@@ -697,11 +794,17 @@
    "#E5E7EB"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "assemblyai",
   "name": "Assemblyai",
+  "category": "AI",
   "description": "Voice AI design with deep indigo identity, developer-first surfaces, mono code aesthetics, and speech-intelligence clarity.",
   "colors": {
    "c0": "#5C6BC0",
@@ -733,11 +836,17 @@
    "#FBBF24"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "asus",
   "name": "ASUS",
+  "category": "Hardware & Devices",
   "description": "Personal computing with broad innovation energy. ASUS's current public site blends bright white merchandising surfaces, deep blue and black contrast areas, crisp product-family storytelling, and premium device imagery across laptops, gaming",
   "colors": {
    "c0": "#FFFFFF",
@@ -773,11 +882,17 @@
    "#005BFF"
   ],
   "score": 37,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 20,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "atlassian",
   "name": "Atlassian",
+  "category": "Productivity",
   "description": "Work coordination software with sharp enterprise clarity and bright blue structure. Atlassian's public site uses `Charlie Display` and `Charlie Text`, with white surfaces, pale blue support backgrounds, deep navy text, and a strong Atlassia",
   "colors": {
    "c0": "#0052CC",
@@ -809,11 +924,17 @@
    "#42526E"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "autodesk",
   "name": "Autodesk",
+  "category": "Design & Creative",
   "description": "Bold industrial-modern brand with black-and-white confidence and high-visibility yellow. Autodesk\u2019s current identity uses Artifakt typography, open whitespace, sharp contrast, and selective color emphasis to make technical creativity feel s",
   "colors": {
    "c0": "#000000",
@@ -845,11 +966,17 @@
    "#0696D7"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 12,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "behance",
   "name": "Behance",
+  "category": "Design & Creative",
   "description": "Creative portfolio discovery with Adobe-adjacent polish, white gallery surfaces, and strong project framing. Behance's public site uses a white and light-gray base, dark text, blue Adobe-style action accents, and dense creative-grid browsin",
   "colors": {
    "c0": "#1769FF",
@@ -877,11 +1004,17 @@
    "#E5E5E5"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "bestbuy",
   "name": "Bestbuy",
+  "category": "Retail & E-commerce",
   "description": "Electronics retail with strong blue-yellow branding and high-visibility merchandising. Best Buy's public site uses a vivid cobalt blue foundation, bright yellow branding, white content surfaces, and dense retail promotion modules.",
   "colors": {
    "c0": "#0046BE",
@@ -910,11 +1043,17 @@
    "#6B7280"
   ],
   "score": 23,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 22,
+   "feats": 10
+  }
  },
  {
   "slug": "betterment",
   "name": "Betterment",
+  "category": "Fintech",
   "description": "Digital investment design with calming green identity, trust-forward surfaces, humanist typography, and goal-based financial clarity.",
   "colors": {
    "c0": "#1A7A4A",
@@ -947,11 +1086,17 @@
    "#DC2626"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "binance",
   "name": "Binance",
+  "category": "Fintech",
   "description": "A confident financial-platform interface anchored on a deep near-black canvas, where Binance's iconic yellow (#FCD535) carries every primary CTA, brand accent, and value-claim moment. Type runs Binance's custom BinanceNova / BinancePlex sta",
   "colors": {
    "primary": "#fcd535",
@@ -997,11 +1142,17 @@
    "#181a20"
   ],
   "score": 49,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 19,
+   "sections": 41,
+   "feats": 9
+  }
  },
  {
   "slug": "bitwarden",
   "name": "Bitwarden",
+  "category": "Browsers & Privacy",
   "description": "Open-source password manager design with trusted blue identity, security-first surfaces, clean type, and transparent privacy messaging.",
   "colors": {
    "c0": "#175DDC",
@@ -1034,11 +1185,17 @@
    "#DC2626"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "bloomberg",
   "name": "Bloomberg",
+  "category": "Fintech",
   "description": "Information-dense media and terminal design with unmistakable black-and-amber identity. Bloomberg combines bold contrast, efficiency-first hierarchy, modern editorial layouts, and a culture of high-signal interface design to make large amou",
   "colors": {
    "c0": "#000000",
@@ -1071,11 +1228,17 @@
    "#374151"
   ],
   "score": 20,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "bmw",
   "name": "BMW",
+  "category": "Automotive",
   "description": "BMW's corporate site \u2014 distinct from BMW M's motorsport-bombastic variant, this is a measured and settled corporate-automotive interface. On a light (cream-tinted white) canvas, BMW corporate blue (#1c69d4) carries every primary CTA; dark n",
   "colors": {
    "primary": "#1c69d4",
@@ -1122,11 +1285,17 @@
    "#1a1a1a"
   ],
   "score": 44,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 22,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "bmw-m",
   "name": "BMW M",
+  "category": "Automotive",
   "description": "A motorsport-engineering interface anchored on a near-black canvas with white BMW Type Next Latin display headlines in confident UPPERCASE. The brand carries no decorative voltage \u2014 its energy comes from full-bleed automotive photography (c",
   "colors": {
    "primary": "#ffffff",
@@ -1169,12 +1338,18 @@
    "#3c3c3c"
   ],
   "score": 42,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "booking",
   "name": "Booking",
-  "description": "",
+  "category": "Travel & Food",
+  "description": "The global travel-booking platform. A trust-driven, information-dense interface in Booking blue, built to convert at scale.",
   "colors": {
    "c0": "#003580",
    "c1": "#00224f",
@@ -1211,11 +1386,17 @@
    "#008009"
   ],
   "score": 56,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 56,
+   "feats": 10
+  }
  },
  {
   "slug": "box",
   "name": "Box",
+  "category": "Productivity",
   "description": "Enterprise content management with white space, blue trust cues, and AI-era document workflows. Box's public site uses bright white canvases, navy-blue accents, structured product cards, and a calm enterprise tone.",
   "colors": {
    "c0": "#0061D5",
@@ -1245,11 +1426,17 @@
    "#5F6B7A"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 23,
+   "feats": 9
+  }
  },
  {
   "slug": "brave",
   "name": "Brave",
+  "category": "Browsers & Privacy",
   "description": "Privacy browser design with official orange identity, dark neutral contrast, Poppins typography, and protective browsing surfaces.",
   "colors": {
    "c0": "#FB542B",
@@ -1280,11 +1467,17 @@
    "#4F30AB"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "brex",
   "name": "Brex",
+  "category": "Fintech",
   "description": "Intelligent finance for high-speed companies. Brex's current public site pairs deep ink and white surfaces with saturated electric-blue accents, rounded enterprise product cards, AI-forward messaging, and dense-but-structured spend controls",
   "colors": {
    "c0": "#0B1020",
@@ -1320,11 +1513,17 @@
    "#2F6BFF"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 19,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "buffer",
   "name": "Buffer",
+  "category": "Productivity",
   "description": "Social media management design with warm teal identity, creator-friendly surfaces, clean typography, and calm publishing workflows.",
   "colors": {
    "c0": "#168EEA",
@@ -1357,11 +1556,17 @@
    "#8B5CF6"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 10
+  }
  },
  {
   "slug": "bugatti",
   "name": "Bugatti",
+  "category": "Automotive",
   "description": "An austere luxury-automotive interface that uses near-pure black canvas, white uppercase letterspaced display, and full-bleed automotive photography as the only voltage. The system runs three custom Bugatti typefaces \u2014 Bugatti Display, Buga",
   "colors": {
    "primary": "#ffffff",
@@ -1401,11 +1606,17 @@
    "#666666"
   ],
   "score": 46,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 37,
+   "feats": 10
+  }
  },
  {
   "slug": "bytedance",
   "name": "Bytedance",
+  "category": "Social & Media",
   "description": "Global content platform design with bold red-and-black identity, creator-economy surfaces, dynamic motion, and algorithm-powered UX.",
   "colors": {
    "c0": "#FE2C55",
@@ -1437,11 +1648,17 @@
    "#22C55E"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 10
+  }
  },
  {
   "slug": "cal",
   "name": "Cal.com",
+  "category": "Productivity",
   "description": "A clean, calendar-software-first interface anchored on white canvas with black primary CTAs and custom Cal Sans display typography. The system reads as friendly modern SaaS \u2014 generous whitespace, soft-rounded cards (~12px), product UI fragm",
   "colors": {
    "primary": "#111111",
@@ -1489,11 +1706,17 @@
    "#6b7280"
   ],
   "score": 44,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "calendly",
   "name": "Calendly",
+  "category": "Productivity",
   "description": "Scheduling product design with calm blue trust, clean booking flows, and precise availability selection.",
   "colors": {
    "c0": "#006BFF",
@@ -1525,11 +1748,17 @@
    "#64748B"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "canva",
   "name": "Canva",
+  "category": "Design & Creative",
   "description": "Creative-tool design with playful confidence, rainbow-gradient energy, and strong workflow simplification. Canva combines bright brand color, rounded UI, approachable motion, and productivity-first editor structure to make advanced design t",
   "colors": {
    "c0": "#00C4CC",
@@ -1564,11 +1793,17 @@
    "#334155"
   ],
   "score": 34,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 10
+  }
  },
  {
   "slug": "capitalone",
   "name": "Capitalone",
+  "category": "Fintech",
   "description": "National bank design with bold red identity, confident card surfaces, clean Sans typography, and accessible financial clarity.",
   "colors": {
    "c0": "#D03027",
@@ -1601,11 +1836,17 @@
    "#1D4ED8"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 13,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "carta",
   "name": "Carta",
+  "category": "Fintech",
   "description": "Equity management design with professional navy identity, legal-precision surfaces, clean table hierarchy, and ownership-clarity UX.",
   "colors": {
    "c0": "#1E3A5F",
@@ -1638,11 +1879,17 @@
    "#DC2626"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "characterai",
   "name": "Characterai",
+  "category": "AI",
   "description": "Consumer AI entertainment design with conversational surfaces, creator discovery, and a lively blue-led interaction system.",
   "colors": {
    "c0": "#1A5EFF",
@@ -1674,11 +1921,17 @@
    "#64748B"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "chime",
   "name": "Chime",
+  "category": "Fintech",
   "description": "Neobank design with energetic green identity, member-first surfaces, friendly typography, and accessible mobile-first banking.",
   "colors": {
    "c0": "#00D64F",
@@ -1711,11 +1964,17 @@
    "#EF4444"
   ],
   "score": 18,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 9,
+   "feats": 10
+  }
  },
  {
   "slug": "circleci",
   "name": "Circleci",
+  "category": "Dev Tools",
   "description": "CI/CD platform design with confident black-and-green delivery surfaces, automation-first dashboards, and pipeline clarity.",
   "colors": {
    "c0": "#111111",
@@ -1746,11 +2005,17 @@
    "#F59E0B"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "cisco",
   "name": "Cisco",
+  "category": "Security & Enterprise",
   "description": "Infrastructure-led enterprise brand with bright network blue, dark technical gradients, and mobile-first content discipline. Cisco\u2019s current web presence balances futuristic AI-era storytelling with practical, readable, conversion-focused l",
   "colors": {
    "c0": "#049FD9",
@@ -1786,11 +2051,17 @@
    "#FFFFFF"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "claude",
   "name": "Claude",
+  "category": "AI",
   "description": "A warm-canvas editorial interface for Anthropic's Claude product. The system anchors on a tinted cream canvas with serif display headlines, warm coral CTAs, and dark navy product surfaces (code editor mockups, model showcase cards). Brand v",
   "colors": {
    "primary": "#cc785c",
@@ -1837,11 +2108,17 @@
    "#252523"
   ],
   "score": 46,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 23,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "clay",
   "name": "Clay",
+  "category": "Productivity",
   "description": "A vibrant claymation-meets-data interface for Clay.com (GTM data-orchestration platform). Anchors on white canvas with dark-navy primary CTAs, custom rounded display type, and saturated single-color feature cards \u2014 hot pink, deep teal, lave",
   "colors": {
    "primary": "#0a0a0a",
@@ -1892,11 +2169,17 @@
    "#1a1a1a"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 26,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "clerk",
   "name": "Clerk",
+  "category": "Dev Tools",
   "description": "Authentication product design with polished drop-in components, violet developer-brand energy, and secure account-management flows.",
   "colors": {
    "c0": "#6C47FF",
@@ -1927,11 +2210,17 @@
    "#F8FAFC"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "clickhouse",
   "name": "ClickHouse",
+  "category": "Dev Tools",
   "description": "A high-performance database interface anchored on near-pure black canvas with electric yellow as the brand voltage. White typography in confident sans, yellow CTAs, and yellow-text stat numbers carry the brand voice across every page. Code ",
   "colors": {
    "primary": "#faff69",
@@ -1977,11 +2266,17 @@
    "#e6e6e6"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 18,
+   "sections": 37,
+   "feats": 9
+  }
  },
  {
   "slug": "clickup",
   "name": "Clickup",
+  "category": "Productivity",
   "description": "Productivity software with a bright gradient brand, polished dashboards, and all-in-one work platform messaging. ClickUp's public site combines violet, pink, and blue gradients with white cards and dense productivity demos.",
   "colors": {
    "c0": "#7B61FF",
@@ -2011,11 +2306,17 @@
    "#667085"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "cloudflare",
   "name": "Cloudflare",
+  "category": "Dev Tools",
   "description": "Internet infrastructure with bold contrast and unmistakable orange brand energy. Cloudflare's public site mixes white and dark surfaces, sharp typography, orange (`#F38020`) accents, and dense infrastructure storytelling for networking, sec",
   "colors": {
    "c0": "#F38020",
@@ -2045,11 +2346,17 @@
    "#1D1D1F"
   ],
   "score": 18,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 13,
+   "sections": 23,
+   "feats": 9
+  }
  },
  {
   "slug": "cloudinary",
   "name": "Cloudinary",
+  "category": "Dev Tools",
   "description": "Visual media platform design with official blue foundations, sky-inspired accents, and practical asset workflow clarity.",
   "colors": {
    "c0": "#3448C5",
@@ -2081,11 +2388,17 @@
    "#48C4D8"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "coda",
   "name": "Coda",
+  "category": "Productivity",
   "description": "All-in-one doc design with bold indigo identity, canvas-first surfaces, flexible grid UX, and building-block content hierarchy.",
   "colors": {
    "c0": "#4338CA",
@@ -2118,11 +2431,17 @@
    "#DC2626"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "cohere",
   "name": "Cohere",
+  "category": "AI",
   "description": "Cohere's 2026 web system is a controlled enterprise AI interface built from stark white editorial space, deep green-black product bands, soft mineral surfaces, rounded media cards, and a distinctive type split between monospaced-feeling dis",
   "colors": {
    "primary": "#17171c",
@@ -2167,11 +2486,17 @@
    "#ffffff"
   ],
   "score": 42,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 43,
+   "feats": 9
+  }
  },
  {
   "slug": "coinbase",
   "name": "Coinbase",
+  "category": "Fintech",
   "description": "An institutional-grade crypto exchange whose marketing surfaces read like a quietly-confident financial-services brand. The base canvas is pure white; Coinbase Blue (`#0052ff`) is the single brand voltage, used scarcely on primary CTAs, sig",
   "colors": {
    "primary": "#0052ff",
@@ -2215,11 +2540,17 @@
    "#0a0b0d"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 39,
+   "feats": 9
+  }
  },
  {
   "slug": "composio",
   "name": "Composio",
+  "category": "AI",
   "description": "A developer-tools brand for AI-agent tool integration whose marketing surfaces lean into a dark, technical aesthetic with a single deep-electric-blue voltage (`#0007cd`). The page floor is near-black (`#0f0f0f`); cards float above on subtle",
   "colors": {
    "primary": "#0007cd",
@@ -2263,11 +2594,17 @@
    "#ffffff"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 18,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "confluent",
   "name": "Confluent",
+  "category": "Dev Tools",
   "description": "Data-streaming platform design with bright coral energy, dark product framing, and concise technical storytelling. Confluent\u2019s current site balances cloud-native momentum with enterprise readability.",
   "colors": {
    "c0": "#FF5F46",
@@ -2302,11 +2639,17 @@
    "#64748B"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "contentful",
   "name": "Contentful",
+  "category": "Dev Tools",
   "description": "Headless CMS design with professional blue identity, content-model clarity, structured entry surfaces, and API-first editorial UX.",
   "colors": {
    "c0": "#0059C8",
@@ -2339,11 +2682,17 @@
    "#7B4FBD"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "convex",
   "name": "Convex",
+  "category": "Dev Tools",
   "description": "Backend platform design with playful technical energy, real-time data clarity, and AI-agent-ready product surfaces.",
   "colors": {
    "c0": "#FF6A3D",
@@ -2373,11 +2722,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "costco",
   "name": "Costco",
+  "category": "Retail & E-commerce",
   "description": "Membership retail with practical red-blue branding and warehouse-scale merchandising. Costco's public site uses white surfaces, brand blue and red, straightforward retail hierarchy, and practical shopping modules.",
   "colors": {
    "c0": "#005DAA",
@@ -2406,11 +2761,17 @@
    "#6B7280"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "coursera",
   "name": "Coursera",
+  "category": "Productivity",
   "description": "Online learning with marketplace breadth, academic trust, and blue-led clarity. Coursera's public site uses a clean sans system, white and pale-blue surfaces, structured category browsing, and strong Coursera blue (`#0056D2`) to organize co",
   "colors": {
    "c0": "#0056D2",
@@ -2441,11 +2802,17 @@
    "#6B7280"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 14,
+   "sections": 33,
+   "feats": 11
+  }
  },
  {
   "slug": "crowdstrike",
   "name": "CrowdStrike",
+  "category": "Security & Enterprise",
   "description": "Cybersecurity platform design with dark urgency, high-contrast red emphasis, and mission-clear hierarchy. CrowdStrike\u2019s current brand uses black, white, gray, and red with tightly controlled tertiary colors to create interfaces that feel ag",
   "colors": {
    "c0": "#111111",
@@ -2477,11 +2844,17 @@
    "#791D24"
   ],
   "score": 20,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 34,
+   "feats": 8
+  }
  },
  {
   "slug": "cursor",
   "name": "Cursor",
+  "category": "Dev Tools",
   "description": "An AI-first code editor whose marketing site reads like a quietly-confident developer-tools brand with a warm-cream editorial canvas (`#f7f7f4`) instead of the typical dark IDE atmosphere. Near-black warm ink (`#26251e`) carries body and di",
   "colors": {
    "primary": "#f54e00",
@@ -2525,11 +2898,17 @@
    "#807d72"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "databricks",
   "name": "Databricks",
+  "category": "Dev Tools",
   "description": "Data-and-AI platform design with sharp technical clarity and optimistic orange energy. Databricks pairs modern enterprise typography, modular product storytelling, and bright coral-red accents with dark product imagery to make sophisticated",
   "colors": {
    "c0": "#FF5F46",
@@ -2565,11 +2944,17 @@
    "#6B7C85"
   ],
   "score": 22,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "datadog",
   "name": "Datadog",
+  "category": "Dev Tools",
   "description": "Observability software with dark dashboards, vivid purple brand cues, and dense technical clarity. Datadog's public site combines white and dark chart surfaces with strong violet-purple accents and crisp, technical product storytelling.",
   "colors": {
    "c0": "#632CA6",
@@ -2599,11 +2984,17 @@
    "#1D2939"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 23,
+   "feats": 9
+  }
  },
  {
   "slug": "deel",
   "name": "Deel",
+  "category": "Fintech",
   "description": "Global HR and payroll design with bold blue identity, compliance-forward surfaces, clean data tables, and multi-currency clarity.",
   "colors": {
    "c0": "#0052CC",
@@ -2636,11 +3027,17 @@
    "#FF5630"
   ],
   "score": 4,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "deepmind",
   "name": "Deepmind",
+  "category": "AI",
   "description": "AI research design with deep indigo identity, science-first surfaces, precision typography, and breakthrough-focused visual storytelling.",
   "colors": {
    "c0": "#3C3CCC",
@@ -2671,11 +3068,17 @@
    "#FFFFFF"
   ],
   "score": 3,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "dell",
   "name": "Dell",
+  "category": "Hardware & Devices",
   "description": "Technology retail and enterprise computing with blue trust cues and hardware-led commerce. Dell's public site uses white surfaces, blue branding, and broad hardware/category merchandising.",
   "colors": {
    "c0": "#0076CE",
@@ -2703,11 +3106,17 @@
    "#DCE5F0"
   ],
   "score": 8,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 21,
+   "feats": 8
+  }
  },
  {
   "slug": "dell-1996",
   "name": "Dell (1996)",
+  "category": "Hardware & Devices",
   "description": "An inspired interpretation of Dell.com's 1996 design language \u2014 a catalog-era enterprise web design built around a literal black page frame, vivid flat color-block \"ribbon cards\" tinted in sage, salmon, periwinkle, sky, peach and lime, chun",
   "colors": {
    "primary": "#e91d2a",
@@ -2746,11 +3155,17 @@
    "#000000"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "deno",
   "name": "Deno",
+  "category": "Dev Tools",
   "description": "Modern JavaScript runtime design with simple black-and-white foundations, green dinosaur-brand personality, and secure-by-default developer tooling.",
   "colors": {
    "c0": "#000000",
@@ -2780,11 +3195,17 @@
    "#F8FAFC"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "digitalocean",
   "name": "Digitalocean",
+  "category": "Dev Tools",
   "description": "Developer cloud infrastructure with approachable blue branding and practical product clarity. DigitalOcean's public site uses a bright blue anchor, white surfaces, rounded cards, and a friendly developer-cloud tone.",
   "colors": {
    "c0": "#0080FF",
@@ -2814,11 +3235,17 @@
    "#64748B"
   ],
   "score": 24,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 23,
+   "feats": 10
+  }
  },
  {
   "slug": "discord",
   "name": "Discord",
+  "category": "Social & Media",
   "description": "Community chat platform with gaming-focused aesthetic. Blurple accent (#5865F2), dark theme dominant, voice-first communication design.",
   "colors": {
    "c0": "#313338",
@@ -2862,11 +3289,17 @@
    "#5865F2"
   ],
   "score": 55,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 29,
+   "sections": 54,
+   "feats": 9
+  }
  },
  {
   "slug": "docker",
   "name": "Docker",
+  "category": "Dev Tools",
   "description": "Container tooling with unmistakable blue branding and developer-centric product proof. Docker's public site uses a bright blue palette, white base surfaces, rounded cards, and code/product screenshots that keep the experience technical but ",
   "colors": {
    "c0": "#2496ED",
@@ -2895,12 +3328,18 @@
    "#64748B"
   ],
   "score": 23,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 23,
+   "feats": 10
+  }
  },
  {
   "slug": "doordash",
   "name": "Doordash",
-  "description": "",
+  "category": "Retail & E-commerce",
+  "description": "On-demand food and grocery delivery. A bright, friendly consumer marketplace anchored on DoorDash red.",
   "colors": {
    "c0": "#FF3008",
    "c1": "#C41E00",
@@ -2940,11 +3379,17 @@
    "#00A651"
   ],
   "score": 46,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 47,
+   "feats": 9
+  }
  },
  {
   "slug": "doppler",
   "name": "Doppler",
+  "category": "Dev Tools",
   "description": "Secrets management design with bold purple identity, developer-first surfaces, audit-trail clarity, and environment-based access UX.",
   "colors": {
    "c0": "#6941C6",
@@ -2977,11 +3422,17 @@
    "#B42318"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "drata",
   "name": "Drata",
+  "category": "Security & Enterprise",
   "description": "Compliance automation design with confident blue identity, audit-ready surfaces, continuous monitoring clarity, and framework-mapped controls.",
   "colors": {
    "c0": "#1B4FD8",
@@ -3014,11 +3465,17 @@
    "#7C3AED"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "dribbble",
   "name": "Dribbble",
+  "category": "Design & Creative",
   "description": "Design discovery with soft pink branding, gallery density, and polished creative-marketplace framing. Dribbble's public site uses white space, dark text, rounded search and filter controls, and a signature pink accent.",
   "colors": {
    "c0": "#EA4C89",
@@ -3046,11 +3503,17 @@
    "#E5E7EB"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "drift",
   "name": "Drift",
+  "category": "Productivity",
   "description": "Conversational marketing design with bold teal identity, chat-first surfaces, real-time engagement UX, and pipeline-focused messaging.",
   "colors": {
    "c0": "#00C4CC",
@@ -3083,11 +3546,17 @@
    "#E53E3E"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "dropbox",
   "name": "Dropbox",
+  "category": "Productivity",
   "description": "Cloud collaboration with editorial confidence and product clarity. Dropbox's current public site combines `Sharp Grotesk`-style display typography with `Atlas Grotesk`-style body text, using bright Dropbox blue (`#0061FF`), dense near-black",
   "colors": {
    "c0": "#0061FF",
@@ -3119,11 +3588,17 @@
    "#D8D1CB"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "duckduckgo",
   "name": "Duckduckgo",
+  "category": "Browsers & Privacy",
   "description": "Privacy search and browser design with friendly orange identity, clean utility surfaces, and no-tracking clarity.",
   "colors": {
    "c0": "#DE5833",
@@ -3153,11 +3628,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "duolingo",
   "name": "Duolingo",
+  "category": "Productivity",
   "description": "Playful learning with high-energy brand character. Duolingo's current public presence pairs a white app-like foundation with vivid green brand accents, rounded illustration-driven UI, bold friendly typography, and gamified feedback that kee",
   "colors": {
    "c0": "#58CC02",
@@ -3193,11 +3674,17 @@
    "#4B4B4B"
   ],
   "score": 31,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "elastic",
   "name": "Elastic",
+  "category": "Dev Tools",
   "description": "Technical platform UI with crisp semantic color and controlled depth. Elastic\u2019s product language pairs Inter, dense but readable layouts, EUI token discipline, and strong semantic blues, teals, and magentas to create interfaces that feel po",
   "colors": {
    "c0": "#0B64DD",
@@ -3238,11 +3725,17 @@
    "#C61E25"
   ],
   "score": 44,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 25,
+   "sections": 38,
+   "feats": 10
+  }
  },
  {
   "slug": "elevenlabs",
   "name": "ElevenLabs",
+  "category": "AI",
   "description": "A voice-AI brand whose marketing surfaces read like a quietly editorial print magazine. The base canvas is off-white (`#f5f5f5`) holding warm near-black ink (`#292524`); the brand voltage is photographic, not chromatic \u2014 soft pastel atmosph",
   "colors": {
    "primary": "#292524",
@@ -3291,11 +3784,17 @@
    "#777169"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 39,
+   "feats": 9
+  }
  },
  {
   "slug": "epicgames",
   "name": "Epicgames",
+  "category": "Gaming",
   "description": "Digital gaming marketplace with sleek, cinematic dark aesthetic. Deep black backgrounds (#121212, #202020), vibrant blue accent (#0074e4), bold yellow free game promotions, and immersive game imagery for a next-gen PC gaming experience.",
   "colors": {
    "c0": "#000000",
@@ -3338,12 +3837,18 @@
    "#3a3a3a"
   ],
   "score": 71,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 23,
+   "sections": 55,
+   "feats": 11
+  }
  },
  {
   "slug": "etsy",
   "name": "Etsy",
-  "description": "",
+  "category": "Retail & E-commerce",
+  "description": "A global marketplace for handmade and vintage goods. Warm orange, editorial and craft-forward.",
   "colors": {
    "c0": "#F56400",
    "c1": "#F1641E",
@@ -3395,11 +3900,17 @@
    "#FFFFFF"
   ],
   "score": 72,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 32,
+   "sections": 62,
+   "feats": 10
+  }
  },
  {
   "slug": "expedia",
   "name": "Expedia",
+  "category": "Travel & Food",
   "description": "Travel booking with royal-blue trust signals, search-led layouts, and marketplace clarity. Expedia's public site uses strong blue framing, white cards, rounded search modules, and broad travel category browsing.",
   "colors": {
    "c0": "#1668E3",
@@ -3428,11 +3939,17 @@
    "#6B7280"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "expo",
   "name": "Expo",
+  "category": "Dev Tools",
   "description": "A React Native developer-platform whose marketing site reads like a quietly-confident infrastructure brand. The base canvas is pure white with a soft sky-blue gradient atmospheric wash behind the hero; near-black ink (`#171717`) carries bod",
   "colors": {
    "primary": "#000000",
@@ -3482,11 +3999,17 @@
    "#60646c"
   ],
   "score": 40,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "fastly",
   "name": "Fastly",
+  "category": "Dev Tools",
   "description": "Edge cloud design with bold red identity, performance-metric surfaces, developer-focused configuration UX, and global CDN clarity.",
   "colors": {
    "c0": "#D32F2F",
@@ -3519,11 +4042,17 @@
    "#6A1B9A"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "ferrari",
   "name": "Ferrari",
+  "category": "Automotive",
   "description": "A luxury-automotive brand whose marketing surfaces read as cinematic editorial. The base canvas is **near-black** (`#181818`) holding pure white display type; white-canvas bands appear only inside specific editorial contexts (preowned listi",
   "colors": {
    "primary": "#da291c",
@@ -3571,11 +4100,17 @@
    "#ffffff"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 20,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "figma",
   "name": "Figma",
+  "category": "Design & Creative",
   "description": "A confident black-and-white editorial frame interrupted by oversized, hand-cut pastel color blocks. The marketing canvas is rigorously monochrome \u2014 figmaSans variable type, pure white surfaces, pure black ink, pill-shaped CTAs \u2014 while each ",
   "colors": {
    "primary": "#000000",
@@ -3617,11 +4152,17 @@
    "#ffffff"
   ],
   "score": 49,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 40,
+   "feats": 10
+  }
  },
  {
   "slug": "flyio",
   "name": "Flyio",
+  "category": "Dev Tools",
   "description": "Edge compute design with terse developer confidence, dark machine surfaces, and globally distributed deployment clarity.",
   "colors": {
    "c0": "#0B0F14",
@@ -3651,11 +4192,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "framer",
   "name": "Framer",
+  "category": "Design & Creative",
   "description": "A confident dark-canvas builder marketing site that treats the page like a working artboard \u2014 pure black surfaces, white display type set in GT Walsheim Medium with aggressive negative tracking, and a single confident blue (#0099ff) reserve",
   "colors": {
    "primary": "#ffffff",
@@ -3694,11 +4241,17 @@
    "#090909"
   ],
   "score": 47,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 40,
+   "feats": 10
+  }
  },
  {
   "slug": "gitbook",
   "name": "Gitbook",
+  "category": "Productivity",
   "description": "Knowledge-layer design with polished documentation surfaces, AI-ready content tools, and warm editorial accents.",
   "colors": {
    "c0": "#111827",
@@ -3728,11 +4281,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "github",
   "name": "Github",
+  "category": "Dev Tools",
   "description": "The official design system for building GitHub's product UI. Primer provides foundations, patterns, and components for creating consistent, accessible, and developer-focused interfaces.",
   "colors": {
    "c0": "#0969da",
@@ -3801,11 +4360,17 @@
    "#bc4c00"
   ],
   "score": 80,
-  "stars": 4.0
+  "stars": 4.0,
+  "metrics": {
+   "tokens": 70,
+   "sections": 56,
+   "feats": 10
+  }
  },
  {
   "slug": "gitlab",
   "name": "GitLab",
+  "category": "Dev Tools",
   "description": "DevSecOps platform with dark contrast, purple-orange brand energy, and lifecycle-spanning product messaging. GitLab's public site uses a modern sans stack, white and dark sections, and the recognizable GitLab orange and aubergine palette.",
   "colors": {
    "c0": "#FC6D26",
@@ -3835,11 +4400,17 @@
    "#1F1F2D"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 23,
+   "feats": 9
+  }
  },
  {
   "slug": "godaddy",
   "name": "Godaddy",
+  "category": "Productivity",
   "description": "Small-business website and commerce design with confident black-and-green branding and guided-builder simplicity. GoDaddy\u2019s current visual language mixes bold identity, rounded utility controls, and approachable site-building flows to make ",
   "colors": {
    "c0": "#111111",
@@ -3874,11 +4445,17 @@
    "#FFFFFF"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "google",
   "name": "Google",
+  "category": "Social & Media",
   "description": "High-clarity product ecosystem with Material influence and playful restraint. Google's public brand surfaces pair `Google Sans` with `Roboto`, white backgrounds, soft gray section fills, and the multicolor brand system of blue (`#4285F4`), ",
   "colors": {
    "c0": "#FFFFFF",
@@ -3911,11 +4488,17 @@
    "#4285F4"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "grafana",
   "name": "Grafana",
+  "category": "Dev Tools",
   "description": "Observability-platform design with dark dashboards, strong signal color, and reusable interface logic. Grafana\u2019s Saga system emphasizes accessibility, flexibility, coherence, and patterns that scale across dense monitoring products.",
   "colors": {
    "c0": "#F05A28",
@@ -3950,11 +4533,17 @@
    "#1F242A"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "grammarly",
   "name": "Grammarly",
+  "category": "Productivity",
   "description": "Writing assistance with polished calm and enterprise trust. Grammarly's current public site pairs a bright white canvas with deep forest-ink contrast, saturated mint-green action color, cool gray UI framing, rounded cards, and motion-driven",
   "colors": {
    "c0": "#FFFFFF",
@@ -3990,11 +4579,17 @@
    "#15C39A"
   ],
   "score": 37,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 20,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "hashicorp",
   "name": "HashiCorp",
+  "category": "Dev Tools",
   "description": "An enterprise-infrastructure marketing canvas built around a near-black ground (#000000) and a system of per-product accent colors \u2014 Terraform purple, Vault yellow, Consul pink, Waypoint cyan, Vagrant blue \u2014 that act as identity tokens rath",
   "colors": {
    "primary": "#000000",
@@ -4046,11 +4641,17 @@
    "#656a76"
   ],
   "score": 43,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 22,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "heroku",
   "name": "Heroku",
+  "category": "Dev Tools",
   "description": "App platform design with official purple foundations, cloud-blue support, and developer-friendly deployment workflows.",
   "colors": {
    "c0": "#5A1BA9",
@@ -4081,11 +4682,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "homedepot",
   "name": "Homedepot",
+  "category": "Retail & E-commerce",
   "description": "Home improvement retail with vivid orange branding and highly practical commerce structure. Home Depot's public site uses strong orange (`#F96302`), white surfaces, black text, and tool-and-project-oriented shopping modules.",
   "colors": {
    "c0": "#F96302",
@@ -4113,11 +4720,17 @@
    "#E5E5E5"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "hp",
   "name": "HP",
+  "category": "Hardware & Devices",
   "description": "An inspired interpretation of HP's design language \u2014 a white-paper enterprise-consumer system anchored by HP Electric Blue (`#024ad8`) as the lone signal CTA, near-black ink (`#1a1a1a`) for headlines, geometric Forma-DJR sans throughout, an",
   "colors": {
    "primary": "#024ad8",
@@ -4167,11 +4780,17 @@
    "#1a1a1a"
   ],
   "score": 45,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "huawei",
   "name": "Huawei",
+  "category": "Hardware & Devices",
   "description": "Global intelligent technology with enterprise-scale polish. Huawei's current public presence combines bright white editorial sections, deep navy framing, selective red accents, and broad platform storytelling across consumer devices, cloud,",
   "colors": {
    "c0": "#FFFFFF",
@@ -4207,11 +4826,17 @@
    "#CF0A2C"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "hubspot",
   "name": "Hubspot",
+  "category": "Productivity",
   "description": "CRM and growth software with approachable enterprise warmth. HubSpot's current public site mixes friendly display type with practical UI text, pairing white surfaces with warm neutrals, deep text, and a strong orange-coral brand accent anch",
   "colors": {
    "c0": "#FF5C35",
@@ -4242,11 +4867,17 @@
    "#D8E1EA"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 33,
+   "feats": 10
+  }
  },
  {
   "slug": "huggingface",
   "name": "Huggingface",
+  "category": "AI",
   "description": "Community-first AI platform design with cheerful yellow accents, open-source utility, and dense but approachable information architecture. Hugging Face combines playful brand signals with practical product surfaces so models, datasets, Spac",
   "colors": {
    "c0": "#FFD21E",
@@ -4281,11 +4912,17 @@
    "#111827"
   ],
   "score": 43,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 35,
+   "feats": 11
+  }
  },
  {
   "slug": "ibm",
   "name": "IBM",
+  "category": "Security & Enterprise",
   "description": "An enterprise-marketing canvas faithful to Carbon Design System: white surfaces, charcoal type, IBM Blue (#0f62fe) as the single confident accent, and a deliberately flat-square aesthetic where corners stay at 0\u20134px. Type runs IBM Plex Sans",
   "colors": {
    "primary": "#0f62fe",
@@ -4328,11 +4965,17 @@
    "#ffffff"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 37,
+   "feats": 9
+  }
  },
  {
   "slug": "ikea",
   "name": "Ikea",
+  "category": "Retail & E-commerce",
   "description": "Home retail with democratic warmth, practical utility, and unmistakable brand color. IKEA's public site uses a clean sans system, a white foundation, utility-led merchandising, and the classic IKEA blue (`#0058A3`) and yellow (`#FFDA1A`) id",
   "colors": {
    "c0": "#0058A3",
@@ -4363,11 +5006,17 @@
    "#666666"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 12,
+   "sections": 33,
+   "feats": 11
+  }
  },
  {
   "slug": "instacart",
   "name": "Instacart",
+  "category": "Retail & E-commerce",
   "description": "Grocery marketplace with fresh green branding and a practical shopping-first interface. Instacart's public site uses white surfaces, grocery imagery, rounded shopping controls, and the signature Instacart green (`#43B02A`).",
   "colors": {
    "c0": "#43B02A",
@@ -4396,11 +5045,17 @@
    "#6B7280"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "intel",
   "name": "Intel",
+  "category": "Hardware & Devices",
   "description": "Computing and silicon innovation with blue brand authority and clean technology framing. Intel's public site uses white and blue surfaces, a modern sans stack, and broad product storytelling around AI and chips.",
   "colors": {
    "c0": "#0071C5",
@@ -4429,11 +5084,17 @@
    "#64748B"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 21,
+   "feats": 8
+  }
  },
  {
   "slug": "intercom",
   "name": "Intercom",
+  "category": "Productivity",
   "description": "An editorial customer-service marketing canvas built around a soft cream-white ground, charcoal type set in Saans (Intercom's proprietary geometric sans), and a single confident Fin Orange (#ff5600) reserved for the Fin AI brand. Cards live",
   "colors": {
    "primary": "#111111",
@@ -4480,11 +5141,17 @@
    "#9c9fa5"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "intuit",
   "name": "Intuit",
+  "category": "Fintech",
   "description": "Friendly financial software design with optimism, precision, and brand discipline. Avenir Next for Intuit, a 4px grid, bright blue-led interfaces, and tightly controlled use of QuickBooks green create experiences that feel supportive, moder",
   "colors": {
    "c0": "#0077C5",
@@ -4521,11 +5188,17 @@
    "#9BE7B0"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 35,
+   "feats": 10
+  }
  },
  {
   "slug": "jetbrains",
   "name": "Jetbrains",
+  "category": "Dev Tools",
   "description": "Developer tools design with black-square brand discipline, vivid product-spectrum color, and dense IDE-ready surfaces.",
   "colors": {
    "c0": "#000000",
@@ -4556,11 +5229,17 @@
    "#6B57FF"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "kaggle",
   "name": "Kaggle",
+  "category": "AI",
   "description": "The official design system for building Kaggle's product UI. Kaggle is the world's AI proving ground \u2014 a platform for 31M+ data scientists, ML engineers, and researchers. The design reflects a functional, data-first environment built on Goo",
   "colors": {
    "c0": "#20BEFF",
@@ -4619,11 +5298,17 @@
    "#F8F8F8"
   ],
   "score": 68,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 50,
+   "sections": 58,
+   "feats": 9
+  }
  },
  {
   "slug": "klarna",
   "name": "Klarna",
+  "category": "Fintech",
   "description": "Flexible payments with distinctly Swedish attitude. Klarna's current public and brand sites pair a bold pink brand core with black, off-white, and occasional warm accent support, using roomy layouts, strong typographic contrast, playful-but",
   "colors": {
    "c0": "#FFB3C7",
@@ -4658,12 +5343,18 @@
    "#E8E1DB"
   ],
   "score": 29,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "lamborghini",
   "name": "Lamborghini",
-  "description": "",
+  "category": "Automotive",
+  "description": "Italian high-performance supercars. A bold, aggressive dark-luxury aesthetic with hexagonal motifs.",
   "colors": {
    "c0": "#000000",
    "c1": "#181818"
@@ -4682,11 +5373,17 @@
    "#181818"
   ],
   "score": 48,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 39,
+   "feats": 10
+  }
  },
  {
   "slug": "launchdarkly",
   "name": "Launchdarkly",
+  "category": "Dev Tools",
   "description": "Feature management design with bold teal identity, flag-first surfaces, targeting-rule clarity, and safe release confidence.",
   "colors": {
    "c0": "#0DAEB4",
@@ -4720,11 +5417,17 @@
    "#D97706"
   ],
   "score": 12,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 13,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "lenovo",
   "name": "Lenovo",
+  "category": "Hardware & Devices",
   "description": "Computing and device retail with black-red branding, practical hierarchy, and broad catalog structure. Lenovo's public site uses a black-white base, red brand accents, and hardware-forward merchandising.",
   "colors": {
    "c0": "#E2231A",
@@ -4752,11 +5455,17 @@
    "#E5E5E5"
   ],
   "score": 15,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 21,
+   "feats": 9
+  }
  },
  {
   "slug": "lg",
   "name": "Lg",
+  "category": "Hardware & Devices",
   "description": "Consumer electronics and appliances with deep red branding, glossy product presentation, and broad lifestyle-tech merchandising. LG's public site uses white and dark surfaces, a burgundy-red accent, and premium home-tech imagery.",
   "colors": {
    "c0": "#A50034",
@@ -4784,11 +5493,17 @@
    "#E5E5E5"
   ],
   "score": 15,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 21,
+   "feats": 9
+  }
  },
  {
   "slug": "linear",
   "name": "Linear",
+  "category": "Dev Tools",
   "description": "Product-development platform with disciplined dark surfaces and indigo brand focus. The current public Linear site ships `Inter Variable`, `Berkeley Mono`, and `Tiempos Headline`, uses a dark default theme (`#08090A`, `#0F1011`, `#141516`, ",
   "colors": {
    "c0": "#08090A",
@@ -4835,11 +5550,17 @@
    "#28282C"
   ],
   "score": 59,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 36,
+   "sections": 44,
+   "feats": 11
+  }
  },
  {
   "slug": "linear.app",
   "name": "Linear",
+  "category": "Dev Tools",
   "description": "A near-black product-focused marketing canvas built around #010102 (the deepest dark surface of any tool in this collection), light gray text (#f7f8f8), and the signature Linear lavender-blue (#5e6ad2) used as the single chromatic accent. T",
   "colors": {
    "primary": "#5e6ad2",
@@ -4884,12 +5605,18 @@
    "#d0d6e0"
   ],
   "score": 40,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "linkedin",
   "name": "Linkedin",
-  "description": "",
+  "category": "Social & Media",
+  "description": "The professional network. A clean, trustworthy enterprise-blue system built for content and connection at scale.",
   "colors": {
    "c0": "#0A66C2",
    "c1": "#70B5F9",
@@ -4925,11 +5652,17 @@
    "#F3F2EF"
   ],
   "score": 50,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 49,
+   "feats": 9
+  }
  },
  {
   "slug": "loom",
   "name": "Loom",
+  "category": "Productivity",
   "description": "Async video communication with gentle gradients, rounded UI, and simple productivity framing. Loom's public site uses a bright but soft brand palette, white surfaces, and product demos centered on recording, sharing, and collaboration.",
   "colors": {
    "c0": "#6D5EF8",
@@ -4959,12 +5692,18 @@
    "#111827"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "lovable",
   "name": "Lovable",
-  "description": "",
+  "category": "AI",
+  "description": "An AI app builder that turns prompts into full-stack apps. A modern, friendly developer-product aesthetic.",
   "colors": {
    "c0": "#eceae4"
   },
@@ -4981,11 +5720,17 @@
    "#eceae4"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 7,
+   "sections": 38,
+   "feats": 10
+  }
  },
  {
   "slug": "lowes",
   "name": "Lowes",
+  "category": "Retail & E-commerce",
   "description": "Home improvement retail with deep blue trust cues, clean retail structure, and project-friendly browsing. Lowe's public site uses a blue-led brand frame, white surfaces, and straightforward shopping modules for tools, appliances, and projec",
   "colors": {
    "c0": "#004990",
@@ -5014,11 +5759,17 @@
    "#6B7280"
   ],
   "score": 8,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "lyft",
   "name": "Lyft",
+  "category": "Travel & Food",
   "description": "Rideshare mobility with human warmth. Lyft's live surfaces serve `Rubik` as the primary brand font, combining deep magenta-black foundations (`#1A1A2E`, `#0A0A0F`) with vibrant pink-magenta brand accents (`#EA0B8C`, `#FF00BF`) and clean whi",
   "colors": {
    "c0": "#FFFFFF",
@@ -5060,11 +5811,17 @@
    "#EA0B8C"
   ],
   "score": 44,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 22,
+   "sections": 40,
+   "feats": 10
+  }
  },
  {
   "slug": "mailchimp",
   "name": "Mailchimp",
+  "category": "Productivity",
   "description": "The iconic email marketing platform with playful personality and signature yellow branding. Mailchimp pairs a white/light foundation with their iconic `#FFE01B` (mustard yellow) as primary brand color, `#DE3A3A` (red) for errors/alerts, `#3",
   "colors": {
    "c0": "#FFFFFF",
@@ -5108,11 +5865,17 @@
    "#9CA3AF"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 25,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "mastodon",
   "name": "Mastodon",
+  "category": "Social & Media",
   "description": "Decentralized, open-source social network with privacy-first design. Mastodon Purple (#6364FF) accent, dark immersive theme, multi-column TweetDeck-style interface, federation-aware UI patterns.",
   "colors": {
    "c0": "#191b22",
@@ -5154,11 +5917,17 @@
    "#6364FF"
   ],
   "score": 59,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 23,
+   "sections": 53,
+   "feats": 10
+  }
  },
  {
   "slug": "mcdonalds",
   "name": "McDonald's",
+  "category": "Travel & Food",
   "description": "Fast-food commerce with strong red-and-yellow branding, friendly utility, and mainstream consumer accessibility. McDonald's public site uses bright brand color, white space, large food imagery, and clear app/deal CTAs.",
   "colors": {
    "c0": "#DA291C",
@@ -5186,11 +5955,17 @@
    "#E5E5E5"
   ],
   "score": 22,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 21,
+   "feats": 10
+  }
  },
  {
   "slug": "medium",
   "name": "Medium",
+  "category": "Social & Media",
   "description": "Reading and writing platform with magazine-like simplicity and strong black-and-green branding. Medium's public site uses restrained editorial layout, serif-forward reading tone, and the signature Medium green (`#1A8917`).",
   "colors": {
    "c0": "#1A8917",
@@ -5218,11 +5993,17 @@
    "#E5E5E5"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "meta",
   "name": "Meta",
+  "category": "Social & Media",
   "description": "Meta's design system spans hardware commerce (Quest VR, Ray-Ban Meta AI glasses) and brand surfaces with a confident product-merchandising voice. The system pairs a stark white canvas with full-bleed photographic product cards, a confident ",
   "colors": {
    "primary": "#0064e0",
@@ -5271,11 +6052,17 @@
    "#ffffff"
   ],
   "score": 55,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 27,
+   "sections": 36,
+   "feats": 10
+  }
  },
  {
   "slug": "metamask",
   "name": "Metamask",
+  "category": "Fintech",
   "description": "The most popular crypto wallet and web3 gateway. MetaMask combines a dark, cyber-focused foundation with fox-inspired branding and purple/blue accent tones for core actions. The system centers on dark mode as default, uses `#9269F3` (lavend",
   "colors": {
    "c0": "#000000",
@@ -5317,11 +6104,17 @@
    "#6B7280"
   ],
   "score": 34,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "microsoft",
   "name": "Microsoft",
+  "category": "Security & Enterprise",
   "description": "Broad computing and productivity ecosystem with Fluent-driven clarity. Microsoft's current public site combines `Segoe UI Variable`, `Segoe UI`, and product-specific illustration gradients with a bright white foundation, soft gray surfaces,",
   "colors": {
    "c0": "#FFFFFF",
@@ -5355,11 +6148,17 @@
    "#0067B8"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "minimax",
   "name": "MiniMax",
+  "category": "AI",
   "description": "MiniMax presents itself as a premium AI infrastructure brand through a striking duality \u2014 bold black-pill CTAs and stark white canvas for marketing, paired with vibrant gradient product cards (orange-red, magenta-pink, purple, blue) that tu",
   "colors": {
    "primary": "#0a0a0a",
@@ -5409,11 +6208,17 @@
    "#1456f0"
   ],
   "score": 55,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 25,
+   "sections": 39,
+   "feats": 10
+  }
  },
  {
   "slug": "mintlify",
   "name": "Mintlify",
+  "category": "Dev Tools",
   "description": "Mintlify presents documentation infrastructure with a dual-mode aesthetic \u2014 atmospheric sky-gradient marketing heroes (cloud illustration backdrops, soft cream-to-blue washes) paired with dense developer-grade documentation surfaces. The sy",
   "colors": {
    "primary": "#0a0a0a",
@@ -5467,11 +6272,17 @@
    "#3772cf"
   ],
   "score": 58,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 26,
+   "sections": 40,
+   "feats": 10
+  }
  },
  {
   "slug": "miro",
   "name": "Miro",
+  "category": "Productivity",
   "description": "Miro presents itself as the AI-powered visual workspace through a confident, almost playful brand voice \u2014 anchored by its signature canary yellow ({colors.brand-yellow}) wordmark over white canvas, broken open by colorful pastel feature tin",
   "colors": {
    "primary": "#1c1c1e",
@@ -5533,11 +6344,17 @@
    "#746019"
   ],
   "score": 51,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 34,
+   "sections": 39,
+   "feats": 9
+  }
  },
  {
   "slug": "mistral",
   "name": "Mistral",
+  "category": "AI",
   "description": "Frontier AI platform design with sharp black foundations, a warm orange-to-yellow signature spectrum, and highly controlled enterprise product framing. Mistral combines open-model energy with direct, no-frills presentation so the interface ",
   "colors": {
    "c0": "#E10500",
@@ -5573,11 +6390,17 @@
    "#FFFAEB"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "mistral.ai",
   "name": "Mistral AI",
+  "category": "AI",
   "description": "Mistral AI brands itself with a singular signature \u2014 atmospheric sunset gradients (mustard, orange, deep red) layered over photography of mountains, plus a horizontal \"sunset stripe\" bar that closes every page. The system pairs warm cream-y",
   "colors": {
    "primary": "#fa520f",
@@ -5635,11 +6458,17 @@
    "#ffa110"
   ],
   "score": 48,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 26,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "mixpanel",
   "name": "Mixpanel",
+  "category": "Dev Tools",
   "description": "Product analytics design with rich purple identity, event-driven dashboards, funnel visualization, and user-journey clarity.",
   "colors": {
    "c0": "#7856FF",
@@ -5672,11 +6501,17 @@
    "#D97706"
   ],
   "score": 11,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "monday",
   "name": "Monday",
+  "category": "Productivity",
   "description": "Work management with vivid color coding, polished SaaS structure, and strong product modularity. Monday.com's public site uses bright multicolor accents, white surfaces, dark text, and highly polished work-platform demos.",
   "colors": {
    "c0": "#006BFF",
@@ -5706,11 +6541,17 @@
    "#FFFFFF"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 23,
+   "feats": 9
+  }
  },
  {
   "slug": "mongodb",
   "name": "Mongodb",
+  "category": "Dev Tools",
   "description": "MongoDB carries a strong dual-mode visual identity \u2014 dark deep-teal hero bands with bright MongoDB green ({colors.brand-green}) CTAs paired with stark white documentation surfaces. The signature green pill button is unmistakable across prod",
   "colors": {
    "primary": "#00ed64",
@@ -5766,11 +6607,17 @@
    "#00684a"
   ],
   "score": 46,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 26,
+   "sections": 41,
+   "feats": 9
+  }
  },
  {
   "slug": "monzo",
   "name": "Monzo",
+  "category": "Fintech",
   "description": "Mobile banking with cheerful confidence. Monzo's current public site centers its signature Hot Coral card, bright white and soft cream surfaces, rounded app-first modules, playful illustrations, and colorful trust-forward storytelling that ",
   "colors": {
    "c0": "#FF5A5F",
@@ -5806,11 +6653,17 @@
    "#2D6CDF"
   ],
   "score": 44,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 20,
+   "sections": 34,
+   "feats": 11
+  }
  },
  {
   "slug": "mozilla",
   "name": "Mozilla",
+  "category": "Browsers & Privacy",
   "description": "Mission-driven web brand with activist energy. High-contrast black and off-white, bright green and seed accents, Mozilla Headline and Mozilla Text, and bold editorial blocks create a system that feels public-interest, open-web, and unmistak",
   "colors": {
    "c0": "#161616",
@@ -5850,11 +6703,17 @@
    "#6d6d6d"
   ],
   "score": 50,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 39,
+   "feats": 11
+  }
  },
  {
   "slug": "n26",
   "name": "N26",
+  "category": "Fintech",
   "description": "Digital banking with calm European clarity. N26's current public site combines white surfaces, deep charcoal and teal-green brand accents, soft gradients, clean app previews, and quiet premium plan framing to make mobile banking feel secure",
   "colors": {
    "c0": "#FFFFFF",
@@ -5890,11 +6749,17 @@
    "#2AA89B"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 19,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "neon",
   "name": "Neon",
+  "category": "Dev Tools",
   "description": "Serverless Postgres design with dark developer-native surfaces, bright green database accents, and branch-based workflow clarity.",
   "colors": {
    "c0": "#0E0E0E",
@@ -5924,11 +6789,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 8,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "netflix",
   "name": "Netflix",
+  "category": "Social & Media",
   "description": "Streaming entertainment with cinematic contrast. The public Netflix signup site is built around `Netflix Sans` and a stark palette of black (`#000000`), charcoal (`#141414`, `#181818`), white (`#FFFFFF`), soft gray (`#B3B3B3`), and signatur",
   "colors": {
    "c0": "#000000",
@@ -5958,11 +6829,17 @@
    "#E50914"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 12,
+   "sections": 33,
+   "feats": 10
+  }
  },
  {
   "slug": "netlify",
   "name": "Netlify",
+  "category": "Dev Tools",
   "description": "Modern web platform with bright teal-blue energy, black-and-white structure, and agent-ready developer tooling. Netlify's public site uses clean sans typography, strong contrast, code examples, and bright cyan/teal accents.",
   "colors": {
    "c0": "#00C7B7",
@@ -5992,11 +6869,17 @@
    "#111827"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "nike",
   "name": "Nike",
+  "category": "Retail & E-commerce",
   "description": "|",
   "colors": {
    "primary": "#111111",
@@ -6041,11 +6924,17 @@
    "#39393b"
   ],
   "score": 53,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 37,
+   "feats": 10
+  }
  },
  {
   "slug": "nintendo-2001",
   "name": "Nintendo (2001)",
+  "category": "Gaming",
   "description": "An analysis of Nintendo.com's 2001 design language \u2014 a brushed-periwinkle \"console chrome\" interface where every panel is a beveled metal plate, navigation glows amber over a halftone-dotted carbon bar, and bold outlined display type sits o",
   "colors": {
    "primary": "#e60012",
@@ -6089,11 +6978,17 @@
    "#9fbee7"
   ],
   "score": 49,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 32,
+   "feats": 10
+  }
  },
  {
   "slug": "nokia",
   "name": "Nokia",
+  "category": "Hardware & Devices",
   "description": "Connectivity-for-the-AI-era branding with cool gradients, dark technological depth, and clean industrial structure. Nokia\u2019s current site uses bright blues and teals, dark network surfaces, and modular enterprise storytelling to make infrast",
   "colors": {
    "c0": "#071A2B",
@@ -6124,11 +7019,17 @@
    "#FFFFFF"
   ],
   "score": 18,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 34,
+   "feats": 8
+  }
  },
  {
   "slug": "notion",
   "name": "Notion",
+  "category": "Productivity",
   "description": "Notion presents itself as the all-in-one workspace through a confident, illustration-rich brand voice \u2014 anchored by a deep navy hero band ({colors.brand-navy}) decorated with brand-colored sticky-note dots and mesh wire illustrations, a sig",
   "colors": {
    "primary": "#5645d4",
@@ -6197,11 +7098,17 @@
    "#070f24"
   ],
   "score": 54,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 42,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "nutanix",
   "name": "Nutanix",
+  "category": "Security & Enterprise",
   "description": "Hybrid-cloud platform design with deep purple branding, dark product surfaces, and enterprise infrastructure clarity. Nutanix\u2019s current visual language frames platform complexity inside modular, future-oriented sections that feel consistent",
   "colors": {
    "c0": "#4B1F6F",
@@ -6236,11 +7143,17 @@
    "#64748B"
   ],
   "score": 21,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "nvidia",
   "name": "NVIDIA",
+  "category": "Hardware & Devices",
   "description": "|",
   "colors": {
    "primary": "#76b900",
@@ -6289,11 +7202,17 @@
    "#000000"
   ],
   "score": 48,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 22,
+   "sections": 41,
+   "feats": 9
+  }
  },
  {
   "slug": "okta",
   "name": "Okta",
+  "category": "Security & Enterprise",
   "description": "Identity-platform design with clear blue actions, neutral enterprise surfaces, and accessibility-first structure. Okta\u2019s Odyssey system aims for consistency, efficiency, and trust across authentication, admin, and security workflows.",
   "colors": {
    "c0": "#1662DD",
@@ -6328,11 +7247,17 @@
    "#64748B"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "ollama",
   "name": "Ollama",
+  "category": "AI",
   "description": "|",
   "colors": {
    "primary": "#000000",
@@ -6373,11 +7298,17 @@
    "#737373"
   ],
   "score": 42,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 13,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "oneplus",
   "name": "OnePlus",
+  "category": "Hardware & Devices",
   "description": "Premium mobile technology with focused intensity. OnePlus's current public presence combines deep black and white contrast, unmistakable red brand accents, clean device photography, and a confident \"Never Settle\" tone across flagship phones",
   "colors": {
    "c0": "#000000",
@@ -6413,11 +7344,17 @@
    "#EB0029"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "openai",
   "name": "OpenAI",
+  "category": "AI",
   "description": "Research-driven AI company with academic elegance. Clean whites (#ffffff) and conversational darks (#212121, #343541), signature ChatGPT green (#10a37f), S\u00f6hne typeface with precise letter-spacing, research paper aesthetic meets modern prod",
   "colors": {
    "c0": "#ffffff",
@@ -6474,11 +7411,17 @@
    "#10a37f"
   ],
   "score": 73,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 43,
+   "sections": 56,
+   "feats": 10
+  }
  },
  {
   "slug": "opencode.ai",
   "name": "OpenCode",
+  "category": "AI",
   "description": "|",
   "colors": {
    "primary": "#201d1d",
@@ -6527,11 +7470,17 @@
    "#424245"
   ],
   "score": 45,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 38,
+   "feats": 9
+  }
  },
  {
   "slug": "opera",
   "name": "Opera",
+  "category": "Browsers & Privacy",
   "description": "Browser design with red brand energy, polished product families, and expressive but controlled browsing surfaces.",
   "colors": {
    "c0": "#FF1B2D",
@@ -6562,11 +7511,17 @@
    "#FFFFFF"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "oracle",
   "name": "Oracle",
+  "category": "Security & Enterprise",
   "description": "Enterprise cloud and applications with stark red-black branding and high-density product breadth. Oracle's public site uses white, black, and Oracle red to frame an extensive enterprise product catalog.",
   "colors": {
    "c0": "#C74634",
@@ -6595,11 +7550,17 @@
    "#666666"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "pagerduty",
   "name": "Pagerduty",
+  "category": "Dev Tools",
   "description": "Incident management design with bold green identity, on-call surfaces, alert-severity hierarchy, and operations-first clarity.",
   "colors": {
    "c0": "#06AC38",
@@ -6632,11 +7593,17 @@
    "#3D70D6"
   ],
   "score": 17,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 10
+  }
  },
  {
   "slug": "palantir",
   "name": "Palantir",
+  "category": "Security & Enterprise",
   "description": "Operational software design with rigorous structure and dark analytical clarity. Palantir\u2019s application styling guidance and Blueprint-derived UI patterns create interfaces that feel mission-critical, customizable, and uncompromisingly func",
   "colors": {
    "c0": "#137CBD",
@@ -6672,11 +7639,17 @@
    "#182026"
   ],
   "score": 29,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 16,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "paloaltonetworks",
   "name": "Paloaltonetworks",
+  "category": "Security & Enterprise",
   "description": "Cybersecurity platform design with black-and-white authority, saturated brand accents, and clear enterprise hierarchy. Palo Alto Networks frames AI and security through strong contrast, large strategic statements, and modular platform story",
   "colors": {
    "c0": "#111111",
@@ -6711,11 +7684,17 @@
    "#F5F7FA"
   ],
   "score": 21,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "patreon",
   "name": "Patreon",
+  "category": "Social & Media",
   "description": "Creator membership platform with a warm coral identity, rounded UI, and creator-economy pragmatism. Patreon's public site uses bright coral (`#FF424D`), white surfaces, friendly sans-serif typography, and approachable community-focused mess",
   "colors": {
    "c0": "#FF424D",
@@ -6743,11 +7722,17 @@
    "#E9DDDA"
   ],
   "score": 15,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 22,
+   "feats": 9
+  }
  },
  {
   "slug": "paypal",
   "name": "Paypal",
+  "category": "Fintech",
   "description": "Digital payments with a polished blue trust system. PayPal's current public site combines `PayPal Pro` / `PayPal Sans`-style typography with deep navy (`#003087`), bright blue (`#0070E0`), softer cyan-blue (`#009CDE`), white (`#FFFFFF`), an",
   "colors": {
    "c0": "#003087",
@@ -6778,11 +7763,17 @@
    "#F5F7FA"
   ],
   "score": 40,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 14,
+   "sections": 33,
+   "feats": 11
+  }
  },
  {
   "slug": "perplexity",
   "name": "Perplexity",
+  "category": "AI",
   "description": "Answer-engine design with paper-white calm, dark citation-focused reading, and a restrained turquoise intelligence accent.",
   "colors": {
    "c0": "#091717",
@@ -6812,11 +7803,17 @@
    "#F3F1EA"
   ],
   "score": 8,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 8,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "pinterest",
   "name": "Pinterest",
+  "category": "Social & Media",
   "description": "|",
   "colors": {
    "primary": "#e60023",
@@ -6868,11 +7865,17 @@
    "#33332e"
   ],
   "score": 48,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 39,
+   "feats": 9
+  }
  },
  {
   "slug": "plaid",
   "name": "Plaid",
+  "category": "Fintech",
   "description": "Open-finance product design with dark trust-first foundations, bright blue holographic gradients, and precise onboarding flows. Plaid's current web and product language combines financial credibility with modern digital optimism so data con",
   "colors": {
    "c0": "#0A85FF",
@@ -6910,11 +7913,17 @@
    "#162033"
   ],
   "score": 37,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 16,
+   "sections": 36,
+   "feats": 10
+  }
  },
  {
   "slug": "planetscale",
   "name": "Planetscale",
+  "category": "Dev Tools",
   "description": "Database platform design with official black-and-white restraint, purple primary brand color, and clean deploy-request workflows.",
   "colors": {
    "c0": "#000000",
@@ -6944,11 +7953,17 @@
    "#F8FAFC"
   ],
   "score": 8,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 8,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "playstation",
   "name": "PlayStation",
+  "category": "Gaming",
   "description": "|",
   "colors": {
    "primary": "#0070d1",
@@ -7000,11 +8015,17 @@
    "#53b1ff"
   ],
   "score": 49,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 21,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "posthog",
   "name": "PostHog",
+  "category": "Dev Tools",
   "description": "|",
   "colors": {
    "primary": "#f7a501",
@@ -7054,11 +8075,17 @@
    "#4d4f46"
   ],
   "score": 52,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 25,
+   "sections": 40,
+   "feats": 9
+  }
  },
  {
   "slug": "postman",
   "name": "Postman",
+  "category": "Dev Tools",
   "description": "API-platform design with energetic orange branding, dense product diagrams, and developer-friendly modularity. Postman\u2019s current web and platform experience balances strong brand personality with clear, scalable structure for the full API l",
   "colors": {
    "c0": "#FF6C37",
@@ -7094,11 +8121,17 @@
    "#64748B"
   ],
   "score": 21,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "proton",
   "name": "Proton",
+  "category": "Browsers & Privacy",
   "description": "Privacy ecosystem design with deep purple foundations, secure product clarity, and calm encrypted-service surfaces.",
   "colors": {
    "c0": "#6D4AFF",
@@ -7129,11 +8162,17 @@
    "#F6F7FB"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "qualcomm",
   "name": "Qualcomm",
+  "category": "Hardware & Devices",
   "description": "Intelligent computing everywhere with enterprise-scale polish. Qualcomm's current public site blends bright white sections, deep navy framing, vivid blue-teal gradients, chip-platform product families, and clean editorial hierarchy to make ",
   "colors": {
    "c0": "#FFFFFF",
@@ -7169,11 +8208,17 @@
    "#0066FF"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 20,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "qualtrics",
   "name": "Qualtrics",
+  "category": "Productivity",
   "description": "Experience-management design with flexible survey styling, clean enterprise surfaces, and explicit accessibility safeguards. Qualtrics supports multiple survey layouts and palette options while keeping typography, question flow, and respons",
   "colors": {
    "c0": "#4F46E5",
@@ -7204,11 +8249,17 @@
    "#E5E7EB"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 10,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "railway",
   "name": "Railway",
+  "category": "Dev Tools",
   "description": "Deployment platform design with dark command-center surfaces, violet infrastructure accents, and fast project-to-production workflows.",
   "colors": {
    "c0": "#0B0D12",
@@ -7239,11 +8290,17 @@
    "#F59E0B"
   ],
   "score": 3,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "raycast",
   "name": "Raycast",
+  "category": "Dev Tools",
   "description": "|",
   "colors": {
    "primary": "#ffffff",
@@ -7289,11 +8346,17 @@
    "#d3d3d4"
   ],
   "score": 57,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 40,
+   "feats": 10
+  }
  },
  {
   "slug": "realme",
   "name": "Realme",
+  "category": "Hardware & Devices",
   "description": "Youth-focused technology with energetic confidence. realme's current global site combines bright yellow, black, and white with bold product imagery, confident category labels, and trend-aware collaborations to create a consumer-tech design ",
   "colors": {
    "c0": "#FFD600",
@@ -7329,11 +8392,17 @@
    "#D8DDE5"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "reddit",
   "name": "Reddit",
+  "category": "Social & Media",
   "description": "Community-driven social platform with card-based content, threaded discussions, and the iconic orangered accent. Clean, scannable, and built for endless scrolling.",
   "colors": {
    "c0": "#FF4500",
@@ -7377,11 +8446,17 @@
    "#1C1C1C"
   ],
   "score": 69,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 32,
+   "sections": 52,
+   "feats": 11
+  }
  },
  {
   "slug": "redhat",
   "name": "Redhat",
+  "category": "Dev Tools",
   "description": "Enterprise open-source brand with editorial red-black energy and product-grade PatternFly structure. Red Hat Display/Text/Mono, disciplined spacing, semantic color, and modular product surfaces create a system that feels credible, open, and",
   "colors": {
    "c0": "#EE0000",
@@ -7421,11 +8496,17 @@
    "#151515"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 36,
+   "feats": 10
+  }
  },
  {
   "slug": "redis",
   "name": "Redis",
+  "category": "Dev Tools",
   "description": "Fast data-platform design with bold red identity, black technical contrast, and performance-first product framing.",
   "colors": {
    "c0": "#DC382D",
@@ -7457,11 +8538,17 @@
    "#F8FAFC"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "renault",
   "name": "Renault",
+  "category": "Automotive",
   "description": "|",
   "colors": {
    "primary": "#ffed00",
@@ -7506,11 +8593,17 @@
    "#333333"
   ],
   "score": 47,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 37,
+   "feats": 10
+  }
  },
  {
   "slug": "render",
   "name": "Render",
+  "category": "Dev Tools",
   "description": "Cloud platform design with clean builder-first surfaces, blue production accents, and simple deploy-to-scale workflows.",
   "colors": {
    "c0": "#2563EB",
@@ -7540,11 +8633,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "replicate",
   "name": "Replicate",
+  "category": "AI",
   "description": "|",
   "colors": {
    "primary": "#ea2804",
@@ -7588,11 +8687,17 @@
    "#575757"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "replit",
   "name": "Replit",
+  "category": "Dev Tools",
   "description": "Browser IDE and AI app-building design with vivid orange identity, clean coding surfaces, and practical workspace ergonomics.",
   "colors": {
    "c0": "#FF3C00",
@@ -7624,11 +8729,17 @@
    "#FFFFFF"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "resend",
   "name": "Resend",
+  "category": "Dev Tools",
   "description": "|",
   "colors": {
    "primary": "#fcfdff",
@@ -7668,11 +8779,17 @@
    "#464a4d"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 16,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "retool",
   "name": "Retool",
+  "category": "Dev Tools",
   "description": "Internal tools design with confident blue identity, drag-and-drop builder surfaces, component-palette clarity, and data-connection UX.",
   "colors": {
    "c0": "#3B82F6",
@@ -7706,11 +8823,17 @@
    "#DC2626"
   ],
   "score": 12,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "revolut",
   "name": "Revolut",
+  "category": "Fintech",
   "description": "|",
   "colors": {
    "primary": "#494fdf",
@@ -7764,11 +8887,17 @@
    "#1f2226"
   ],
   "score": 52,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 27,
+   "sections": 36,
+   "feats": 10
+  }
  },
  {
   "slug": "rippling",
   "name": "Rippling",
+  "category": "Fintech",
   "description": "Workforce management design with bold yellow identity, unified HR-IT-Finance surfaces, employee-record clarity, and automation-forward UX.",
   "colors": {
    "c0": "#F5C518",
@@ -7802,11 +8931,17 @@
    "#059669"
   ],
   "score": 5,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 13,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "robinhood",
   "name": "Robinhood",
+  "category": "Fintech",
   "description": "Investing and trading with a stripped-down, high-contrast fintech identity. Robinhood's public site uses a mostly black-and-white base with its signature vivid green (`#00C805`), minimal chrome, and direct product framing for investing, cry",
   "colors": {
    "c0": "#00C805",
@@ -7836,11 +8971,17 @@
    "#E5E5E5"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 33,
+   "feats": 10
+  }
  },
  {
   "slug": "runway",
   "name": "Runway",
+  "category": "AI",
   "description": "Creative AI video design with stark black-and-white brand discipline, cinematic media surfaces, and precise generation controls.",
   "colors": {
    "c0": "#000000",
@@ -7870,12 +9011,18 @@
    "#3B82F6"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 8,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "runwayml",
   "name": "Runway ML",
-  "description": "",
+  "category": "AI",
+  "description": "Generative AI tools for video and media creation. A sleek, dark, creative-pro interface.",
   "colors": {
    "c0": "#27272a",
    "c1": "#000000"
@@ -7894,11 +9041,17 @@
    "#000000"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "salesforce",
   "name": "Salesforce",
+  "category": "Productivity",
   "description": "Enterprise CRM with bright cloud-brand optimism and structured product breadth. Salesforce's public site uses `Salesforce Sans`, cloud-heavy imagery, white and sky-blue surfaces, and a vivid brand blue anchored around `#0176D3`.",
   "colors": {
    "c0": "#0176D3",
@@ -7929,11 +9082,17 @@
    "#5C5C5C"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "samsung",
   "name": "Samsung",
+  "category": "Hardware & Devices",
   "description": "Consumer electronics with premium hardware polish and broad product merchandising. Samsung's public site blends `Samsung Sharp Sans` with `SamsungOne`, using a black-and-white foundation, cool grays, brand blue highlights, and large product",
   "colors": {
    "c0": "#000000",
@@ -7964,12 +9123,18 @@
    "#1428A0"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 12,
+   "sections": 33,
+   "feats": 10
+  }
  },
  {
   "slug": "sanity",
   "name": "Sanity",
-  "description": "",
+  "category": "Dev Tools",
+  "description": "A composable content platform and headless CMS for developers. Clean, technical and brand-flexible.",
   "colors": {
    "c0": "#212121"
   },
@@ -7986,11 +9151,17 @@
    "#212121"
   ],
   "score": 45,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 16,
+   "sections": 37,
+   "feats": 10
+  }
  },
  {
   "slug": "sap",
   "name": "SAP",
+  "category": "Security & Enterprise",
   "description": "Enterprise application design with calm clarity and rigorous structure. SAP Fiori combines the proprietary 72 typeface, Horizon theme colors, a responsive 12-column grid, and intent-driven controls to create interfaces that feel trustworthy",
   "colors": {
    "c0": "#0070f2",
@@ -8027,11 +9198,17 @@
    "#223548"
   ],
   "score": 29,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 16,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "segment",
   "name": "Segment",
+  "category": "Dev Tools",
   "description": "Customer data platform design with bold green identity, data-pipeline clarity, integration catalog surfaces, and schema-driven UX.",
   "colors": {
    "c0": "#52BD95",
@@ -8063,11 +9240,17 @@
    "#EF4444"
   ],
   "score": 10,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "sentry",
   "name": "Sentry",
+  "category": "Dev Tools",
   "description": "An inspired interpretation of Sentri's design language \u2014 a developer-tools brand built on a deep purple-violet midnight canvas, electric lime accents, and a slightly subversive illustrated personality. The system pairs a custom display sans",
   "colors": {
    "primary": "#150f23",
@@ -8110,11 +9293,17 @@
    "#6a5fc1"
   ],
   "score": 43,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "servicenow",
   "name": "Servicenow",
+  "category": "Productivity",
   "description": "Enterprise workflow design with customizable structure, strong branding hooks, and pragmatic platform clarity. ServiceNow\u2019s modern theming model uses global styles, brand color palettes, typography controls, and shape settings to build cons",
   "colors": {
    "c0": "#1F8476",
@@ -8147,11 +9336,17 @@
    "#F7F9FB"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 11,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "shopify",
   "name": "Shopify",
+  "category": "Retail & E-commerce",
   "description": "An inspired interpretation of Shopifi's design language \u2014 a cinematic commerce platform that runs two parallel design tracks. The marketing-hero and product-narrative pages live on near-black canvases with full-bleed photography of merchant",
   "colors": {
    "primary": "#000000",
@@ -8195,11 +9390,17 @@
    "#0a0a0a"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 17,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "slack",
   "name": "Slack",
+  "category": "Productivity",
   "description": "An inspired interpretation of Slacc's design language \u2014 a workplace messaging brand built on a deep aubergine primary, with cream-lavender hero gradients, blue inline links, and pill CTAs. The system pairs a proprietary humanist sans for di",
   "colors": {
    "primary": "#4a154b",
@@ -8240,11 +9441,17 @@
    "#1d1d1d"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 18,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "snapchat",
   "name": "Snapchat",
+  "category": "Social & Media",
   "description": "Camera-first social platform with ephemeral messaging. Signature Yellow (#FFFC00), playful Gen-Z aesthetic, Bitmoji-integrated, designed for spontaneous visual communication.",
   "colors": {
    "c0": "#FFFC00",
@@ -8291,11 +9498,17 @@
    "#F7F7F7"
   ],
   "score": 61,
-  "stars": 3.0
+  "stars": 3.0,
+  "metrics": {
+   "tokens": 32,
+   "sections": 56,
+   "feats": 9
+  }
  },
  {
   "slug": "snowflake",
   "name": "Snowflake",
+  "category": "Dev Tools",
   "description": "Data-platform design with cool precision and AI-era confidence. Bright glacier blue, dark cloud navies, crisp technical typography, and modular enterprise blocks create interfaces that feel powerful, modern, and highly legible.",
   "colors": {
    "c0": "#29B5E8",
@@ -8331,11 +9544,17 @@
    "#1E293B"
   ],
   "score": 22,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "snyk",
   "name": "Snyk",
+  "category": "Dev Tools",
   "description": "Developer security design with dark product confidence, bright green remediation cues, and clear vulnerability-to-fix workflows.",
   "colors": {
    "c0": "#0B1220",
@@ -8366,11 +9585,17 @@
    "#F8FAFC"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "sofi",
   "name": "Sofi",
+  "category": "Fintech",
   "description": "Consumer finance with a bright cyan-blue identity, rounded fintech surfaces, and benefit-led product framing. SoFi's public site uses strong teal/cyan branding, white cards, and mainstream financial product storytelling.",
   "colors": {
    "c0": "#00A3E0",
@@ -8399,11 +9624,17 @@
    "#64748B"
   ],
   "score": 16,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 21,
+   "feats": 9
+  }
  },
  {
   "slug": "sonar",
   "name": "Sonar",
+  "category": "Dev Tools",
   "description": "Code quality and security design with clean developer dashboards, orange-blue brand energy, and issue remediation clarity.",
   "colors": {
    "c0": "#236AFA",
@@ -8434,11 +9665,17 @@
    "#F8FAFC"
   ],
   "score": 3,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "sony",
   "name": "Sony",
+  "category": "Hardware & Devices",
   "description": "Consumer electronics with black-and-white premium restraint and entertainment-adjacent polish. Sony's public electronics site uses dark framing, white text and surfaces, and clean premium product presentation.",
   "colors": {
    "c0": "#000000",
@@ -8466,11 +9703,17 @@
    "#E5E5E5"
   ],
   "score": 8,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 21,
+   "feats": 8
+  }
  },
  {
   "slug": "spacex",
   "name": "SpaceX",
+  "category": "Hardware & Devices",
   "description": "An inspired interpretation of Spasex's design language \u2014 a mission-oriented aerospace brand built on pure black canvas, full-bleed photographic and video heroes of rockets and Mars landscapes, and uppercase D-DIN display type set in tight v",
   "colors": {
    "primary": "#000000",
@@ -8505,12 +9748,18 @@
    "#0a0a0a"
   ],
   "score": 31,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 8,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "spotify",
   "name": "Spotify",
-  "description": "",
+  "category": "Social & Media",
+  "description": "The world's largest music-streaming service. Dark-first UI with signature Spotify green and bold imagery.",
   "colors": {
    "c0": "#121212",
    "c1": "#181818"
@@ -8529,11 +9778,17 @@
    "#181818"
   ],
   "score": 31,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 18,
+   "sections": 32,
+   "feats": 9
+  }
  },
  {
   "slug": "square",
   "name": "Square",
+  "category": "Fintech",
   "description": "Commerce infrastructure with black-and-white precision and practical business breadth. Square's public site uses a clean sans system, sharp monochrome structure, and modest accent color while balancing payments, hardware, restaurants, retai",
   "colors": {
    "c0": "#0D0D0D",
@@ -8563,11 +9818,17 @@
    "#12805C"
   ],
   "score": 25,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "squarespace",
   "name": "Squarespace",
+  "category": "Design & Creative",
   "description": "Editorial website-builder design with New York polish and expressive restraint. Squarespace pairs the custom Clarkson typeface, spacious black-and-white layouts, rich typography choices, and Fluid Engine\u2019s smart grid to create interfaces th",
   "colors": {
    "c0": "#000000",
@@ -8597,11 +9858,17 @@
    "#24313f"
   ],
   "score": 24,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 8,
+   "sections": 34,
+   "feats": 9
+  }
  },
  {
   "slug": "steam",
   "name": "Steam",
+  "category": "Gaming",
   "description": "Digital gaming distribution platform with dark, immersive aesthetic. Navy blue gradients (#1b2838), Steam cyan accent (#66c0f4), and commerce-focused UI patterns for the world's largest PC gaming storefront.",
   "colors": {
    "c0": "#171a21",
@@ -8655,11 +9922,17 @@
    "#32465a"
   ],
   "score": 85,
-  "stars": 4.0
+  "stars": 4.0,
+  "metrics": {
+   "tokens": 57,
+   "sections": 57,
+   "feats": 11
+  }
  },
  {
   "slug": "storyblok",
   "name": "Storyblok",
+  "category": "Dev Tools",
   "description": "Headless CMS design with bright blue brand confidence, visual editing clarity, and component-based content structure.",
   "colors": {
    "c0": "#00A9FF",
@@ -8689,11 +9962,17 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "stripe",
   "name": "Stripe",
+  "category": "Fintech",
   "description": "An inspired interpretation of Stripi's design language \u2014 a financial-infrastructure brand built on a deep navy ink, an electric indigo primary, and a recurring atmospheric gradient mesh that occupies the upper third of nearly every marketin",
   "colors": {
    "primary": "#533afd",
@@ -8735,11 +10014,17 @@
    "#1c1e54"
   ],
   "score": 38,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 19,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "substack",
   "name": "Substack",
+  "category": "Social & Media",
   "description": "Publishing with literary simplicity, serif display tone, and restrained orange brand cues. Substack's public site uses a clean editorial layout, black-and-white structure, and orange accents to frame newsletters, writers, and subscriptions.",
   "colors": {
    "c0": "#FF6719",
@@ -8767,11 +10052,17 @@
    "#E5E5E5"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "supabase",
   "name": "Supabase",
+  "category": "Dev Tools",
   "description": "An inspired interpretation of Supabaze's design language \u2014 an open-source database platform built on a clean white-and-near-black system with a single signature emerald-green CTA, a custom humanist sans display tier, and dense product UI mo",
   "colors": {
    "primary": "#3ecf8e",
@@ -8820,11 +10111,17 @@
    "#707070"
   ],
   "score": 39,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 25,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "superhuman",
   "name": "Superhuman",
+  "category": "Productivity",
   "description": "An inspired interpretation of Superhumon's design language \u2014 a fast-email productivity brand split between an editorial dark hero (deep indigo navy with violet-sky atmospheric backdrop and a portrait subject) and a quiet white content body ",
   "colors": {
    "primary": "#1b1938",
@@ -8861,11 +10158,17 @@
    "#9a9794"
   ],
   "score": 34,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 9
+  }
  },
  {
   "slug": "tailscale",
   "name": "Tailscale",
+  "category": "Dev Tools",
   "description": "Secure networking design with calm infrastructure clarity, friendly mesh diagrams, and low-friction admin surfaces.",
   "colors": {
    "c0": "#4B7FFF",
@@ -8896,12 +10199,18 @@
    "#F8FAFC"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "target",
   "name": "Target",
-  "description": "",
+  "category": "Retail & E-commerce",
+  "description": "Major US retail chain. A bright, friendly commerce UI on Target red with generous white space.",
   "colors": {
    "c0": "#CC0000",
    "c1": "#A80000",
@@ -8939,11 +10248,17 @@
    "#F7F7F7"
   ],
   "score": 50,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 18,
+   "sections": 45,
+   "feats": 10
+  }
  },
  {
   "slug": "telegram",
   "name": "Telegram",
+  "category": "Social & Media",
   "description": "The official design system for building Telegram's web product UI. Rooted in clarity, speed, and privacy-first interaction \u2014 a minimal but expressive communication platform.",
   "colors": {
    "c0": "#26A5E4",
@@ -9003,11 +10318,17 @@
    "#F7F7F7"
   ],
   "score": 77,
-  "stars": 4.0
+  "stars": 4.0,
+  "metrics": {
+   "tokens": 54,
+   "sections": 59,
+   "feats": 10
+  }
  },
  {
   "slug": "temporal",
   "name": "Temporal",
+  "category": "Dev Tools",
   "description": "Durable execution design with dark reliability surfaces, green workflow accents, and code-first orchestration clarity.",
   "colors": {
    "c0": "#0D0F14",
@@ -9037,12 +10358,18 @@
    "#FFFFFF"
   ],
   "score": 2,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 10,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "theverge",
   "name": "The Verge",
-  "description": "",
+  "category": "Social & Media",
+  "description": "Technology, science and culture publication. A bold editorial system with strong type and vivid accents.",
   "colors": {
    "c0": "#131313",
    "c1": "#ffffff",
@@ -9065,11 +10392,17 @@
    "#5200ff"
   ],
   "score": 51,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 16,
+   "sections": 39,
+   "feats": 10
+  }
  },
  {
   "slug": "threads",
   "name": "Threads",
+  "category": "Social & Media",
   "description": "A comprehensive design guide for Threads' visual identity (2023-2026)",
   "colors": {
    "c0": "#FFFFFF",
@@ -9114,12 +10447,18 @@
    "#8134AF"
   ],
   "score": 68,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 25,
+   "sections": 66,
+   "feats": 10
+  }
  },
  {
   "slug": "tiktok",
   "name": "Tiktok",
-  "description": "",
+  "category": "Social & Media",
+  "description": "Short-form video platform. A dark, high-energy, mobile-first UI with cyan and magenta brand accents.",
   "colors": {
    "c0": "#000000",
    "c1": "#121212",
@@ -9155,11 +10494,17 @@
    "#2A2A2A"
   ],
   "score": 69,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 16,
+   "sections": 63,
+   "feats": 11
+  }
  },
  {
   "slug": "together.ai",
   "name": "Together AI",
+  "category": "AI",
   "description": "An inspired interpretation of Together AI's design language \u2014 an AI infrastructure platform whose surface alternates between near-black hero bands (with a three-color orange-magenta-periwinkle gradient as the single piece of brand chrome) a",
   "colors": {
    "primary": "#000000",
@@ -9194,11 +10539,17 @@
    "#ffffff"
   ],
   "score": 40,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 12,
+   "sections": 32,
+   "feats": 9
+  }
  },
  {
   "slug": "trello",
   "name": "Trello",
+  "category": "Productivity",
   "description": "Visual task management with playful productivity and board-first clarity. Trello's public site uses a bright, approachable design language rooted in white, pale blue, bold blue gradients, rounded cards, and simple productivity metaphors lik",
   "colors": {
    "c0": "#0C66E4",
@@ -9230,11 +10581,17 @@
    "#44546F"
   ],
   "score": 40,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 15,
+   "sections": 33,
+   "feats": 11
+  }
  },
  {
   "slug": "tripadvisor",
   "name": "Tripadvisor",
+  "category": "Travel & Food",
   "description": "Travel discovery with content-heavy browsing, green brand cues, and review-driven utility. Tripadvisor's public site uses white surfaces, black text, rounded search controls, and the familiar Tripadvisor green (`#34E0A1`) with review-and-di",
   "colors": {
    "c0": "#34E0A1",
@@ -9262,11 +10619,17 @@
    "#E5E5E5"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 22,
+   "feats": 8
+  }
  },
  {
   "slug": "turso",
   "name": "Turso",
+  "category": "Dev Tools",
   "description": "Edge database design with black-and-lime technical contrast, SQLite clarity, and distributed data workflows.",
   "colors": {
    "c0": "#050505",
@@ -9296,11 +10659,17 @@
    "#FFFFFF"
   ],
   "score": 3,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 9,
+   "feats": 8
+  }
  },
  {
   "slug": "twilio",
   "name": "Twilio",
+  "category": "Dev Tools",
   "description": "Developer-first enterprise platform with approachable polish. Twilio Sans, a disciplined 8px grid, token-driven semantics, and restrained use of brand red create a system that feels clean, professional, and neighborly without losing technic",
   "colors": {
    "c0": "#0263E0",
@@ -9340,11 +10709,17 @@
    "#121C2D"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 20,
+   "sections": 37,
+   "feats": 10
+  }
  },
  {
   "slug": "twitch",
   "name": "Twitch",
+  "category": "Social & Media",
   "description": "Live streaming platform with gaming-first aesthetic. Twitch Purple (#9146FF) accent, dark immersive backgrounds, real-time engagement through chat, emotes, and community features.",
   "colors": {
    "c0": "#9146FF",
@@ -9390,11 +10765,17 @@
    "#0e0e10"
   ],
   "score": 74,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 29,
+   "sections": 58,
+   "feats": 11
+  }
  },
  {
   "slug": "typeform",
   "name": "Typeform",
+  "category": "Productivity",
   "description": "Conversational form design with editorial personality, expressive brand customization, and low-friction question-by-question interaction.",
   "colors": {
    "c0": "#2A222B",
@@ -9425,11 +10806,17 @@
    "#FFFFFF"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "uber",
   "name": "Uber",
+  "category": "Travel & Food",
   "description": "An inspired interpretation of Uber's design language \u2014 a transportation-and-delivery super-app brand whose web surface is a black-and-white duet, framed by a custom geometric display sans, accented by a single signature pill shape (radius 9",
   "colors": {
    "primary": "#000000",
@@ -9464,11 +10851,17 @@
    "#4b4b4b"
   ],
   "score": 37,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 10,
+   "sections": 32,
+   "feats": 9
+  }
  },
  {
   "slug": "udemy",
   "name": "Udemy",
+  "category": "Productivity",
   "description": "Course marketplace with strong category browsing, educational commerce clarity, and a dark-purple brand anchor. Udemy's public site combines white surfaces, black text, purple accents, and broad catalog navigation.",
   "colors": {
    "c0": "#A435F0",
@@ -9497,11 +10890,17 @@
    "#6A6F73"
   ],
   "score": 23,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 10
+  }
  },
  {
   "slug": "unity",
   "name": "Unity",
+  "category": "Gaming",
   "description": "Creator-platform design with dark technical confidence and game-industry energy. Unity\u2019s current web presence leans on black-and-white contrast, cool slate surfaces, bold product screenshots, and clean creator-focused hierarchy.",
   "colors": {
    "c0": "#111111",
@@ -9536,11 +10935,17 @@
    "#D4DAE3"
   ],
   "score": 22,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 14,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "venmo",
   "name": "Venmo",
+  "category": "Fintech",
   "description": "Peer-to-peer payments with bright blue consumer-fintech energy and playful simplicity. Venmo's public site uses its iconic blue, white space, rounded consumer UI, and social payment framing.",
   "colors": {
    "c0": "#008CFF",
@@ -9569,11 +10974,17 @@
    "#64748B"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 21,
+   "feats": 8
+  }
  },
  {
   "slug": "vercel",
   "name": "Vercel",
+  "category": "Dev Tools",
   "description": "An inspired interpretation of Vercel's design language \u2014 a developer-platform brand whose surface is a stark black-and-ink duet on near-white canvas, broken at hero scale by a multi-color mesh gradient (cyan / blue / magenta / amber) that a",
   "colors": {
    "primary": "#171717",
@@ -9631,11 +11042,17 @@
    "#ebebeb"
   ],
   "score": 50,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 30,
+   "sections": 32,
+   "feats": 9
+  }
  },
  {
   "slug": "vmware",
   "name": "Vmware",
+  "category": "Security & Enterprise",
   "description": "Enterprise-ready consumer-simple design with strong action blue, compact controls, and reusable app structure. VMware\u2019s Clarity system focuses on accessibility, consistency, and practical patterns for dense business software.",
   "colors": {
    "c0": "#0065C4",
@@ -9671,11 +11088,17 @@
    "#D8E1E8"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 36,
+   "feats": 9
+  }
  },
  {
   "slug": "vodafone",
   "name": "Vodafone",
+  "category": "Hardware & Devices",
   "description": "An inspired interpretation of Vodafone's design language \u2014 a telecom super-brand whose web surface alternates between editorial photography hero bands with massive uppercase display headlines and clean white content bands, anchored by the c",
   "colors": {
    "primary": "#e60000",
@@ -9705,11 +11128,17 @@
    "#ffffff"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 6,
+   "sections": 31,
+   "feats": 9
+  }
  },
  {
   "slug": "voltagent",
   "name": "VoltAgent",
+  "category": "AI",
   "description": "An inspired interpretation of Voltagent's design language \u2014 a developer-focused AI agent engineering platform whose surface is an unrelenting near-black canvas broken only by a single electric-green brand accent, code-editor mockups inside ",
   "colors": {
    "primary": "#00d992",
@@ -9744,12 +11173,18 @@
    "#ffffff"
   ],
   "score": 32,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 12,
+   "sections": 29,
+   "feats": 9
+  }
  },
  {
   "slug": "walmart",
   "name": "Walmart",
-  "description": "",
+  "category": "Retail & E-commerce",
+  "description": "The world's largest retailer. A clean, trust-led commerce UI on Walmart blue with the spark mark.",
   "colors": {
    "c0": "#0071DC",
    "c1": "#FFC220",
@@ -9779,11 +11214,17 @@
    "#B00020"
   ],
   "score": 54,
-  "stars": 2.5
+  "stars": 2.5,
+  "metrics": {
+   "tokens": 18,
+   "sections": 56,
+   "feats": 10
+  }
  },
  {
   "slug": "warp",
   "name": "Warp",
+  "category": "Dev Tools",
   "description": "An inspired interpretation of Warp's design language \u2014 an agentic terminal-and-development-environment brand whose surface is a warm near-charcoal canvas (a tint warmer than pure black), broken only by clean Inter typography, the occasional",
   "colors": {
    "primary": "#f7f5f0",
@@ -9814,11 +11255,17 @@
    "#aea69c"
   ],
   "score": 29,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 7,
+   "sections": 29,
+   "feats": 9
+  }
  },
  {
   "slug": "wayfair",
   "name": "Wayfair",
+  "category": "Retail & E-commerce",
   "description": "Home furnishings retail with broad catalog density, warm merchandising, and soft home-oriented polish. Wayfair's public site uses a white base, dark text, subtle category framing, and the Wayfair purple identity across a very broad home-goo",
   "colors": {
    "c0": "#7B189F",
@@ -9847,11 +11294,17 @@
    "#E5E7EB"
   ],
   "score": 23,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 11,
+   "sections": 22,
+   "feats": 10
+  }
  },
  {
   "slug": "webflow",
   "name": "Webflow",
+  "category": "Design & Creative",
   "description": "An inspired interpretation of Webflow's design language \u2014 a visual web development platform whose surface contrasts a deep near-black `#080808` primary against a generous white canvas, broken by a five-stop chromatic accent system (purple /",
   "colors": {
    "primary": "#080808",
@@ -9892,11 +11345,17 @@
    "#5a5a5a"
   ],
   "score": 35,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 17,
+   "sections": 29,
+   "feats": 9
+  }
  },
  {
   "slug": "wired",
   "name": "Wired",
+  "category": "Social & Media",
   "description": "An inspired interpretation of Wired's design language \u2014 a flagship technology-magazine brand whose surface is a strict editorial duet of stark black wordmark on white canvas, anchored by a tall narrow custom display serif for hero headlines",
   "colors": {
    "primary": "#000000",
@@ -9927,11 +11386,17 @@
    "#e0e0e0"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 7,
+   "sections": 29,
+   "feats": 9
+  }
  },
  {
   "slug": "wise",
   "name": "Wise",
+  "category": "Fintech",
   "description": "An inspired interpretation of Wise's design language \u2014 a global money-transfer brand whose surface combines an unusually heavy near-black display sans (weight 900 at 64\u2013126 px) with a vivid lime-green brand accent, sage-tinted surface neutr",
   "colors": {
    "primary": "#9fe870",
@@ -9975,11 +11440,17 @@
    "#0e0f0c"
   ],
   "score": 41,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 21,
+   "sections": 29,
+   "feats": 10
+  }
  },
  {
   "slug": "wix",
   "name": "Wix",
+  "category": "Design & Creative",
   "description": "Friendly no-code web-design platform with bright utility color and high customization energy. Wix combines the custom Madefor typeface, bold brand colors, theme-driven site styling, and flexible visual tooling to create experiences that fee",
   "colors": {
    "c0": "#0C6EFC",
@@ -10014,11 +11485,17 @@
    "#674FE6"
   ],
   "score": 33,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 13,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "workday",
   "name": "Workday",
+  "category": "Productivity",
   "description": "Enterprise operations design with calm authority and warm orange emphasis. Workday\u2019s current visual language pairs soft neutrals, ink-heavy typography, rounded enterprise cards, and selective orange accents to make large-scale HR and financ",
   "colors": {
    "c0": "#F38B00",
@@ -10055,11 +11532,17 @@
    "#64748B"
   ],
   "score": 23,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 15,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "x",
   "name": "X",
+  "category": "Social & Media",
   "description": "A comprehensive design guide for X's current visual identity (2024-2026)",
   "colors": {
    "c0": "#000000",
@@ -10098,11 +11581,17 @@
    "#71767B"
   ],
   "score": 68,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 23,
+   "sections": 61,
+   "feats": 11
+  }
  },
  {
   "slug": "x.ai",
   "name": "xAI",
+  "category": "AI",
   "description": "An inspired interpretation of xAI's design language \u2014 Elon Musk's frontier-AI company whose web surface is a strict near-black canvas broken only by white pill outlines, occasional warm sunset / dusk gradient accents, a custom geometric san",
   "colors": {
    "primary": "#ffffff",
@@ -10142,11 +11631,17 @@
    "#7d8187"
   ],
   "score": 30,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 28,
+   "feats": 9
+  }
  },
  {
   "slug": "xbox",
   "name": "Xbox",
+  "category": "Gaming",
   "description": "Microsoft Fluent Design meets gaming. Xbox Green (#107C10), deep dark backgrounds, Segoe UI typography, Game Pass branding, achievement gamerscore, and controller-centric Xbox ecosystem.",
   "colors": {
    "c0": "#107C10",
@@ -10189,11 +11684,17 @@
    "#0e0e0e"
   ],
   "score": 73,
-  "stars": 3.5
+  "stars": 3.5,
+  "metrics": {
+   "tokens": 25,
+   "sections": 56,
+   "feats": 11
+  }
  },
  {
   "slug": "xero",
   "name": "Xero",
+  "category": "Fintech",
   "description": "Friendly accounting-software design with small-business optimism and product-system rigor. Xero pairs bright sky-blue branding, calm financial UI structure, and a large reusable component library to make complex bookkeeping workflows feel s",
   "colors": {
    "c0": "#13B5EA",
@@ -10227,11 +11728,17 @@
    "#64748B"
   ],
   "score": 20,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 12,
+   "sections": 35,
+   "feats": 8
+  }
  },
  {
   "slug": "xiaomi",
   "name": "Xiaomi",
+  "category": "Hardware & Devices",
   "description": "Consumer technology at global scale with bold accessibility. Xiaomi's current public site combines bright white surfaces, vivid orange brand accents, broad product-category merchandising, and ecosystem storytelling around phones, AIoT, home",
   "colors": {
    "c0": "#FFFFFF",
@@ -10267,11 +11774,17 @@
    "#FF6900"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 18,
+   "sections": 34,
+   "feats": 10
+  }
  },
  {
   "slug": "zapier",
   "name": "Zapier",
+  "category": "Productivity",
   "description": "An inspired interpretation of Zapier's design language \u2014 a workflow-automation platform whose surface combines warm-cream neutrals (`#fffefb` canvas, `#f8f4f0` soft cream) with deep coffee ink (`#201515`) and a single saturated orange CTA a",
   "colors": {
    "primary": "#ff4f00",
@@ -10303,11 +11816,17 @@
    "#605d52"
   ],
   "score": 28,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 9,
+   "sections": 28,
+   "feats": 9
+  }
  },
  {
   "slug": "zenbrowser",
   "name": "Zenbrowser",
+  "category": "Browsers & Privacy",
   "description": "Calm privacy-first browser design with customizable chrome, quiet gradients, compact productivity features, and a focus on a less distracting web.",
   "colors": {
    "c0": "#111827",
@@ -10338,11 +11857,17 @@
    "#7DD3FC"
   ],
   "score": 9,
-  "stars": 1
+  "stars": 1,
+  "metrics": {
+   "tokens": 9,
+   "sections": 9,
+   "feats": 9
+  }
  },
  {
   "slug": "zendesk",
   "name": "Zendesk",
+  "category": "Productivity",
   "description": "Support-centric product design with restrained enterprise clarity. Garden\u2019s neutral grays, kale depth, blue interaction states, and semantic color model create interfaces that feel calm, actionable, and highly structured without becoming st",
   "colors": {
    "c0": "#f8f9f9",
@@ -10389,11 +11914,17 @@
    "#39434b"
   ],
   "score": 36,
-  "stars": 2.0
+  "stars": 2.0,
+  "metrics": {
+   "tokens": 26,
+   "sections": 37,
+   "feats": 9
+  }
  },
  {
   "slug": "zillow",
   "name": "Zillow",
+  "category": "Travel & Food",
   "description": "Real-estate discovery with high-trust search flows and map-driven clarity. Zillow's public site uses a white and soft-blue foundation, dark text, large search-led hero areas, and the strong Zillow blue (`#006AFF`) to anchor rentals, homes, ",
   "colors": {
    "c0": "#006AFF",
@@ -10424,11 +11955,17 @@
    "#69707A"
   ],
   "score": 26,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 14,
+   "sections": 33,
+   "feats": 9
+  }
  },
  {
   "slug": "zoom",
   "name": "Zoom",
+  "category": "Productivity",
   "description": "Communication software with a bright, approachable productivity frame. Zoom's current public site combines `Happy Display`-style headlines with `Almaden Sans`-style UI text, using Zoom blue (`#0B5CFF`), white (`#FFFFFF`), deep navy (`#0B173",
   "colors": {
    "c0": "#0B5CFF",
@@ -10460,6 +11997,11 @@
    "#D6E2FF"
   ],
   "score": 27,
-  "stars": 1.5
+  "stars": 1.5,
+  "metrics": {
+   "tokens": 15,
+   "sections": 33,
+   "feats": 9
+  }
  }
 ]

@@ -29,7 +29,12 @@
   .search:focus{border-color:#33333a}
   .count{color:var(--faint);font-size:13px;white-space:nowrap}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px;padding:34px 0 90px}
+  .cats{display:flex;flex-wrap:wrap;gap:8px;padding:26px 0 0}
+  .chip-f{background:var(--bg-2);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+    padding:7px 14px;font-size:13px;cursor:pointer;transition:.15s}
+  .chip-f:hover{color:var(--text);border-color:#3a3a42}
+  .chip-f.on{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px;padding:22px 0 90px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
     transition:transform .18s ease,border-color .18s ease;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-4px);border-color:#33333a}
@@ -113,6 +118,17 @@
   pre.code{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:20px;overflow:auto;
     max-height:440px;font-size:12.5px;line-height:1.6;color:#cfcfd6;
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;margin:0}
+  .hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .hero-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .hbtn{font-family:Inter,sans-serif;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:9px;
+    border:1px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;transition:.15s}
+  .hbtn:hover{filter:brightness(1.06)}
+  .scorebar{display:flex;gap:24px;align-items:flex-start;background:var(--bg-2);border:1px solid var(--line);
+    border-radius:12px;padding:18px 20px;margin-bottom:24px;flex-wrap:wrap}
+  .bigscore{font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1;white-space:nowrap}
+  .bigscore span{font-size:14px;color:var(--faint);font-weight:500}
+  .why{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6;max-width:60ch}
+  .why b{color:var(--text);font-weight:600}
   @media(max-width:560px){.hero,.body{padding:24px}.hero h2{font-size:32px}}
 </style>
 </head>
@@ -135,6 +151,8 @@
     <span class="count" id="count"></span>
   </div>
 </div>
+
+<div class="wrap"><div class="cats" id="cats"></div></div>
 
 <div class="wrap">
   <div class="grid" id="grid"></div>
@@ -204,9 +222,22 @@ function render(list){
   document.getElementById('empty').hidden = list.length>0;
   countEl.textContent = `${list.length} of ${DATA.length}`;
 }
+let activeCat='All';
+function renderCats(){
+  const counts={};
+  DATA.forEach(d=>counts[d.category]=(counts[d.category]||0)+1);
+  const cats=['All',...Object.keys(counts).sort((a,b)=>counts[b]-counts[a])];
+  document.getElementById('cats').innerHTML=cats.map(c=>
+    `<button class="chip-f ${c===activeCat?'on':''}" data-cat="${c}">${c}${c==='All'?'':` <span style="opacity:.6">${counts[c]}</span>`}</button>`).join('');
+}
+document.getElementById('cats').addEventListener('click', e=>{
+  const b=e.target.closest('.chip-f'); if(!b) return;
+  activeCat=b.dataset.cat; renderCats(); apply();
+});
 function apply(){
   const t=q.value.trim().toLowerCase();
   let list = t ? DATA.filter(d=>(d.name+' '+d.description+' '+d.slug).toLowerCase().includes(t)) : DATA.slice();
+  if(activeCat!=='All') list=list.filter(d=>d.category===activeCat);
   if(document.getElementById('sort').value==='rated')
     list.sort((a,b)=> (b.score||0)-(a.score||0) || a.name.localeCompare(b.name));
   else list.sort((a,b)=> a.name.localeCompare(b.name));
@@ -220,6 +251,7 @@ grid.addEventListener('click', e=>{
 fetch('data.json').then(r=>r.json()).then(d=>{
   DATA=d;
   document.getElementById('total').textContent=d.length;
+  renderCats();
   apply();
 });
 
@@ -236,20 +268,27 @@ async function openDetail(d){
   const ff=(d.displayFont||'inherit').replace(/"/g,'');
   const chips=Object.entries(d.colors||{}).filter(([,v])=>String(v).startsWith('#')).map(([k,v])=>
     `<div class="chip" data-copy="${v}"><div class="sw" style="background:${v}"></div><div class="lab"><span>${k}</span><b>${v}</b></div></div>`).join('');
+  const onAccent=readable(accent), hair=d.hairline||'rgba(127,127,127,.3)';
+  const m=d.metrics||{tokens:0,sections:0,feats:0};
   modal.innerHTML=`
     <div class="hero ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
       <button class="x" id="closeX">✕</button>
       <h2>${d.name}</h2>
-      <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:38px;height:38px;display:inline-block"></i>`).join('')}</div>
+      <div class="hero-foot">
+        <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:34px;height:34px;display:inline-block"></i>`).join('')}</div>
+        <div class="hero-actions">
+          <button class="hbtn" id="copyBtn" style="background:${accent};color:${onAccent}">Copy DESIGN.md</button>
+          <a class="hbtn" href="design-md/${d.slug}/DESIGN.md" download style="border-color:${hair};color:${ink}">Download</a>
+          <a class="hbtn" href="design-md/${d.slug}/DESIGN.md" target="_blank" style="border-color:${hair};color:${ink}">Open</a>
+        </div>
+      </div>
     </div>
     <div class="body">
-      <p class="sect" style="margin-bottom:8px">Spec completeness · ${d.score}/100 ${'★'.repeat(Math.round(d.stars))}<span style="color:var(--faint)">${'★'.repeat(5-Math.round(d.stars))}</span></p>
-      <p class="descfull">${d.description||''}</p>
-      <div class="actions">
-        <button class="btn primary" id="copyBtn">Copy DESIGN.md</button>
-        <a class="btn" href="design-md/${d.slug}/DESIGN.md" download>Download .md</a>
-        <a class="btn" href="design-md/${d.slug}/DESIGN.md" target="_blank">Open raw</a>
+      <div class="scorebar">
+        <div><p class="sect" style="margin:0 0 6px">Spec completeness</p><div class="bigscore">${d.score}<span>/100</span></div></div>
+        <p class="why">How thorough this DESIGN.md is. Scored on <b>${m.tokens}</b> colour tokens, <b>${m.sections}</b> spec sections and <b>${m.feats}/12</b> depth signals (typography, components, guardrails, responsive, spacing, motion, accessibility). A richer spec gives an AI agent more to build from, so it renders more faithfully.</p>
       </div>
+      <p class="descfull">${d.description||''}</p>
       <p class="sect">Palette · click any swatch to copy</p>
       <div class="pal">${chips}</div>
       <p class="sect">DESIGN.md</p>

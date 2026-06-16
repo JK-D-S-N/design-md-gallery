@@ -262,11 +262,16 @@ function setRating(slug,n){ ratings[slug]=n; localStorage.setItem(RKEY,JSON.stri
 const STAR_FILL='#f5b301';
 
 function card(d,i){
-  const bg=d.bg||'#101014', ink=d.ink||readable(bg), accent=d.accent||'#888';
-  const onAccent=readable(accent), hair=d.hairline||'rgba(127,127,127,.28)';
+  const fl=(typeof FLAGSHIP!=='undefined'&&FLAGSHIP[d.slug])||null;
+  const bg=fl?fl.bg:(d.bg||'#101014');
+  const ink=fl?(fl.heroInk||fl.ink):(d.ink||readable(bg));
+  const accent=fl?fl.accent:(d.accent||'#888');
+  const onAccent=readable(accent);
+  const hair=fl?(readable(bg)==='#111'?'rgba(0,0,0,.12)':'rgba(255,255,255,.12)'):(d.hairline||'rgba(127,127,127,.28)');
   const dots=(d.swatches||[]).filter(Boolean).slice(0,5);
-  const ff=(d.displayFont||'inherit').replace(/"/g,'');
-  const wt=d.displayWeight||'600', trk=d.displayTracking||'-0.02em', br=d.btnRadius||'8px';
+  const ff=fl?fl.font:(d.displayFont||'inherit').replace(/"/g,'');
+  const wt=fl?(fl.heroWeight||'600'):(d.displayWeight||'600'), trk=fl?(fl.heroTrack||'-0.02em'):(d.displayTracking||'-0.02em'), br=d.btnRadius||'8px';
+  const pb=(fl&&fl.btns&&fl.btns.primary)?fl.btns.primary:{bg:accent,color:onAccent,label:'Get started',radius:br};
   return `<div class="sscard" data-i="${i}" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
     <div class="ss-head">
       <span class="eyebrow">Design system</span>
@@ -278,7 +283,7 @@ function card(d,i){
       <div class="ss-dots" style="margin-bottom:16px">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</div>
       <div class="ss-foot">
         <div class="ss-controls">
-          <span class="ss-btn" style="background:${accent};color:${onAccent};border-radius:${br}">Get started</span>
+          <span class="ss-btn" style="background:${pb.bg};color:${pb.color};border-radius:${pb.radius||br}">${pb.label}</span>
           <span class="ss-chip" style="border-color:${hair};color:${ink};border-radius:${br}">DESIGN.md</span>
         </div>
         <span class="ss-arrow">→</span>
@@ -384,18 +389,17 @@ const FLAGSHIP={
       cols:[{h:'Product',links:['AI','Docs','Wikis','Projects','Calendar']},{h:'Company',links:['About us','Careers','Blog','Security']},{h:'Resources',links:['Help centre','Pricing','Templates','Integrations']}]},
   },
   linear:{
+    // verified from linear.app screenshots (hero, nav, buttons). Footer not captured → left generic, not invented.
     bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter","SF Pro Display",sans-serif', fontName:'Inter',
     navBg:'#08090a', navInk:'#f7f8f8', navCaps:false, wordmark:'Linear',
     navItems:['Product','Resources','Customers','Pricing','Now','Contact'], navActive:'',
-    navCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'8px'},
-    heroBg:'radial-gradient(140% 120% at 50% -10%, #1c1d2e 0%, #08090a 55%)', heroInk:'#f7f8f8', heroWeight:'600', heroTrack:'-0.03em',
-    heroHead:'The product development system for teams and agents.',
+    navCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'999px'},
+    heroBg:'#08090a', heroInk:'#f7f8f8', heroWeight:'510', heroTrack:'-0.02em',
+    heroHead:'The product development system for teams and agents',
     heroSub:'Purpose-built for planning and building products. Designed for the AI era.',
-    heroCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'8px'}, heroCta2:'Introduction',
-    btns:{primary:{bg:'#5e6ad2', color:'#fff', label:'Start building'},secondary:{bg:'#f7f8f8', color:'#08090a', label:'Sign up'},tertiary:{color:'#8a8f98', label:'Log in'}},
-    panel:'#0f1011',
-    footer:{bg:'#08090a', fine:'© 2026 Linear',
-      cols:[{h:'Features',links:['Plan','Build','Insights','Customer Requests']},{h:'Product',links:['Pricing','Method','Integrations','Changelog']},{h:'Company',links:['About','Customers','Careers','Blog']}]},
+    heroNote:'New · Coding Sessions →',
+    btns:{primary:{bg:'#f7f8f8', color:'#08090a', label:'Sign up', radius:'999px'},
+      secondary:{text:true, color:'#f7f8f8', label:'Log in'}},
   },
 };
 
@@ -425,10 +429,11 @@ async function openDetail(d){
       ${fl.heroEyebrow?`<span class="sp-eyebrow" style="color:${fl.accent}">${fl.heroEyebrow}</span>`:''}
       <h3 class="sp-display" style="color:${heroInk};font-weight:${fl.heroWeight||'700'};letter-spacing:${fl.heroTrack||'-0.02em'};max-width:18ch;margin:0">${fl.heroHead}</h3>
       <p style="font-size:16px;line-height:1.5;color:${heroInk};opacity:.82;max-width:48ch;margin:16px 0 0;font-family:Inter,sans-serif">${fl.heroSub}</p>
-      <div class="sp-actions">
+      ${fl.heroCta?`<div class="sp-actions">
         <span class="cbtn" style="background:${fl.heroCta.bg};color:${fl.heroCta.color};border-radius:${fl.heroCta.radius||'8px'};${fl.heroCta.caps?'text-transform:uppercase;letter-spacing:.05em;':''}padding:13px 24px;font-weight:600">${fl.heroCta.label}</span>
         ${fl.heroCta2?`<span class="cbtn" style="background:transparent;border:1px solid ${tint(heroInk,.3)};color:${heroInk};border-radius:${fl.heroCta.radius||'8px'};padding:13px 24px;font-weight:600">${fl.heroCta2}</span>`:''}
-      </div>
+      </div>`:''}
+      ${fl.heroNote?`<p style="margin:20px 0 0;font-family:Inter,sans-serif;font-size:13px;color:${heroInk};opacity:.6">${fl.heroNote}</p>`:''}
     </div>`
     : `<div class="block sp-hero" style="background:${bg};color:${ink};font-family:${ff}">
       <span class="sp-eyebrow" style="color:${accent}">New · ${d.category}</span>
@@ -500,10 +505,7 @@ async function openDetail(d){
       <p class="sect">Button hierarchy</p>
       <div class="specimen">
         <div class="comp-row">
-          ${fl&&fl.btns?`
-          <span class="cbtn" style="background:${fl.btns.primary.bg};color:${fl.btns.primary.color};border-radius:${br}">${fl.btns.primary.label}</span>
-          <span class="cbtn" style="background:${fl.btns.secondary.bg};color:${fl.btns.secondary.color};border-radius:${br}">${fl.btns.secondary.label}</span>
-          <span class="cbtn" style="color:${fl.btns.tertiary.color};border-radius:${br}">${fl.btns.tertiary.label}</span>`
+          ${fl&&fl.btns?['primary','secondary','tertiary'].filter(k=>fl.btns[k]).map(k=>{const b=fl.btns[k]; return (b.text||!b.bg)?`<span class="cbtn" style="color:${b.color};border-radius:${b.radius||br}">${b.label}</span>`:`<span class="cbtn" style="background:${b.bg};color:${b.color};border-radius:${b.radius||br}">${b.label}</span>`}).join('')
           :`
           <span class="cbtn" style="background:${accent};color:${onAccent};border-radius:${br}">Primary</span>
           <span class="cbtn" style="border:1px solid var(--line);color:var(--text);border-radius:${br}">Secondary</span>

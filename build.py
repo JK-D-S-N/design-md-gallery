@@ -30,6 +30,40 @@ def sat(h):
 
 HEX=re.compile(r'#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b')
 
+def _lin(c):
+    c=c/255
+    return c/12.92 if c<=0.03928 else ((c+0.055)/1.055)**2.4
+def rel_lum(h):
+    h=h.lstrip('#')
+    if len(h)==3: h=''.join(x*2 for x in h)
+    if len(h)<6: return .5
+    r,g,b=[int(h[i:i+2],16) for i in (0,2,4)]
+    return 0.2126*_lin(r)+0.7152*_lin(g)+0.0722*_lin(b)
+def contrast(a,b):
+    la,lb=rel_lum(a),rel_lum(b)
+    return (max(la,lb)+.05)/(min(la,lb)+.05)
+def fix_ink(ink,bg):
+    if not ink.startswith('#'): return ink
+    if contrast(ink,bg) >= 4.5: return ink
+    return '#0a0a0c' if rel_lum(bg) > 0.4 else '#ffffff'
+
+def btn_radius(text):
+    for ln in text.splitlines():
+        if 'button' in ln.lower():
+            if 'pill' in ln.lower() or '999' in ln: return '999px'
+            mm=re.search(r'(\d+)\s*px', ln)
+            if mm: return f'{max(2,min(16,int(mm.group(1))))}px'
+    low=text.lower()
+    if 'pill' in low or '999px' in low or 'rounded-full' in low: return '999px'
+    return '8px'
+
+def display_type(text):
+    m=re.search(r'display-(?:xl|lg|xxl):\s*\n(.*?)(?=\n\s{2}\w|\n\S)', text, re.S)
+    blk=m.group(1) if m else ''
+    w=re.search(r'fontWeight:\s*(\d+)', blk)
+    ls=re.search(r'letterSpacing:\s*(-?[\d.]+)px', blk)
+    return (w.group(1) if w else '600'), (ls.group(1)+'px' if ls else '-0.02em')
+
 # ---------- format A: YAML frontmatter with a colors: block ----------
 def parse_yaml(text):
     m=re.search(r'^---\s*\n(.*?)\n---', text, re.S)
@@ -110,15 +144,20 @@ for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
     if not parsed: continue
     bg=parsed['bg'] or '#0e0e10'
     ink=parsed['ink'] or ('#111' if lum(bg)>150 else '#f4f4f5')
+    ink=fix_ink(ink,bg)
+    accent=parsed['accent'] or '#888'
+    dw,dt=display_type(text)
     entries.append({
         'slug':slug, 'name':prettify(slug),
         'description':parsed['description'][:240],
         'colors':parsed['colors'],
         'displayFont':parsed['displayFont'],
+        'displayWeight':dw, 'displayTracking':dt,
+        'btnRadius':btn_radius(text),
         'bg':bg, 'ink':ink,
-        'accent':parsed['accent'] or '#888',
+        'accent':accent,
         'muted':parsed['colors'].get('muted','') or '',
-        'hairline':parsed['hairline'] or ('rgba(0,0,0,.12)' if lum(bg)>150 else 'rgba(255,255,255,.14)'),
+        'hairline':parsed['hairline'] or ('rgba(0,0,0,.14)' if lum(bg)>150 else 'rgba(255,255,255,.16)'),
         'swatches':[s for s in parsed['swatches'] if s][:6],
         '_m':raw_metrics(text),
     })

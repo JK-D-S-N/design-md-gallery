@@ -68,6 +68,9 @@ DESC = {
  'theverge':"Technology, science and culture publication. A bold editorial system with strong type and vivid accents.",
  'tiktok':"Short-form video platform. A dark, high-energy, mobile-first UI with cyan and magenta brand accents.",
  'walmart':"The world's largest retailer. A clean, trust-led commerce UI on Walmart blue with the spark mark.",
+ 'nike':"The global sportswear leader. Monochrome and high-contrast, bold uppercase type, full-bleed imagery, the swoosh as the only ornament.",
+ 'ollama':"Run open large language models locally. A clean, terminal-first developer aesthetic, monochrome with minimal chrome.",
+ 'opencode.ai':"An open-source AI coding agent for the terminal. Developer-first, dark, monospaced and minimal.",
 }
 
 def lum(h):
@@ -203,10 +206,13 @@ for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
     ink=fix_ink(ink,bg)
     accent=parsed['accent'] or '#888'
     dw,dt=display_type(text)
+    _d=parsed['description'].strip()
+    if len(_d)<12 or not any(c.isalpha() for c in _d):   # reject junk like "|" or stray rows
+        _d=DESC.get(slug,'')
     entries.append({
         'slug':slug, 'name':prettify(slug),
         'category':SLUG2CAT.get(slug,'Other'),
-        'description':(parsed['description'].strip() or DESC.get(slug,''))[:240],
+        'description':_d[:240],
         'colors':parsed['colors'],
         'displayFont':parsed['displayFont'],
         'displayWeight':dw, 'displayTracking':dt,

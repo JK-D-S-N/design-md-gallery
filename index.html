@@ -135,7 +135,7 @@
   pre.code{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:20px;overflow:auto;
     max-height:440px;font-size:12.5px;line-height:1.6;color:#cfcfd6;
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;margin:0}
-  .hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .hero-foot{display:flex;align-items:flex-end;justify-content:flex-end;gap:16px;flex-wrap:wrap}
   .hero-actions{display:flex;gap:8px;flex-wrap:wrap}
   .hbtn{font-family:Inter,sans-serif;font-size:12.5px;font-weight:600;padding:9px 14px;border-radius:9px;
     border:1px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;transition:.15s}
@@ -147,8 +147,8 @@
   .why{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6;max-width:60ch}
   .why b{color:var(--text);font-weight:600}
   /* atomic spec specimens — rendered in each system's own tokens */
-  .specimen{border:1px solid;border-radius:12px;padding:22px;margin:0 0 16px}
-  .type-row{display:flex;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid}
+  .specimen{background:var(--bg-2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:22px;margin:0 0 16px}
+  .type-row{display:flex;align-items:baseline;gap:16px;padding:9px 0;border-bottom:1px solid var(--line)}
   .type-row:last-child{border-bottom:none;padding-bottom:0}
   .type-lab{font-family:Inter,sans-serif;font-size:10px;opacity:.5;width:62px;flex:none;
     text-transform:uppercase;letter-spacing:.1em;font-weight:600}
@@ -161,6 +161,16 @@
   .field{font-family:Inter,sans-serif;font-size:13px;padding:10px 12px;border:1px solid;max-width:300px;opacity:.85}
   .cbadge{font-family:Inter,sans-serif;font-size:12px;font-weight:600;padding:5px 11px}
   .ccard{border:1px solid;padding:16px;max-width:340px}
+  .seg{display:inline-flex;border:1px solid;padding:3px;font-family:Inter,sans-serif;font-size:12.5px;gap:2px;border-radius:8px}
+  .seg span{padding:6px 12px;opacity:.55}
+  .seg .seg-on{opacity:1;font-weight:600}
+  .toggle{width:42px;height:24px;border-radius:999px;display:inline-flex;align-items:center;padding:3px;justify-content:flex-end}
+  .toggle .knob{width:18px;height:18px;border-radius:50%;background:#fff;display:block}
+  .alert{font-family:Inter,sans-serif;font-size:13px;line-height:1.5;background:var(--bg);padding:12px 14px;color:var(--text)}
+  .alert b{font-weight:600}
+  .ctable{width:100%;border-collapse:collapse;font-family:Inter,sans-serif;font-size:13px;max-width:360px}
+  .ctable th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:600;padding:0 0 8px}
+  .ctable td{border-top:1px solid var(--line);padding:10px 0;color:var(--muted)}
   .grouphdr{font-size:15px;font-weight:600;letter-spacing:-.01em;margin:30px 0 14px;color:var(--text)}
   /* signature blocks — the brand in use */
   .block{border:1px solid;border-radius:12px;overflow:hidden;margin:0 0 16px}
@@ -370,7 +380,6 @@ async function openDetail(d){
         <p class="hero-desc">${d.description||''}</p>
       </div>
       <div class="hero-foot">
-        <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:34px;height:34px;display:inline-block"></i>`).join('')}</div>
         <div class="hero-actions">
           <button class="hbtn" id="copyBtn" style="background:${accent};color:${onAccent}">Copy DESIGN.md</button>
           <a class="hbtn" href="design-md/${d.slug}/DESIGN.md" download style="border-color:${hair};color:${ink}">Download</a>
@@ -386,10 +395,10 @@ async function openDetail(d){
       <p class="sect">Type pairing — display meets body</p>
       ${pairingBlock}
       <p class="sect">Type scale · ${fam}</p>
-      <div class="specimen" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+      <div class="specimen" style="font-family:${ff}">
         ${[['Display','38px',dw],['Heading','27px','700'],['Title','20px','600'],['Body','15px','400'],['Caption','12px','500']].map(([l,s,w])=>
-          `<div class="type-row" style="border-color:${hair}"><span class="type-lab">${l}</span><span class="type-sample" style="font-size:${s};font-weight:${w};letter-spacing:${dt}">${d.name}</span></div>`).join('')}
-        <div class="type-row" style="border-color:${hair}"><span class="type-lab">Mono</span><span class="type-sample" style="font-family:ui-monospace,Menlo,monospace;font-size:13px">const build = designMd();</span></div>
+          `<div class="type-row"><span class="type-lab">${l}</span><span class="type-sample" style="font-size:${s};font-weight:${w};letter-spacing:${dt}">${d.name}</span></div>`).join('')}
+        <div class="type-row"><span class="type-lab">Mono</span><span class="type-sample" style="font-family:ui-monospace,Menlo,monospace;font-size:13px">const build = designMd();</span></div>
       </div>
 
       <p class="grouphdr">Colour</p>
@@ -406,39 +415,59 @@ async function openDetail(d){
 
       <p class="grouphdr">Components</p>
       <p class="sect">Button hierarchy</p>
-      <div class="specimen" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+      <div class="specimen">
         <div class="comp-row">
           <span class="cbtn" style="background:${accent};color:${onAccent};border-radius:${br}">Primary</span>
-          <span class="cbtn" style="border:1px solid ${hair};color:${ink};border-radius:${br}">Secondary</span>
+          <span class="cbtn" style="border:1px solid var(--line);color:var(--text);border-radius:${br}">Secondary</span>
           <span class="cbtn" style="color:${accent};border-radius:${br}">Tertiary</span>
-          <span class="cbtn" style="background:${tint(accent,.45)};color:${onAccent};border-radius:${br}">Disabled</span>
+          <span class="cbtn" style="background:${tint(accent,.4)};color:var(--text);border-radius:${br};opacity:.7">Disabled</span>
         </div>
       </div>
-      <p class="sect">Form, badges, card</p>
-      <div class="specimen" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+      <p class="sect">Form & selection</p>
+      <div class="specimen">
         <div class="comp-grid">
-          <div class="field" style="border-color:${hair};color:${ink};border-radius:${br}">name@company.com</div>
+          <div class="field" style="border-color:var(--line);color:var(--text);border-radius:${br}">name@company.com</div>
           <div class="comp-row">
-            <span class="cbadge" style="background:${tint(accent,.16)};color:${accent};border-radius:999px">Brand</span>
-            <span class="cbadge" style="background:${tint('#16A34A',.16)};color:#15803D;border-radius:999px">Success</span>
-            <span class="cbadge" style="background:${tint('#F59E0B',.18)};color:#B45309;border-radius:999px">Warning</span>
-            <span class="cbadge" style="background:${tint('#DC2626',.14)};color:#DC2626;border-radius:999px">Error</span>
+            <span class="seg" style="border-color:var(--line);border-radius:${br}"><span class="seg-on" style="background:${accent};color:${onAccent};border-radius:${Math.max(2,parseInt(br)||8)-2}px">Overview</span><span>Activity</span><span>Settings</span></span>
+            <span class="toggle" style="background:${accent}"><span class="knob"></span></span>
           </div>
-          <div class="ccard" style="border-color:${hair};border-radius:${br}">
+        </div>
+      </div>
+      <p class="sect">Badges & status</p>
+      <div class="specimen">
+        <div class="comp-row" style="margin-bottom:14px">
+          <span class="cbadge" style="background:${tint(accent,.18)};color:${accent};border-radius:999px">Brand</span>
+          <span class="cbadge" style="background:${tint('#16A34A',.16)};color:#22C55E;border-radius:999px">Success</span>
+          <span class="cbadge" style="background:${tint('#F59E0B',.18)};color:#F59E0B;border-radius:999px">Warning</span>
+          <span class="cbadge" style="background:${tint('#DC2626',.16)};color:#F87171;border-radius:999px">Error</span>
+        </div>
+        <div class="alert" style="border-left:3px solid ${accent};border-radius:6px">
+          <b>Heads up.</b> Inline messaging uses the system's accent and semantic tokens, never colour alone.
+        </div>
+      </div>
+      <p class="sect">Card & data</p>
+      <div class="specimen">
+        <div class="comp-grid">
+          <div class="ccard" style="border-color:var(--line);border-radius:${br}">
             <div style="font-weight:600;margin-bottom:5px">Card title</div>
-            <div style="opacity:.7;font-size:13px;font-family:Inter,sans-serif">A surface rendered live in this system's own tokens.</div>
+            <div style="opacity:.65;font-size:13px">A surface built from this system's radius, border and type tokens.</div>
           </div>
+          <table class="ctable"><thead><tr><th>Name</th><th>Role</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Ada Lovelace</td><td>Owner</td><td><span style="color:#22C55E">Active</span></td></tr>
+            <tr><td>Alan Turing</td><td>Admin</td><td><span style="color:${accent}">Invited</span></td></tr>
+          </tbody></table>
         </div>
       </div>
 
       <p class="grouphdr">Foundations</p>
       <p class="sect">Spacing · 4px base</p>
-      <div class="specimen" style="background:${bg};border-color:${hair}">
-        <div class="space-row">${[4,8,12,16,24,32,48].map(n=>`<div><div style="width:${n}px;height:${n}px;background:${accent};border-radius:2px;margin:0 auto"></div><div class="space-lab" style="color:${ink}">${n}</div></div>`).join('')}</div>
+      <div class="specimen">
+        <div class="space-row">${[4,8,12,16,24,32,48].map(n=>`<div><div style="width:${n}px;height:${n}px;background:${accent};border-radius:2px;margin:0 auto"></div><div class="space-lab">${n}</div></div>`).join('')}</div>
       </div>
       <p class="sect">Radius</p>
-      <div class="specimen" style="background:${bg};border-color:${hair}">
-        <div class="space-row">${[['sm','8px'],['md',br],['lg','16px'],['xl','24px'],['full','999px']].map(([l,r])=>`<div><div style="width:58px;height:40px;background:${accent};border-radius:${r}"></div><div class="space-lab" style="color:${ink}">${l}</div></div>`).join('')}</div>
+      <div class="specimen">
+        <div class="space-row">${[['sm','8px'],['md',br],['lg','16px'],['xl','24px'],['full','999px']].map(([l,r])=>`<div><div style="width:58px;height:40px;background:${accent};border-radius:${r}"></div><div class="space-lab">${l}</div></div>`).join('')}</div>
       </div>
 
       <p class="grouphdr">Source</p>

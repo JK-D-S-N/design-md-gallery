@@ -91,6 +91,15 @@ def parse_prose(text):
         'swatches':seen[:6],
     }
 
+# ---------- objective completeness metric, computed from the DESIGN.md ----------
+def raw_metrics(text):
+    low=text.lower()
+    hexes=len(set(HEX.findall(text)))
+    sections=len(re.findall(r'^#{2,3}\s', text, re.M))
+    words=len(text.split())
+    feats=sum(k in low for k in ['typograph','font','component','guardrail',"don't",'responsive','breakpoint','spacing','radius','shadow','motion','accessib'])
+    return {'hexes':hexes,'sections':sections,'words':words,'feats':feats}
+
 entries=[]
 for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
     md=os.path.join(d,'DESIGN.md')
@@ -111,11 +120,26 @@ for d in sorted(glob.glob(os.path.join(ROOT,'design-md','*'))):
         'muted':parsed['colors'].get('muted','') or '',
         'hairline':parsed['hairline'] or ('rgba(0,0,0,.12)' if lum(bg)>150 else 'rgba(255,255,255,.14)'),
         'swatches':[s for s in parsed['swatches'] if s][:6],
+        '_m':raw_metrics(text),
     })
+
+# normalise each metric across the corpus, weight, → 0-100 score + 1-5 stars
+def norm(vals):
+    lo,hi=min(vals),max(vals)
+    return (lambda v: 0.0 if hi==lo else (v-lo)/(hi-lo))
+W={'hexes':.30,'sections':.30,'words':.20,'feats':.20}
+norms={k:norm([e['_m'][k] for e in entries]) for k in W}
+for e in entries:
+    score=sum(W[k]*norms[k](e['_m'][k]) for k in W)*100
+    e['score']=round(score)
+    e['stars']=max(1,min(5,round(score/20*2)/2))   # 1–5, half-steps
+    del e['_m']
 
 json.dump(entries, open(os.path.join(ROOT,'data.json'),'w'), indent=1)
 nopal=sum(1 for e in entries if not e['swatches'])
+top=sorted(entries,key=lambda e:-e['score'])[:5]
 print(f"wrote data.json — {len(entries)} systems; {nopal} with no palette")
+print("top by completeness:", ", ".join(f"{e['name']} {e['score']}" for e in top))
 for s in ('klarna','discord','amazon','apple','claude','mcdonalds'):
     e=next((x for x in entries if x['slug']==s),None)
     if e: print(' ',s,'| bg',e['bg'],'| accent',e['accent'],'| sw',len(e['swatches']),'|',e['description'][:38])

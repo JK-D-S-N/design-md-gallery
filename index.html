@@ -74,12 +74,8 @@
   .dl:hover{color:var(--text);border-color:#3a3a42}
   .desc{margin:10px 0 0;color:var(--muted);font-size:13.5px;line-height:1.55;
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .stars{display:inline-flex;gap:2px}
-  .stars button{background:none;border:none;padding:0;cursor:pointer;font-size:15px;line-height:1;color:#3a3a42;transition:.12s}
-  .stars button.on{color:#e8b341}
-  .stars button:hover{transform:scale(1.15)}
-  .raterow{display:flex;align-items:center;gap:8px;margin-top:12px}
-  .ratenum{font-size:12px;color:var(--faint)}
+  .stars{display:inline-flex;align-items:center;gap:2px;font-size:14px;line-height:1}
+  .stars .score{font-family:Inter,system-ui,sans-serif;font-size:11px;font-weight:600;margin-left:7px;letter-spacing:.02em}
   select.sort{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;color:var(--text);
     padding:11px 12px;font-size:14px;outline:none;cursor:pointer}
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--faint);font-size:13px}
@@ -130,8 +126,8 @@
   <div class="wrap">
     <input class="search" id="q" placeholder="Search systems, aesthetics, brands…" autocomplete="off" />
     <select class="sort" id="sort">
+      <option value="rated">Best specified</option>
       <option value="az">A–Z</option>
-      <option value="rated">Top rated</option>
     </select>
     <span class="count" id="count"></span>
   </div>
@@ -171,20 +167,15 @@ const ratings = JSON.parse(localStorage.getItem(RKEY)||'{}');
 function getRating(slug){ return ratings[slug]||0; }
 function setRating(slug,n){ ratings[slug]=n; localStorage.setItem(RKEY,JSON.stringify(ratings)); }
 const STAR_FILL='#f5b301';
-function starsHTML(slug, ink){
-  const v=getRating(slug);
-  let s=`<span class="stars" data-slug="${slug}" data-ink="${ink||'#888'}">`;
+// objective, read-only rating derived from how complete the design.md spec is
+function starsHTML(d, ink){
+  const v=Math.round(d.stars||0);
+  let s=`<span class="stars" title="Spec completeness ${d.score}/100">`;
   for(let i=1;i<=5;i++){
-    const st = i<=v ? `color:${STAR_FILL};opacity:1` : `color:${ink||'#888'};opacity:.24`;
-    s+=`<button data-n="${i}" style="${st}" aria-label="${i} stars">★</button>`;
+    const st = i<=v ? `color:${STAR_FILL};opacity:1` : `color:${ink||'#888'};opacity:.22`;
+    s+=`<span style="${st}">★</span>`;
   }
-  return s+'</span>';
-}
-function applyStars(wrap){
-  const v=getRating(wrap.dataset.slug), ink=wrap.dataset.ink;
-  [...wrap.children].forEach((b,idx)=>{
-    b.style.cssText = (idx<v) ? `color:${STAR_FILL};opacity:1` : `color:${ink};opacity:.24`;
-  });
+  return s+`<span class="score" style="color:${ink};opacity:.5">${d.score}</span></span>`;
 }
 
 function card(d,i){
@@ -203,7 +194,7 @@ function card(d,i){
         <span class="ss-dots" style="margin-left:auto">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</span>
       </div>
       <div class="ss-foot">
-        ${starsHTML(d.slug, ink)}
+        ${starsHTML(d, ink)}
         <span class="dl" style="color:${ink};opacity:.55;font-family:Inter,sans-serif">View →</span>
       </div>
     </div>
@@ -221,20 +212,12 @@ function apply(){
   const t=q.value.trim().toLowerCase();
   let list = t ? DATA.filter(d=>(d.name+' '+d.description+' '+d.slug).toLowerCase().includes(t)) : DATA.slice();
   if(document.getElementById('sort').value==='rated')
-    list.sort((a,b)=> getRating(b.slug)-getRating(a.slug) || a.name.localeCompare(b.name));
+    list.sort((a,b)=> (b.score||0)-(a.score||0) || a.name.localeCompare(b.name));
   else list.sort((a,b)=> a.name.localeCompare(b.name));
   render(list);
 }
 grid.addEventListener('click', e=>{
-  const star=e.target.closest('.stars button');
-  if(star){
-    e.stopPropagation();
-    const wrap=star.closest('.stars'); const slug=wrap.dataset.slug; const n=+star.dataset.n;
-    setRating(slug, n===getRating(slug)?0:n);   // click same star again to clear
-    applyStars(wrap);
-    return;
-  }
-  const c=e.target.closest('.card'); if(!c) return;
+  const c=e.target.closest('.sscard'); if(!c) return;
   openDetail(VIEW[+c.dataset.i]);
 });
 
@@ -264,6 +247,7 @@ async function openDetail(d){
       <div class="swatches">${(d.swatches||[]).filter(Boolean).map(c=>`<i style="background:${c};width:38px;height:38px;display:inline-block"></i>`).join('')}</div>
     </div>
     <div class="body">
+      <p class="sect" style="margin-bottom:8px">Spec completeness · ${d.score}/100 ${'★'.repeat(Math.round(d.stars))}<span style="color:var(--faint)">${'★'.repeat(5-Math.round(d.stars))}</span></p>
       <p class="descfull">${d.description||''}</p>
       <div class="actions">
         <button class="btn primary" id="copyBtn">Copy DESIGN.md</button>

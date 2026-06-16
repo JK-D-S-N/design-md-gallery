@@ -1,123 +1,180 @@
 # Deno Design System
 
-> Modern JavaScript runtime design with simple black-and-white foundations, green dinosaur-brand personality, and secure-by-default developer tooling.
+> A secure runtime for JavaScript and TypeScript. Black and white form the base; the signature mint green signals Deno identity, permission safety, and successful deploy/runtime state. Restrained, technical, documentation-led.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
 
-Deno should feel like a clean, modern runtime and cloud platform for JavaScript, TypeScript, WebAssembly, and edge apps. The design language balances playful mascot identity with serious security, standards, and developer workflow clarity.
-
-- Mood: modern, secure, simple, standards-based, developer-native
-- Density: medium, with docs, code examples, and deploy surfaces
-- Character: black/white restraint, green brand accents, code-first panels, mascot-friendly touches
+Deno pairs a clean light canvas with a single load-bearing brand accent and a disciplined neutral ramp. Surfaces stay quiet so product data, code and status carry the meaning. Depth is communicated with hairline borders and soft shadows rather than heavy chrome, and every interactive element resolves to one of the documented tokens below.
 
 ## 2. Color Palette & Roles
 
+### Brand & action
 | Token | Hex | Role |
 |-------|-----|------|
-| `--deno-black` | `#000000` | Primary text and dark surface |
-| `--deno-white` | `#FFFFFF` | Main surface |
-| `--deno-green` | `#70FFAF` | Brand accent and positive action |
+| `--primary` | `#70FFAF` | Primary CTA, active state, brand signal |
+| `--primary-hover` | `#22C55E` | Hover / pressed state for primary |
+| `--primary-subtle` | `#ECFFF5` | Tinted callout / selected background |
+| `--on-primary` | `#000000` | Text/icon on primary fill |
 | `--deno-green-dark` | `#22C55E` | Strong success / active state |
+| `--deno-code` | `#111827` | Code block background |
 | `--deno-gray` | `#6B7280` | Secondary text |
+
+### Neutrals (text, surfaces, borders)
+| Token | Hex | Role |
+|-------|-----|------|
+| `--ink` | `#000000` | Primary text, headings, dark surfaces |
+| `--neutral-900` | `#0F172A` | Strong text |
+| `--neutral-700` | `#334155` | Body text |
+| `--neutral-500` | `#64748B` | Secondary text, captions |
+| `--neutral-400` | `#94A3B8` | Placeholder, disabled text |
+| `--neutral-300` | `#CBD5E1` | Strong borders |
+| `--neutral-200` | `#E5E7EB` | Default borders, dividers, inputs |
+| `--neutral-100` | `#F1F5F9` | Sunken fields, hover rows |
 | `--surface-page` | `#F8FAFC` | Page background |
-| `--surface-card` | `#FFFFFF` | Cards and docs panels |
-| `--surface-code` | `#111827` | Code block background |
-| `--border-default` | `#E5E7EB` | Dividers and inputs |
+| `--surface-card` | `#FFFFFF` | Cards, panels, tables |
+| `--surface-raised` | `#FFFFFF` | Modals, popovers, menus |
 
-Use black and white as the base. Green should signal Deno identity, permission safety, and successful deploy/runtime state.
+### Semantic states
+| Token | Hex | Role |
+|-------|-----|------|
+| `--success` | `#16A34A` | Success, healthy, passing |
+| `--success-subtle` | `#DCFCE7` | Success background |
+| `--warning` | `#F59E0B` | Warning, pending, queued |
+| `--warning-subtle` | `#FEF3C7` | Warning background |
+| `--error` | `#DC2626` | Error, failed, destructive |
+| `--error-subtle` | `#FEE2E2` | Error background |
+| `--info` | `#2563EB` | Links, informational |
+| `--focus-ring` | `#70FFAF` | 2px focus outline (3:1 min against surface) |
 
-## 3. Typography Rules
-
-```css
---font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
---font-mono: "DM Mono", "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, monospace;
-```
-
-| Element | Size | Weight | Line Height |
-|---------|------|--------|-------------|
-| Hero Display | 60px | 700 | 1.05 |
-| Page Title | 40px | 700 | 1.12 |
-| Section Title | 30px | 650 | 1.2 |
-| Docs Title | 22px | 650 | 1.3 |
-| Body | 16px | 400 | 1.65 |
-| Code | 13px | 500 | 1.55 |
-| Label | 13px | 600 | 1.35 |
-
-## 4. Component Stylings
+## 3. Typography
 
 ```css
-.button-primary {
-  min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #000000;
-  border-radius: 999px;
-  background: #000000;
-  color: #FFFFFF;
-  font: 600 14px/1 Inter, sans-serif;
-}
-
-.button-accent {
-  min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #70FFAF;
-  border-radius: 999px;
-  background: #70FFAF;
-  color: #000000;
-  font: 700 14px/1 Inter, sans-serif;
-}
-
-.code-panel {
-  border-radius: 16px;
-  background: #111827;
-  color: #F9FAFB;
-  padding: 18px;
-  font: 500 13px/1.55 "DM Mono", monospace;
-}
-
-.docs-card {
-  border: 1px solid #E5E7EB;
-  border-radius: 16px;
-  background: #FFFFFF;
-  padding: 20px;
-}
+--font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+--font-mono: "DM Mono", "SF Mono", "JetBrains Mono", Menlo, monospace;
 ```
 
-## 5. Layout Principles
+| Element | Size | Weight | Line height | Tracking |
+|---------|------|--------|-------------|----------|
+| Display | 58px | 700 | 1.04 | -0.02em |
+| H1 / Page title | 40px | 700 | 1.12 | -0.02em |
+| H2 / Section | 30px | 650 | 1.20 | -0.01em |
+| H3 | 22px | 600 | 1.30 | -0.01em |
+| H4 | 18px | 600 | 1.35 | normal |
+| Body large | 18px | 400 | 1.60 | normal |
+| Body | 16px | 400 | 1.60 | normal |
+| Body small | 14px | 400 | 1.55 | normal |
+| Caption | 12px | 500 | 1.40 | 0.02em |
+| Code | 13px | 500 | 1.55 | normal |
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-2` | `8px` | Code metadata |
-| `--space-4` | `16px` | Docs rhythm |
-| `--space-5` | `24px` | Cards and panels |
-| `--space-8` | `48px` | Major sections |
+## 4. Spacing & Layout Grid
 
-Lead with code, runtime capabilities, permissions, deploy paths, and standards compatibility. Keep docs highly scannable.
+4px base unit. Use the ramp; never arbitrary values.
 
-## 6. Depth & Elevation
+| Token | Value | Token | Value |
+|-------|-------|-------|-------|
+| `--space-1` | 4px | `--space-6` | 24px |
+| `--space-2` | 8px | `--space-8` | 32px |
+| `--space-3` | 12px | `--space-10` | 40px |
+| `--space-4` | 16px | `--space-12` | 48px |
+| `--space-5` | 20px | `--space-16` | 64px |
+
+Content max-width `1200px`; reading column `680px`; 12-column grid with `24px` gutters.
+
+## 5. Radius & Borders
 
 ```css
-.shadow-card { box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06); }
-.shadow-panel { box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12); }
+--radius-sm: 8px;   /* inputs, badges */
+--radius-md: 10px;  /* buttons, controls */
+--radius-lg: 16px;  /* cards, panels */
+--radius-xl: 24px;  /* feature surfaces */
+--radius-full: 999px;
+--border-hairline: 1px solid var(--neutral-200);
 ```
 
-Use light shadows for cards and stronger separation for code/deploy panels.
+## 6. Components
 
-## 7. Do's and Don'ts
+```css
+.button-primary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  font: 600 14px/1 var(--font-sans); }
+.button-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.button-secondary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--surface-card); color: var(--ink); border: 1px solid var(--neutral-200); }
+.button-ghost { background: transparent; color: var(--ink); border: 1px solid transparent; }
+.input { height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200); background: var(--surface-card); color: var(--ink); }
+.input:focus { outline: 2px solid var(--focus-ring); outline-offset: 1px; border-color: var(--primary); }
+.card { background: var(--surface-card); border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg); padding: 18px; }
+.badge { border-radius: var(--radius-full); padding: 4px 10px; font: 500 12px/1 var(--font-sans); }
+.badge-success { background: var(--success-subtle); color: #15803D; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font: 600 12px/1.4 var(--font-sans); color: var(--neutral-500); }
+.table td { border-top: 1px solid var(--neutral-200); padding: 12px 0; }
+.code-block { background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+  padding: 16px; font: 500 13px/1.55 var(--font-mono); }
+```
 
-Do make secure-by-default permissions visible. Do use code examples generously. Do not overuse mascot visuals inside dense developer tools. Do not make the runtime feel like a generic hosting dashboard.
+## 7. Elevation & Shadows
 
-## 8. Responsive Behavior
+```css
+--shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+--shadow-card: 0 8px 18px rgba(15, 23, 42, 0.07);
+--shadow-panel: 0 20px 48px rgba(15, 23, 42, 0.14);
+```
 
-| Breakpoint | Min Width | Behavior |
+Elevate sparingly: cards rest on the page, only menus, popovers and modals lift.
+
+## 8. Motion & Transitions
+
+```css
+--ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+--duration-fast: 120ms;   /* hover, focus */
+--duration-base: 200ms;   /* most UI */
+--duration-slow: 320ms;   /* overlays, sheets */
+```
+
+Animate transform and opacity, not layout. Honour `prefers-reduced-motion`.
+
+## 9. Accessibility
+
+- Body text meets WCAG AA (4.5:1); large text and UI meet 3:1.
+- Never use colour alone for status — pair with an icon or label.
+- Visible 2px focus ring on every interactive element; never remove focus styles.
+- Hit targets at least 44x44px; respect `prefers-reduced-motion` and `prefers-color-scheme`.
+
+## 10. Dark Mode
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--surface-page` | `#F8FAFC` | `#0B0F14` |
+| `--surface-card` | `#FFFFFF` | `#11161D` |
+| `--ink` | `#000000` | `#F8FAFC` |
+| `--neutral-200` | `#E5E7EB` | `#1F2733` |
+| `--primary` | `#70FFAF` | `#70FFAF` |
+
+Keep the brand accent constant; invert surfaces and neutrals, and lift `--primary-subtle` to a low-opacity tint of the accent.
+
+## 11. Responsive Behavior
+
+| Breakpoint | Min width | Behavior |
 |------------|-----------|----------|
-| Mobile | `0px` | Stack docs cards and code panels |
-| Tablet | `768px` | Two-column docs/product sections |
-| Desktop | `1200px` | Full docs navigation, code examples, and deploy workflows |
+| Mobile | `0px` | Single column, stacked panels, sticky primary action |
+| Tablet | `768px` | Two-column layouts, condensed navigation |
+| Desktop | `1200px` | Full multi-pane console with persistent navigation |
 
-Code panels should scroll horizontally when needed.
+## 12. Do's and Don'ts
 
-## 9. Agent Prompt Guide
+- Do use `--primary` for the single most important action per view.
+- Do reserve semantic colours for real state, never decoration.
+- Do lead with the neutral ramp; let the accent punctuate.
+- Don't introduce off-ramp hex values or arbitrary spacing.
+- Don't stack multiple primary buttons in one region.
+- Don't communicate status with colour alone.
 
-Design like Deno: black-and-white developer clarity, green runtime accents, secure-by-default permission cues, clean code panels, docs-first layouts, and a modern JavaScript/TypeScript tooling feel.
+## 13. Agent Prompt Guide
+
+Build like Deno: A secure runtime for JavaScript and TypeScript. Black and white form the base; the signature mint green signals Deno identity, permission safety, and successful deploy/runtime state. Restrained, technical, documentation-led. Anchor every surface on the neutral ramp, use `--primary` (`#70FFAF`) for the single key action, reserve semantic colours for true state, and apply the documented type, spacing, radius, motion and accessibility tokens throughout.

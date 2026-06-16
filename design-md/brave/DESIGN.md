@@ -1,119 +1,180 @@
 # Brave Design System
 
-> Privacy browser design with official orange identity, dark neutral contrast, Poppins typography, and protective browsing surfaces.
+> A privacy-first browser and ecosystem. Bold and confident — Brave Orange is the core action and brand signal, with purple and magenta reserved for distinct product families (private AI, rewards), never as generic decoration.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
 
-Brave should feel protective, fast, and independent. The design language needs to communicate browser privacy, search, AI, rewards, wallet, and ad-blocking without becoming cluttered.
-
-- Mood: private, bold, secure, fast, user-first
-- Density: medium, with feature modules and browser/product surfaces
-- Character: official orange, dark slate neutrals, purple support accents, rounded browser cards
+Brave pairs a clean light canvas with a single load-bearing brand accent and a disciplined neutral ramp. Surfaces stay quiet so product data, code and status carry the meaning. Depth is communicated with hairline borders and soft shadows rather than heavy chrome, and every interactive element resolves to one of the documented tokens below.
 
 ## 2. Color Palette & Roles
 
+### Brand & action
 | Token | Hex | Role |
 |-------|-----|------|
-| `--brave-orange` | `#FB542B` | Official brand accent and primary CTA |
-| `--brave-slate` | `#343546` | Dark text and product surface |
-| `--brave-gray` | `#A0A1B2` | Secondary text and disabled state |
-| `--brave-light` | `#F0F0F0` | Light background |
-| `--brave-magenta` | `#A3278F` | Rewards / Web3 accent |
+| `--primary` | `#FB542B` | Primary CTA, active state, brand signal |
+| `--primary-hover` | `#E0431C` | Hover / pressed state for primary |
+| `--primary-subtle` | `#FFF1EC` | Tinted callout / selected background |
+| `--on-primary` | `#FFFFFF` | Text/icon on primary fill |
+| `--brave-magenta` | `#A3278F` | Rewards / Web3 product family |
 | `--brave-purple` | `#4F30AB` | Private AI / secondary accent |
-| `--surface-card` | `#FFFFFF` | Cards and panels |
-| `--border-default` | `#E5E7EB` | Dividers and controls |
-| `--success` | `#16A34A` | Shield active / safe state |
+| `--brave-gray` | `#A0A1B2` | Secondary text, disabled |
 
-Use orange as the core action and brand signal. Use purple and magenta for product families, not as generic decoration.
+### Neutrals (text, surfaces, borders)
+| Token | Hex | Role |
+|-------|-----|------|
+| `--ink` | `#343546` | Primary text, headings, dark surfaces |
+| `--neutral-900` | `#0F172A` | Strong text |
+| `--neutral-700` | `#334155` | Body text |
+| `--neutral-500` | `#64748B` | Secondary text, captions |
+| `--neutral-400` | `#94A3B8` | Placeholder, disabled text |
+| `--neutral-300` | `#CBD5E1` | Strong borders |
+| `--neutral-200` | `#E5E7EB` | Default borders, dividers, inputs |
+| `--neutral-100` | `#F1F5F9` | Sunken fields, hover rows |
+| `--surface-page` | `#F0F0F0` | Page background |
+| `--surface-card` | `#FFFFFF` | Cards, panels, tables |
+| `--surface-raised` | `#FFFFFF` | Modals, popovers, menus |
 
-## 3. Typography Rules
+### Semantic states
+| Token | Hex | Role |
+|-------|-----|------|
+| `--success` | `#16A34A` | Success, healthy, passing |
+| `--success-subtle` | `#DCFCE7` | Success background |
+| `--warning` | `#F59E0B` | Warning, pending, queued |
+| `--warning-subtle` | `#FEF3C7` | Warning background |
+| `--error` | `#DC2626` | Error, failed, destructive |
+| `--error-subtle` | `#FEE2E2` | Error background |
+| `--info` | `#4F30AB` | Links, informational |
+| `--focus-ring` | `#FB542B` | 2px focus outline (3:1 min against surface) |
+
+## 3. Typography
 
 ```css
---font-sans: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--font-sans: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
 --font-mono: "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, monospace;
 ```
 
-| Element | Size | Weight | Line Height |
-|---------|------|--------|-------------|
-| Hero Display | 60px | 700 | 1.05 |
-| Page Title | 40px | 700 | 1.12 |
-| Section Title | 30px | 650 | 1.2 |
-| Card Title | 22px | 600 | 1.3 |
-| Body | 16px | 400 | 1.6 |
-| Small | 14px | 400 | 1.45 |
-| Label | 13px | 600 | 1.35 |
+| Element | Size | Weight | Line height | Tracking |
+|---------|------|--------|-------------|----------|
+| Display | 58px | 700 | 1.04 | -0.02em |
+| H1 / Page title | 40px | 700 | 1.12 | -0.02em |
+| H2 / Section | 30px | 650 | 1.20 | -0.01em |
+| H3 | 22px | 600 | 1.30 | -0.01em |
+| H4 | 18px | 600 | 1.35 | normal |
+| Body large | 18px | 400 | 1.60 | normal |
+| Body | 16px | 400 | 1.60 | normal |
+| Body small | 14px | 400 | 1.55 | normal |
+| Caption | 12px | 500 | 1.40 | 0.02em |
+| Code | 13px | 500 | 1.55 | normal |
 
-## 4. Component Stylings
+## 4. Spacing & Layout Grid
 
-```css
-.button-primary {
-  min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #FB542B;
-  border-radius: 999px;
-  background: #FB542B;
-  color: #FFFFFF;
-  font: 600 14px/1 Poppins, sans-serif;
-}
+4px base unit. Use the ramp; never arbitrary values.
 
-.shield-card {
-  border: 1px solid #E5E7EB;
-  border-radius: 18px;
-  background: #FFFFFF;
-  padding: 20px;
-}
+| Token | Value | Token | Value |
+|-------|-------|-------|-------|
+| `--space-1` | 4px | `--space-6` | 24px |
+| `--space-2` | 8px | `--space-8` | 32px |
+| `--space-3` | 12px | `--space-10` | 40px |
+| `--space-4` | 16px | `--space-12` | 48px |
+| `--space-5` | 20px | `--space-16` | 64px |
 
-.dark-panel {
-  border-radius: 20px;
-  background: #343546;
-  color: #FFFFFF;
-  padding: 24px;
-}
+Content max-width `1200px`; reading column `680px`; 12-column grid with `24px` gutters.
 
-.input {
-  min-height: 44px;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  padding: 0 14px;
-}
-```
-
-## 5. Layout Principles
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-2` | `8px` | Status rows |
-| `--space-4` | `16px` | Core rhythm |
-| `--space-5` | `24px` | Cards |
-| `--space-8` | `48px` | Major sections |
-
-Lead with privacy value, then show browser, search, AI, wallet, and ads features as clear product families.
-
-## 6. Depth & Elevation
+## 5. Radius & Borders
 
 ```css
-.shadow-card { box-shadow: 0 8px 20px rgba(52, 53, 70, 0.08); }
-.shadow-panel { box-shadow: 0 18px 44px rgba(52, 53, 70, 0.16); }
+--radius-sm: 8px;   /* inputs, badges */
+--radius-md: 10px;  /* buttons, controls */
+--radius-lg: 16px;  /* cards, panels */
+--radius-xl: 24px;  /* feature surfaces */
+--radius-full: 999px;
+--border-hairline: 1px solid var(--neutral-200);
 ```
 
-Use depth to separate browser mockups, shield panels, and modal security states.
+## 6. Components
 
-## 7. Do's and Don'ts
+```css
+.button-primary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  font: 600 14px/1 var(--font-sans); }
+.button-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.button-secondary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--surface-card); color: var(--ink); border: 1px solid var(--neutral-200); }
+.button-ghost { background: transparent; color: var(--ink); border: 1px solid transparent; }
+.input { height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200); background: var(--surface-card); color: var(--ink); }
+.input:focus { outline: 2px solid var(--focus-ring); outline-offset: 1px; border-color: var(--primary); }
+.card { background: var(--surface-card); border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg); padding: 18px; }
+.badge { border-radius: var(--radius-full); padding: 4px 10px; font: 500 12px/1 var(--font-sans); }
+.badge-success { background: var(--success-subtle); color: #15803D; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font: 600 12px/1.4 var(--font-sans); color: var(--neutral-500); }
+.table td { border-top: 1px solid var(--neutral-200); padding: 12px 0; }
+.code-block { background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+  padding: 16px; font: 500 13px/1.55 var(--font-mono); }
+```
 
-Do make privacy benefits concrete. Do use official orange and Poppins. Do not overuse Web3 visuals in core browser surfaces. Do not make security states ambiguous.
+## 7. Elevation & Shadows
 
-## 8. Responsive Behavior
+```css
+--shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+--shadow-card: 0 8px 18px rgba(15, 23, 42, 0.07);
+--shadow-panel: 0 20px 48px rgba(15, 23, 42, 0.14);
+```
 
-| Breakpoint | Min Width | Behavior |
+Elevate sparingly: cards rest on the page, only menus, popovers and modals lift.
+
+## 8. Motion & Transitions
+
+```css
+--ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+--duration-fast: 120ms;   /* hover, focus */
+--duration-base: 200ms;   /* most UI */
+--duration-slow: 320ms;   /* overlays, sheets */
+```
+
+Animate transform and opacity, not layout. Honour `prefers-reduced-motion`.
+
+## 9. Accessibility
+
+- Body text meets WCAG AA (4.5:1); large text and UI meet 3:1.
+- Never use colour alone for status — pair with an icon or label.
+- Visible 2px focus ring on every interactive element; never remove focus styles.
+- Hit targets at least 44x44px; respect `prefers-reduced-motion` and `prefers-color-scheme`.
+
+## 10. Dark Mode
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--surface-page` | `#F0F0F0` | `#0B0F14` |
+| `--surface-card` | `#FFFFFF` | `#11161D` |
+| `--ink` | `#343546` | `#F8FAFC` |
+| `--neutral-200` | `#E5E7EB` | `#1F2733` |
+| `--primary` | `#FB542B` | `#FB542B` |
+
+Keep the brand accent constant; invert surfaces and neutrals, and lift `--primary-subtle` to a low-opacity tint of the accent.
+
+## 11. Responsive Behavior
+
+| Breakpoint | Min width | Behavior |
 |------------|-----------|----------|
-| Mobile | `0px` | Stack browser features and CTAs |
-| Tablet | `768px` | Two-column feature cards |
-| Desktop | `1200px` | Full browser/product feature grid |
+| Mobile | `0px` | Single column, stacked panels, sticky primary action |
+| Tablet | `768px` | Two-column layouts, condensed navigation |
+| Desktop | `1200px` | Full multi-pane console with persistent navigation |
 
-Keep shield, download, and search actions easy to reach.
+## 12. Do's and Don'ts
 
-## 9. Agent Prompt Guide
+- Do use `--primary` for the single most important action per view.
+- Do reserve semantic colours for real state, never decoration.
+- Do lead with the neutral ramp; let the accent punctuate.
+- Don't introduce off-ramp hex values or arbitrary spacing.
+- Don't stack multiple primary buttons in one region.
+- Don't communicate status with colour alone.
 
-Design like Brave: official orange CTAs, Poppins typography, dark slate privacy panels, clean browser cards, shield/security states, and bold user-first privacy messaging.
+## 13. Agent Prompt Guide
+
+Build like Brave: A privacy-first browser and ecosystem. Bold and confident — Brave Orange is the core action and brand signal, with purple and magenta reserved for distinct product families (private AI, rewards), never as generic decoration. Anchor every surface on the neutral ramp, use `--primary` (`#FB542B`) for the single key action, reserve semantic colours for true state, and apply the documented type, spacing, radius, motion and accessibility tokens throughout.

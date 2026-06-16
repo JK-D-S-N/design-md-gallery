@@ -1,116 +1,180 @@
 # CircleCI Design System
 
-> CI/CD platform design with confident black-and-green delivery surfaces, automation-first dashboards, and pipeline clarity.
+> A CI/CD platform built around pipeline status clarity. Near-black surfaces host code and logs; green signals validation and successful delivery, while red and yellow are reserved exclusively for pipeline states and failures.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
 
-CircleCI should feel like reliable software delivery at speed. The product language needs to support pipelines, workflows, jobs, tests, rollbacks, releases, agents, config, and platform-team controls.
-
-- Mood: confident, automated, technical, operational, scalable
-- Density: medium-to-high for pipeline and job views
-- Character: near-black hero surfaces, green validation accents, white dashboard cards, status-driven rows
+CircleCI pairs a clean light canvas with a single load-bearing brand accent and a disciplined neutral ramp. Surfaces stay quiet so product data, code and status carry the meaning. Depth is communicated with hairline borders and soft shadows rather than heavy chrome, and every interactive element resolves to one of the documented tokens below.
 
 ## 2. Color Palette & Roles
 
+### Brand & action
 | Token | Hex | Role |
 |-------|-----|------|
-| `--circle-black` | `#111111` | Hero and code/log surface |
-| `--circle-green` | `#00B871` | Passing build / positive state |
-| `--circle-green-dark` | `#008F5A` | Hover / active state |
-| `--circle-blue` | `#2563EB` | Link and info state |
+| `--primary` | `#00B871` | Primary CTA, active state, brand signal |
+| `--primary-hover` | `#008F5A` | Hover / pressed state for primary |
+| `--primary-subtle` | `#E9F9F1` | Tinted callout / selected background |
+| `--on-primary` | `#FFFFFF` | Text/icon on primary fill |
 | `--circle-red` | `#DC2626` | Failed build |
 | `--circle-yellow` | `#F59E0B` | Running / queued state |
+| `--circle-black` | `#111111` | Hero and code/log surface |
+
+### Neutrals (text, surfaces, borders)
+| Token | Hex | Role |
+|-------|-----|------|
+| `--ink` | `#111111` | Primary text, headings, dark surfaces |
+| `--neutral-900` | `#0F172A` | Strong text |
+| `--neutral-700` | `#334155` | Body text |
+| `--neutral-500` | `#64748B` | Secondary text, captions |
+| `--neutral-400` | `#94A3B8` | Placeholder, disabled text |
+| `--neutral-300` | `#CBD5E1` | Strong borders |
+| `--neutral-200` | `#E2E8F0` | Default borders, dividers, inputs |
+| `--neutral-100` | `#F1F5F9` | Sunken fields, hover rows |
 | `--surface-page` | `#F8FAFC` | Page background |
-| `--surface-card` | `#FFFFFF` | Pipeline cards |
-| `--border-default` | `#E2E8F0` | Dividers and inputs |
+| `--surface-card` | `#FFFFFF` | Cards, panels, tables |
+| `--surface-raised` | `#FFFFFF` | Modals, popovers, menus |
 
-Use green for validation and successful delivery. Use red/yellow only for pipeline status and failures.
+### Semantic states
+| Token | Hex | Role |
+|-------|-----|------|
+| `--success` | `#16A34A` | Success, healthy, passing |
+| `--success-subtle` | `#DCFCE7` | Success background |
+| `--warning` | `#F59E0B` | Warning, pending, queued |
+| `--warning-subtle` | `#FEF3C7` | Warning background |
+| `--error` | `#DC2626` | Error, failed, destructive |
+| `--error-subtle` | `#FEE2E2` | Error background |
+| `--info` | `#2563EB` | Links, informational |
+| `--focus-ring` | `#00B871` | 2px focus outline (3:1 min against surface) |
 
-## 3. Typography Rules
+## 3. Typography
 
 ```css
---font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 --font-mono: "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, monospace;
 ```
 
-| Element | Size | Weight | Line Height |
-|---------|------|--------|-------------|
-| Hero Display | 60px | 700 | 1.05 |
-| Page Title | 40px | 700 | 1.12 |
-| Section Title | 30px | 650 | 1.2 |
-| Job Title | 18px | 650 | 1.3 |
-| Body | 16px | 400 | 1.6 |
-| Log Text | 13px | 500 | 1.55 |
-| Label | 13px | 600 | 1.35 |
+| Element | Size | Weight | Line height | Tracking |
+|---------|------|--------|-------------|----------|
+| Display | 58px | 700 | 1.04 | -0.02em |
+| H1 / Page title | 40px | 700 | 1.12 | -0.02em |
+| H2 / Section | 30px | 650 | 1.20 | -0.01em |
+| H3 | 22px | 600 | 1.30 | -0.01em |
+| H4 | 18px | 600 | 1.35 | normal |
+| Body large | 18px | 400 | 1.60 | normal |
+| Body | 16px | 400 | 1.60 | normal |
+| Body small | 14px | 400 | 1.55 | normal |
+| Caption | 12px | 500 | 1.40 | 0.02em |
+| Code | 13px | 500 | 1.55 | normal |
 
-## 4. Component Stylings
+## 4. Spacing & Layout Grid
 
-```css
-.button-primary {
-  min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #00B871;
-  border-radius: 10px;
-  background: #00B871;
-  color: #111111;
-  font: 700 14px/1 Inter, sans-serif;
-}
+4px base unit. Use the ramp; never arbitrary values.
 
-.pipeline-card {
-  border: 1px solid #E2E8F0;
-  border-radius: 14px;
-  background: #FFFFFF;
-  padding: 18px;
-}
+| Token | Value | Token | Value |
+|-------|-------|-------|-------|
+| `--space-1` | 4px | `--space-6` | 24px |
+| `--space-2` | 8px | `--space-8` | 32px |
+| `--space-3` | 12px | `--space-10` | 40px |
+| `--space-4` | 16px | `--space-12` | 48px |
+| `--space-5` | 20px | `--space-16` | 64px |
 
-.job-pass {
-  border-left: 4px solid #00B871;
-}
+Content max-width `1200px`; reading column `680px`; 12-column grid with `24px` gutters.
 
-.log-panel {
-  border-radius: 14px;
-  background: #111111;
-  color: #FFFFFF;
-  padding: 16px;
-}
-```
-
-## 5. Layout Principles
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-2` | `8px` | Job rows |
-| `--space-4` | `16px` | Pipeline rhythm |
-| `--space-5` | `24px` | Detail panels |
-| `--space-8` | `48px` | Sections |
-
-Organize by project, branch, workflow, job, status, duration, artifact, and test result.
-
-## 6. Depth & Elevation
+## 5. Radius & Borders
 
 ```css
-.shadow-card { box-shadow: 0 8px 18px rgba(17, 17, 17, 0.07); }
-.shadow-panel { box-shadow: 0 20px 48px rgba(17, 17, 17, 0.16); }
+--radius-sm: 8px;   /* inputs, badges */
+--radius-md: 10px;  /* buttons, controls */
+--radius-lg: 16px;  /* cards, panels */
+--radius-xl: 24px;  /* feature surfaces */
+--radius-full: 999px;
+--border-hairline: 1px solid var(--neutral-200);
 ```
 
-Use borders and status strips for dense lists. Use elevation for job detail panels.
+## 6. Components
 
-## 7. Do's and Don'ts
+```css
+.button-primary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  font: 600 14px/1 var(--font-sans); }
+.button-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.button-secondary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--surface-card); color: var(--ink); border: 1px solid var(--neutral-200); }
+.button-ghost { background: transparent; color: var(--ink); border: 1px solid transparent; }
+.input { height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200); background: var(--surface-card); color: var(--ink); }
+.input:focus { outline: 2px solid var(--focus-ring); outline-offset: 1px; border-color: var(--primary); }
+.card { background: var(--surface-card); border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg); padding: 18px; }
+.badge { border-radius: var(--radius-full); padding: 4px 10px; font: 500 12px/1 var(--font-sans); }
+.badge-success { background: var(--success-subtle); color: #15803D; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font: 600 12px/1.4 var(--font-sans); color: var(--neutral-500); }
+.table td { border-top: 1px solid var(--neutral-200); padding: 12px 0; }
+.code-block { background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+  padding: 16px; font: 500 13px/1.55 var(--font-mono); }
+```
 
-Do make build status impossible to miss. Do keep logs readable. Do not hide failure cause behind decorative charts. Do not use status colors for generic decoration.
+## 7. Elevation & Shadows
 
-## 8. Responsive Behavior
+```css
+--shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+--shadow-card: 0 8px 18px rgba(15, 23, 42, 0.07);
+--shadow-panel: 0 20px 48px rgba(15, 23, 42, 0.14);
+```
 
-| Breakpoint | Min Width | Behavior |
+Elevate sparingly: cards rest on the page, only menus, popovers and modals lift.
+
+## 8. Motion & Transitions
+
+```css
+--ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+--duration-fast: 120ms;   /* hover, focus */
+--duration-base: 200ms;   /* most UI */
+--duration-slow: 320ms;   /* overlays, sheets */
+```
+
+Animate transform and opacity, not layout. Honour `prefers-reduced-motion`.
+
+## 9. Accessibility
+
+- Body text meets WCAG AA (4.5:1); large text and UI meet 3:1.
+- Never use colour alone for status — pair with an icon or label.
+- Visible 2px focus ring on every interactive element; never remove focus styles.
+- Hit targets at least 44x44px; respect `prefers-reduced-motion` and `prefers-color-scheme`.
+
+## 10. Dark Mode
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--surface-page` | `#F8FAFC` | `#0B0F14` |
+| `--surface-card` | `#FFFFFF` | `#11161D` |
+| `--ink` | `#111111` | `#F8FAFC` |
+| `--neutral-200` | `#E2E8F0` | `#1F2733` |
+| `--primary` | `#00B871` | `#00B871` |
+
+Keep the brand accent constant; invert surfaces and neutrals, and lift `--primary-subtle` to a low-opacity tint of the accent.
+
+## 11. Responsive Behavior
+
+| Breakpoint | Min width | Behavior |
 |------------|-----------|----------|
-| Mobile | `0px` | Stack workflows, jobs, and logs |
-| Tablet | `768px` | Two-column pipeline/detail views |
-| Desktop | `1200px` | Full pipeline graph, job table, and log panels |
+| Mobile | `0px` | Single column, stacked panels, sticky primary action |
+| Tablet | `768px` | Two-column layouts, condensed navigation |
+| Desktop | `1200px` | Full multi-pane console with persistent navigation |
 
-Logs and config snippets should scroll horizontally on mobile.
+## 12. Do's and Don'ts
 
-## 9. Agent Prompt Guide
+- Do use `--primary` for the single most important action per view.
+- Do reserve semantic colours for real state, never decoration.
+- Do lead with the neutral ramp; let the accent punctuate.
+- Don't introduce off-ramp hex values or arbitrary spacing.
+- Don't stack multiple primary buttons in one region.
+- Don't communicate status with colour alone.
 
-Design like CircleCI: black-and-green CI/CD confidence, white pipeline cards, clear pass/fail status strips, readable log panels, and automation-first software delivery dashboards.
+## 13. Agent Prompt Guide
+
+Build like CircleCI: A CI/CD platform built around pipeline status clarity. Near-black surfaces host code and logs; green signals validation and successful delivery, while red and yellow are reserved exclusively for pipeline states and failures. Anchor every surface on the neutral ramp, use `--primary` (`#00B871`) for the single key action, reserve semantic colours for true state, and apply the documented type, spacing, radius, motion and accessibility tokens throughout.

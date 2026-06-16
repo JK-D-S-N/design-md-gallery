@@ -1,118 +1,179 @@
 # Aiven Design System
 
-> Open source data infrastructure design with practical cloud clarity, warm orange accents, and production-ready service management surfaces.
+> A managed open-source data-platform console. Calm, trustworthy and dense without being cold — orange drives action and product emphasis, green is reserved strictly for service health, uptime and successful change.
 
 ---
 
 ## 1. Visual Theme & Atmosphere
 
-Aiven should feel like managed data infrastructure that removes operational drag. The product language needs to support PostgreSQL, Kafka, ClickHouse, OpenSearch, MySQL, Valkey, metrics, backups, compliance, BYOC, and multi-cloud deployment without making the interface feel like raw cloud plumbing.
-
-- Mood: reliable, practical, cloud-neutral, engineer-friendly, production-ready
-- Density: medium-to-high for service consoles and usage tables
-- Character: warm action accents, calm neutral surfaces, service cards, region/cloud metadata
+Aiven pairs a clean light canvas with a single load-bearing brand accent and a disciplined neutral ramp. Surfaces stay quiet so product data, code and status carry the meaning. Depth is communicated with hairline borders and soft shadows rather than heavy chrome, and every interactive element resolves to one of the documented tokens below.
 
 ## 2. Color Palette & Roles
 
+### Brand & action
 | Token | Hex | Role |
 |-------|-----|------|
-| `--aiven-orange` | `#FF6B00` | Primary CTA and product accent |
-| `--aiven-orange-dark` | `#D95500` | Hover / pressed state |
-| `--aiven-ink` | `#111827` | Primary text and dark surfaces |
-| `--aiven-blue` | `#2563EB` | Links and cloud/provider metadata |
-| `--aiven-green` | `#16A34A` | Healthy service / SLA state |
-| `--surface-page` | `#F8FAFC` | Console and page background |
-| `--surface-card` | `#FFFFFF` | Service cards and tables |
-| `--surface-soft` | `#FFF4E8` | Subtle orange callout |
-| `--border-default` | `#E2E8F0` | Dividers, cards, inputs |
+| `--primary` | `#FF6B00` | Primary CTA, active state, brand signal |
+| `--primary-hover` | `#D95500` | Hover / pressed state for primary |
+| `--primary-subtle` | `#FFF4E8` | Tinted callout / selected background |
+| `--on-primary` | `#FFFFFF` | Text/icon on primary fill |
+| `--aiven-blue` | `#2563EB` | Provider / cloud metadata |
+| `--aiven-green` | `#16A34A` | Healthy service, SLA, backup state |
 
-Use orange for action and product emphasis. Use green strictly for healthy services, uptime, backup status, or successful changes.
+### Neutrals (text, surfaces, borders)
+| Token | Hex | Role |
+|-------|-----|------|
+| `--ink` | `#111827` | Primary text, headings, dark surfaces |
+| `--neutral-900` | `#0F172A` | Strong text |
+| `--neutral-700` | `#334155` | Body text |
+| `--neutral-500` | `#64748B` | Secondary text, captions |
+| `--neutral-400` | `#94A3B8` | Placeholder, disabled text |
+| `--neutral-300` | `#CBD5E1` | Strong borders |
+| `--neutral-200` | `#E2E8F0` | Default borders, dividers, inputs |
+| `--neutral-100` | `#F1F5F9` | Sunken fields, hover rows |
+| `--surface-page` | `#F8FAFC` | Page background |
+| `--surface-card` | `#FFFFFF` | Cards, panels, tables |
+| `--surface-raised` | `#FFFFFF` | Modals, popovers, menus |
 
-## 3. Typography Rules
+### Semantic states
+| Token | Hex | Role |
+|-------|-----|------|
+| `--success` | `#16A34A` | Success, healthy, passing |
+| `--success-subtle` | `#DCFCE7` | Success background |
+| `--warning` | `#F59E0B` | Warning, pending, queued |
+| `--warning-subtle` | `#FEF3C7` | Warning background |
+| `--error` | `#DC2626` | Error, failed, destructive |
+| `--error-subtle` | `#FEE2E2` | Error background |
+| `--info` | `#2563EB` | Links, informational |
+| `--focus-ring` | `#FF6B00` | 2px focus outline (3:1 min against surface) |
+
+## 3. Typography
 
 ```css
---font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+--font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 --font-mono: "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, monospace;
 ```
 
-| Element | Size | Weight | Line Height |
-|---------|------|--------|-------------|
-| Hero Display | 58px | 700 | 1.05 |
-| Page Title | 40px | 700 | 1.12 |
-| Section Title | 30px | 650 | 1.2 |
-| Service Title | 20px | 650 | 1.3 |
-| Body | 16px | 400 | 1.6 |
-| Helper | 14px | 400 | 1.45 |
-| Code | 13px | 500 | 1.55 |
+| Element | Size | Weight | Line height | Tracking |
+|---------|------|--------|-------------|----------|
+| Display | 58px | 700 | 1.04 | -0.02em |
+| H1 / Page title | 40px | 700 | 1.12 | -0.02em |
+| H2 / Section | 30px | 650 | 1.20 | -0.01em |
+| H3 | 22px | 600 | 1.30 | -0.01em |
+| H4 | 18px | 600 | 1.35 | normal |
+| Body large | 18px | 400 | 1.60 | normal |
+| Body | 16px | 400 | 1.60 | normal |
+| Body small | 14px | 400 | 1.55 | normal |
+| Caption | 12px | 500 | 1.40 | 0.02em |
+| Code | 13px | 500 | 1.55 | normal |
 
-## 4. Component Stylings
+## 4. Spacing & Layout Grid
 
-```css
-.button-primary {
-  min-height: 44px;
-  padding: 0 18px;
-  border: 1px solid #FF6B00;
-  border-radius: 999px;
-  background: #FF6B00;
-  color: #FFFFFF;
-  font: 600 14px/1 Inter, sans-serif;
-}
+4px base unit. Use the ramp; never arbitrary values.
 
-.service-card {
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  background: #FFFFFF;
-  padding: 18px;
-}
+| Token | Value | Token | Value |
+|-------|-------|-------|-------|
+| `--space-1` | 4px | `--space-6` | 24px |
+| `--space-2` | 8px | `--space-8` | 32px |
+| `--space-3` | 12px | `--space-10` | 40px |
+| `--space-4` | 16px | `--space-12` | 48px |
+| `--space-5` | 20px | `--space-16` | 64px |
 
-.cloud-panel {
-  border-radius: 20px;
-  background: #FFF4E8;
-  padding: 24px;
-}
+Content max-width `1200px`; reading column `680px`; 12-column grid with `24px` gutters.
 
-.input {
-  min-height: 44px;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  padding: 0 14px;
-}
-```
-
-## 5. Layout Principles
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--space-2` | `8px` | Status metadata |
-| `--space-4` | `16px` | Console rhythm |
-| `--space-5` | `24px` | Service card padding |
-| `--space-8` | `48px` | Major sections |
-
-Organize around cloud, region, service type, plan, connection details, backups, observability, and compliance.
-
-## 6. Depth & Elevation
+## 5. Radius & Borders
 
 ```css
-.shadow-card { box-shadow: 0 8px 18px rgba(17, 24, 39, 0.06); }
-.shadow-panel { box-shadow: 0 18px 42px rgba(17, 24, 39, 0.10); }
+--radius-sm: 8px;   /* inputs, badges */
+--radius-md: 10px;  /* buttons, controls */
+--radius-lg: 16px;  /* cards, panels */
+--radius-xl: 24px;  /* feature surfaces */
+--radius-full: 999px;
+--border-hairline: 1px solid var(--neutral-200);
 ```
 
-Use borders for console density and subtle elevation for onboarding, cloud selection, and service creation panels.
+## 6. Components
 
-## 7. Do's and Don'ts
+```css
+.button-primary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--primary); color: var(--on-primary); border: 1px solid var(--primary);
+  font: 600 14px/1 var(--font-sans); }
+.button-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.button-secondary { min-height: 44px; padding: 0 18px; border-radius: var(--radius-md);
+  background: var(--surface-card); color: var(--ink); border: 1px solid var(--neutral-200); }
+.button-ghost { background: transparent; color: var(--ink); border: 1px solid transparent; }
+.input { height: 40px; padding: 0 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--neutral-200); background: var(--surface-card); color: var(--ink); }
+.input:focus { outline: 2px solid var(--focus-ring); outline-offset: 1px; border-color: var(--primary); }
+.card { background: var(--surface-card); border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg); padding: 18px; }
+.badge { border-radius: var(--radius-full); padding: 4px 10px; font: 500 12px/1 var(--font-sans); }
+.badge-success { background: var(--success-subtle); color: #15803D; }
+.table { width: 100%; border-collapse: collapse; }
+.table th { text-align: left; font: 600 12px/1.4 var(--font-sans); color: var(--neutral-500); }
+.table td { border-top: 1px solid var(--neutral-200); padding: 12px 0; }
+.code-block { background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+  padding: 16px; font: 500 13px/1.55 var(--font-mono); }
+```
 
-Do make managed services, cloud choice, SLA, and compliance visible. Do show service health clearly. Do not make multi-cloud controls look abstract. Do not hide cost, region, or backup state.
+## 7. Elevation & Shadows
 
-## 8. Responsive Behavior
+```css
+--shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+--shadow-card: 0 8px 18px rgba(15, 23, 42, 0.07);
+--shadow-panel: 0 20px 48px rgba(15, 23, 42, 0.14);
+```
 
-| Breakpoint | Min Width | Behavior |
+Elevate sparingly: cards rest on the page, only menus, popovers and modals lift.
+
+## 8. Motion & Transitions
+
+```css
+--ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--ease-emphasis: cubic-bezier(0.2, 0, 0, 1);
+--duration-fast: 120ms;   /* hover, focus */
+--duration-base: 200ms;   /* most UI */
+--duration-slow: 320ms;   /* overlays, sheets */
+```
+
+Animate transform and opacity, not layout. Honour `prefers-reduced-motion`.
+
+## 9. Accessibility
+
+- Body text meets WCAG AA (4.5:1); large text and UI meet 3:1.
+- Never use colour alone for status — pair with an icon or label.
+- Visible 2px focus ring on every interactive element; never remove focus styles.
+- Hit targets at least 44x44px; respect `prefers-reduced-motion` and `prefers-color-scheme`.
+
+## 10. Dark Mode
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--surface-page` | `#F8FAFC` | `#0B0F14` |
+| `--surface-card` | `#FFFFFF` | `#11161D` |
+| `--ink` | `#111827` | `#F8FAFC` |
+| `--neutral-200` | `#E2E8F0` | `#1F2733` |
+| `--primary` | `#FF6B00` | `#FF6B00` |
+
+Keep the brand accent constant; invert surfaces and neutrals, and lift `--primary-subtle` to a low-opacity tint of the accent.
+
+## 11. Responsive Behavior
+
+| Breakpoint | Min width | Behavior |
 |------------|-----------|----------|
-| Mobile | `0px` | Stack service cards and metadata |
-| Tablet | `768px` | Two-column service and cloud panels |
-| Desktop | `1200px` | Full console tables, sidebars, and service detail views |
+| Mobile | `0px` | Single column, stacked panels, sticky primary action |
+| Tablet | `768px` | Two-column layouts, condensed navigation |
+| Desktop | `1200px` | Full multi-pane console with persistent navigation |
 
-Keep service actions and status controls at least `44px` tall.
+## 12. Do's and Don'ts
 
-## 9. Agent Prompt Guide
+- Do use `--primary` for the single most important action per view.
+- Do reserve semantic colours for real state, never decoration.
+- Do lead with the neutral ramp; let the accent punctuate.
+- Don't introduce off-ramp hex values or arbitrary spacing.
+- Don't stack multiple primary buttons in one region.
+- Don't communicate status with colour alone.
 
-Design like Aiven: practical managed open source data infrastructure, warm orange action accents, white service cards, cloud/region metadata, clear health and SLA states, and calm production console density.
+## 13. Agent Prompt Guide
+
+Build like Aiven: A managed open-source data-platform console. Calm, trustworthy and dense without being cold — orange drives action and product emphasis, green is reserved strictly for service health, uptime and successful change. Anchor every surface on the neutral ramp, use `--primary` (`#FF6B00`) for the single key action, reserve semantic colours for true state, and apply the documented type, spacing, radius, motion and accessibility tokens throughout.

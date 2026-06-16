@@ -34,6 +34,23 @@
     transition:transform .18s ease,border-color .18s ease;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-4px);border-color:#33333a}
 
+  /* fully self-styled card — every card rendered in its own design.md */
+  .sscard{border-radius:16px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;
+    min-height:300px;padding:26px;border:1px solid;transition:transform .18s ease,box-shadow .18s ease}
+  .sscard:hover{transform:translateY(-4px);box-shadow:0 18px 50px -20px rgba(0,0,0,.55)}
+  .sscard .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.5;margin:0 0 14px}
+  .sscard .ss-name{font-size:32px;line-height:1.04;letter-spacing:-.02em;margin:0;font-weight:600}
+  .sscard .ss-desc{font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;opacity:.72;
+    margin:12px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .sscard .ss-bottom{margin-top:auto;padding-top:22px}
+  .sscard .ss-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .sscard .ss-btn{font-family:Inter,system-ui,sans-serif;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:8px}
+  .sscard .ss-chip{font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:500;padding:8px 13px;border-radius:8px;border:1px solid}
+  .sscard .ss-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+  .sscard .ss-dots{display:flex;gap:5px}
+  .sscard .ss-dots i{width:9px;height:9px;border-radius:50%;display:block}
+  .sscard .stars button{font-size:14px}
+
   /* the preview is a rendered specimen, in the system's OWN colours + type */
   .preview{aspect-ratio:16/10;padding:26px 26px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
   .preview.light{box-shadow:inset 0 0 0 1px rgba(0,0,0,.10)}
@@ -153,36 +170,42 @@ const RKEY='dmg-ratings';
 const ratings = JSON.parse(localStorage.getItem(RKEY)||'{}');
 function getRating(slug){ return ratings[slug]||0; }
 function setRating(slug,n){ ratings[slug]=n; localStorage.setItem(RKEY,JSON.stringify(ratings)); }
-function starsHTML(slug){
+const STAR_FILL='#f5b301';
+function starsHTML(slug, ink){
   const v=getRating(slug);
-  let s='<span class="stars" data-slug="'+slug+'">';
-  for(let i=1;i<=5;i++) s+=`<button data-n="${i}" class="${i<=v?'on':''}" aria-label="${i} stars">★</button>`;
-  s+='</span>';
-  return s;
+  let s=`<span class="stars" data-slug="${slug}" data-ink="${ink||'#888'}">`;
+  for(let i=1;i<=5;i++){
+    const st = i<=v ? `color:${STAR_FILL};opacity:1` : `color:${ink||'#888'};opacity:.24`;
+    s+=`<button data-n="${i}" style="${st}" aria-label="${i} stars">★</button>`;
+  }
+  return s+'</span>';
+}
+function applyStars(wrap){
+  const v=getRating(wrap.dataset.slug), ink=wrap.dataset.ink;
+  [...wrap.children].forEach((b,idx)=>{
+    b.style.cssText = (idx<v) ? `color:${STAR_FILL};opacity:1` : `color:${ink};opacity:.24`;
+  });
 }
 
 function card(d,i){
   const bg=d.bg||'#101014', ink=d.ink||readable(bg), accent=d.accent||'#888';
-  const onAccent=readable(accent);
-  const dots=(d.swatches||[]).filter(Boolean).slice(0,4);
+  const onAccent=readable(accent), hair=d.hairline||'rgba(127,127,127,.28)';
+  const dots=(d.swatches||[]).filter(Boolean).slice(0,5);
   const ff=(d.displayFont||'inherit').replace(/"/g,'');
-  return `<div class="card" data-i="${i}">
-    <div class="preview ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
-      <div class="spec">
-        <p class="eyebrow">Design system</p>
-        <h2 class="pname">${d.name}</h2>
-        <p class="body">The quick brown fox jumps over the lazy dog.</p>
-        <div class="controls">
-          <span class="btn-p" style="background:${accent};color:${onAccent}">Get started</span>
-          <span class="chip" style="border:1px solid ${d.hairline||'rgba(127,127,127,.3)'};color:${ink}">Learn more</span>
-          <span class="dots">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</span>
-        </div>
+  return `<div class="sscard" data-i="${i}" style="background:${bg};color:${ink};border-color:${hair};font-family:${ff}">
+    <p class="eyebrow">Design system</p>
+    <h2 class="ss-name">${d.name}</h2>
+    <p class="ss-desc">${d.description||'A design system rendered from its own DESIGN.md.'}</p>
+    <div class="ss-bottom">
+      <div class="ss-controls">
+        <span class="ss-btn" style="background:${accent};color:${onAccent}">Get started</span>
+        <span class="ss-chip" style="border-color:${hair};color:${ink}">Docs</span>
+        <span class="ss-dots" style="margin-left:auto">${dots.map(c=>`<i style="background:${c}"></i>`).join('')}</span>
       </div>
-    </div>
-    <div class="meta">
-      <div class="row"><h3>${d.name}</h3><span class="dl">View →</span></div>
-      <p class="desc">${d.description||''}</p>
-      <div class="raterow">${starsHTML(d.slug)}<span class="ratenum"></span></div>
+      <div class="ss-foot">
+        ${starsHTML(d.slug, ink)}
+        <span class="dl" style="color:${ink};opacity:.55;font-family:Inter,sans-serif">View →</span>
+      </div>
     </div>
   </div>`;
 }
@@ -208,7 +231,7 @@ grid.addEventListener('click', e=>{
     e.stopPropagation();
     const wrap=star.closest('.stars'); const slug=wrap.dataset.slug; const n=+star.dataset.n;
     setRating(slug, n===getRating(slug)?0:n);   // click same star again to clear
-    [...wrap.children].forEach((b,idx)=>b.classList.toggle('on', idx<getRating(slug)));
+    applyStars(wrap);
     return;
   }
   const c=e.target.closest('.card'); if(!c) return;

@@ -36,6 +36,11 @@ Built **on top of** Google's spec (so our files are standard-compatible), extend
 - The **lockup** (logo + wordmark treatment), **navigation**, **hero**, **footer**.
 - Real component property mappings + variants (hover/active), per the spec.
 
+**Layout & signature sections (added 2026-06-17 — the "how they compose a page" layer):**
+- **Grid & measurements** — content max-width, column count, gutters, section rhythm (the rough numbers a builder needs to lay out like them).
+- **Signature section patterns** — the brand's recognisable compositions, not just nav/hero/footer. e.g. Linear's centred **"Built for the future" CTA box**, the **4-up horizontal feature row** (Plan / Build / Diffs / Monitor), the **horizontal testimonial cards** (the blue + lime quote pair), **text/image splits**, and **blog / case-study** layouts (linear.app/customers/cursor). Each: structure, proportions, when to use.
+- These are the "templates" layer made concrete and brand-specific. This is often where a brand is *most* recognisable.
+
 **Essence layer (our extension — the differentiator):**
 - **The three distinctives** — the 2-3 things that make this brand unmistakable (e.g. Stripe's gradient flourishes, Linear's keyboard-dense calm, Steam's dark capsule cards). Named, specific.
 - **Tone of voice** — short. How they write: button labels, descriptors, microcopy. A few real examples + the rule.

@@ -394,6 +394,8 @@ const FLAGSHIP={
   linear:{
     // extracted from linear.app rendered DOM + CSS (canvas #08090A, Inter Variable, footer columns verbatim).
     bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter","SF Pro Display",sans-serif', fontName:'Inter Variable',
+    brand:'Dark, modern and clean. A near-black canvas, crisp white type and a single indigo accent. Calm, dense and fast — engineered for keyboard-first power users.',
+    voice:'Direct and confident. Short, declarative, no fluff. Buttons say exactly what they do — "Sign up", "Log in", "Open app".',
     navBg:'#08090a', navInk:'#f7f8f8', navCaps:false, wordmark:'Linear',
     navItems:['Product','Resources','Customers','Pricing','Now','Contact'], navActive:'',
     navCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'999px'},
@@ -403,9 +405,12 @@ const FLAGSHIP={
     heroNote:'New · Coding Sessions →',
     btns:{primary:{bg:'#f7f8f8', color:'#08090a', label:'Sign up', radius:'999px'},
       secondary:{text:true, color:'#f7f8f8', label:'Log in'}},
-    footer:{bg:'#08090a', fine:'© 2026 Linear',
+    footer:{bg:'#08090a', fine:'Privacy · Terms · DPA · AUP',
       cols:[{h:'Product',links:['Intake','Plan','Build','Diffs','Monitor','Pricing','Security']},
-            {h:'Features',links:['Asks','Agents','Coding Sessions','Customer Requests','Insights','Mobile','Integrations','Changelog']}]},
+            {h:'Features',links:['Asks','Agents','Coding Sessions','Customer Requests','Insights','Mobile','Integrations','Changelog']},
+            {h:'Company',links:['About','Customers','Careers','Blog','Method','Quality','Brand']},
+            {h:'Resources',links:['Switch','Download','Documentation','Developers','Status','Enterprise','Startups']},
+            {h:'Connect',links:['Contact us','Community','X (Twitter)','GitHub','YouTube']}]},
   },
 };
 
@@ -461,6 +466,26 @@ async function openDetail(d){
       <h3 class="pair-display" style="font-weight:${dw};letter-spacing:${dt}">Great products start with a point of view.</h3>
       <p class="pair-body">And the body voice carries it. The relationship between the headline and this paragraph — the jump in scale, the shift in weight, the measure of the line — is what a reader feels before they read a word.</p>
     </div>`;
+  const brandText=(fl&&fl.brand)||d.description||'';
+  const voiceText=(fl&&fl.voice)||'';
+  const brandBlock=`<div class="specimen" style="line-height:1.6">
+      <p class="sect" style="margin:0 0 6px">Brand visual</p>
+      <p style="font-size:15.5px;color:var(--text);margin:0 0 ${voiceText?'18px':'0'};max-width:64ch">${brandText}</p>
+      ${voiceText?`<p class="sect" style="margin:0 0 6px">Tone of voice</p><p style="font-size:14px;color:var(--muted);margin:0;max-width:64ch">${voiceText}</p>`:''}
+    </div>`;
+  const lockupBlock=`<div class="block" style="background:${bg};font-family:${ff};padding:40px 32px;display:flex;align-items:center;gap:16px">
+      <span class="sp-logo" style="color:${fl?(fl.heroInk||ink):ink};font-size:30px;font-weight:${dw};letter-spacing:${fl?'0':dt}">${fl?fl.wordmark:d.name}</span>
+    </div>`;
+  const cardsBlock=`<div class="block" style="background:${fl?fl.bg:bg};padding:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+      <div class="ccard" style="background:${fl&&fl.panel?fl.panel:'rgba(127,127,127,.06)'};border-color:${hair};border-radius:${br};font-family:${ff}">
+        <div style="font-weight:600;color:${fl?(fl.heroInk||ink):ink};margin-bottom:6px">Card title</div>
+        <div style="font-size:13px;color:${fl?fl.ink:ink};opacity:.7">A surface in this system's radius, border, type and elevation.</div>
+      </div>
+      <div class="ccard" style="background:${accent};border:none;border-radius:${br};font-family:${ff}">
+        <div style="font-weight:600;color:${onAccent};margin-bottom:6px">Accent card</div>
+        <div style="font-size:13px;color:${onAccent};opacity:.85">The brand colour carrying a highlighted surface.</div>
+      </div>
+    </div>`;
   modal.innerHTML=`
     <div class="hero ${isLight(bg)?'light':''}" style="background:${bg};color:${ink};font-family:${ff}">
       <button class="x" id="closeX">✕</button>
@@ -477,11 +502,17 @@ async function openDetail(d){
       </div>
     </div>
     <div class="body">
-      <div class="scorebar">
-        <div><p class="sect" style="margin:0 0 6px">Spec completeness</p><div class="bigscore">${d.score}<span>/100</span></div></div>
-        <p class="why">How thorough this DESIGN.md is. Scored on <b>${m.tokens}</b> colour tokens, <b>${m.sections}</b> spec sections and <b>${m.feats}/12</b> depth signals (typography, components, guardrails, responsive, spacing, motion, accessibility). A richer spec gives an AI agent more to build from, so it renders more faithfully.</p>
-      </div>
-      <p class="grouphdr">Voice & type</p>
+      <p class="grouphdr">Brand & voice</p>
+      ${brandBlock}
+
+      <p class="grouphdr">Signature</p>
+      ${fl?`<p class="sect">Hero</p>${heroBlock}`:''}
+      <p class="sect">Cards</p>
+      ${cardsBlock}
+      <p class="sect">Lockup</p>
+      ${lockupBlock}
+
+      <p class="grouphdr">Type, colour & spacing</p>
       <p class="sect">Type pairing — display meets body</p>
       ${pairingBlock}
       <p class="sect">Type scale · ${fam}</p>
@@ -490,20 +521,20 @@ async function openDetail(d){
           `<div class="type-row"><span class="type-lab">${l}</span><span class="type-sample" style="font-size:${s};font-weight:${w};letter-spacing:${dt}">${d.name}</span></div>`).join('')}
         <div class="type-row"><span class="type-lab">Mono</span><span class="type-sample" style="font-family:ui-monospace,Menlo,monospace;font-size:13px">const build = designMd();</span></div>
       </div>
-
-      <p class="grouphdr">Colour</p>
-      <p class="sect">Palette · click any swatch to copy</p>
+      <p class="sect">Colour · click any swatch to copy</p>
       <div class="pal">${chips}</div>
+      <p class="sect">Spacing · 4px base</p>
+      <div class="specimen">
+        <div class="space-row">${[4,8,12,16,24,32,48].map(n=>`<div><div style="width:${n}px;height:${n}px;background:${accent};border-radius:2px;margin:0 auto"></div><div class="space-lab">${n}</div></div>`).join('')}</div>
+      </div>
+      <p class="sect">Radius</p>
+      <div class="specimen">
+        <div class="space-row">${[['sm','8px'],['md',br],['lg','16px'],['xl','24px'],['full','999px']].map(([l,r])=>`<div><div style="width:58px;height:40px;background:${accent};border-radius:${r}"></div><div class="space-lab">${l}</div></div>`).join('')}</div>
+      </div>
 
-      ${fl?`<p class="grouphdr">Signature blocks — the system in use</p>
-      <p class="sect">Navigation</p>
-      ${navBlock}
-      <p class="sect">Hero</p>
-      ${heroBlock}
-      ${footerBlock?`<p class="sect">Footer</p>${footerBlock}`:''}`:''}
-
-      <p class="grouphdr">Components</p>
-      <p class="sect">Button hierarchy</p>
+      <p class="grouphdr">Other components</p>
+      ${fl?`<p class="sect">Navigation</p>${navBlock}`:''}
+      <p class="sect">Buttons</p>
       <div class="specimen">
         <div class="comp-row">
           ${fl&&fl.btns?['primary','secondary','tertiary'].filter(k=>fl.btns[k]).map(k=>{const b=fl.btns[k]; return (b.text||!b.bg)?`<span class="cbtn" style="color:${b.color};border-radius:${b.radius||br}">${b.label}</span>`:`<span class="cbtn" style="background:${b.bg};color:${b.color};border-radius:${b.radius||br}">${b.label}</span>`}).join('')
@@ -536,33 +567,21 @@ async function openDetail(d){
           <b>Heads up.</b> Inline messaging uses the system's accent and semantic tokens, never colour alone.
         </div>
       </div>
-      <p class="sect">Card & data</p>
+      <p class="sect">Table</p>
       <div class="specimen">
-        <div class="comp-grid">
-          <div class="ccard" style="border-color:var(--line);border-radius:${br}">
-            <div style="font-weight:600;margin-bottom:5px">Card title</div>
-            <div style="opacity:.65;font-size:13px">A surface built from this system's radius, border and type tokens.</div>
-          </div>
-          <table class="ctable"><thead><tr><th>Name</th><th>Role</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>Ada Lovelace</td><td>Owner</td><td><span style="color:#22C55E">Active</span></td></tr>
-            <tr><td>Alan Turing</td><td>Admin</td><td><span style="color:${accent}">Invited</span></td></tr>
-          </tbody></table>
-        </div>
+        <table class="ctable"><thead><tr><th>Name</th><th>Role</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Ada Lovelace</td><td>Owner</td><td><span style="color:#22C55E">Active</span></td></tr>
+          <tr><td>Alan Turing</td><td>Admin</td><td><span style="color:${accent}">Invited</span></td></tr>
+        </tbody></table>
       </div>
-
-      <p class="grouphdr">Foundations</p>
-      <p class="sect">Spacing · 4px base</p>
-      <div class="specimen">
-        <div class="space-row">${[4,8,12,16,24,32,48].map(n=>`<div><div style="width:${n}px;height:${n}px;background:${accent};border-radius:2px;margin:0 auto"></div><div class="space-lab">${n}</div></div>`).join('')}</div>
-      </div>
-      <p class="sect">Radius</p>
-      <div class="specimen">
-        <div class="space-row">${[['sm','8px'],['md',br],['lg','16px'],['xl','24px'],['full','999px']].map(([l,r])=>`<div><div style="width:58px;height:40px;background:${accent};border-radius:${r}"></div><div class="space-lab">${l}</div></div>`).join('')}</div>
-      </div>
+      ${fl&&footerBlock?`<p class="sect">Footer</p>${footerBlock}`:''}
 
       <p class="grouphdr">Source</p>
-      <p class="sect">DESIGN.md</p>
+      <div class="scorebar" style="margin-bottom:16px">
+        <div><p class="sect" style="margin:0 0 6px">Spec completeness</p><div class="bigscore">${d.score}<span>/100</span></div></div>
+        <p class="why">How thorough this DESIGN.md is — <b>${m.tokens}</b> colour tokens, <b>${m.sections}</b> sections, <b>${m.feats}/12</b> depth signals. A richer spec rebuilds more faithfully.</p>
+      </div>
       <pre class="code" id="code">Loading…</pre>
     </div>`;
   overlay.classList.add('open');

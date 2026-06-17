@@ -1,82 +1,88 @@
 # design.md — Product Requirements
 
-_Working PRD. Updated 2026-06-17 (overnight session)._
+_Rewritten 2026-06-17 after researching Google's official DESIGN.md spec and the wider landscape._
 
 ## The problem
 
-AI agents can build almost any UI now. What they can't do is **taste**. Point Claude Code or Cursor at a blank project and it produces generic, soulless screens, because it has no design point of view to build from. Designers know this; the missing input is a **design system the agent can read**.
+AI agents can build almost any UI, but with no taste. Point Claude Code / Cursor / Stitch at a blank project and you get generic, soulless screens. The missing input is a **design system the agent can read.** A `DESIGN.md` is that input.
 
-A `DESIGN.md` solves that: a single plain-markdown file describing a visual language (colour, type, spacing, components, layouts) that an agent reads to build every screen consistently. The format is emerging fast. But there's no good way to **find, compare, judge or generate** them. The existing collections are README link-dumps made by developers, token lists with no soul, no preview, no fidelity to the real brand.
+But two gaps:
+1. **The standard stops at mechanics.** Google Labs open-sourced DESIGN.md (Apache 2.0, alpha) — YAML tokens (`colors`, `typography`, `spacing`, `rounded`, `components`) + prose (Overview, Colours, Typography, Layout, Elevation, Shapes, Components, Do's/Don'ts). The orthodox guidance: keep it to mechanical tokens, concise, "not a full design system." So agents get colour and type, but not the **essence** of a brand.
+2. **No good way to get one.** Existing collections (voltagent, Khalidabdi, designmd.app, getdesign.md) are scraped token-dumps or themed costumes. None capture what makes a brand *that brand*, and none are generated faithfully on demand.
 
-## What we're solving
+## What we're building
 
-**Give AI builders a fast way to find or generate a design system they'd actually ship with.** Browse a look, see it rendered faithfully, judge it, copy the file, drop it in, build. And when the look you want isn't in the library, **point at any URL and generate it.**
+A way for an **AI builder to get a genuine head-start in a brand's essence** — then make their own decisions. Not a copy. The Monzo example: a brief says "they like Monzo." Click Monzo → pull its tone of voice, colour, spacing, components, the three things that make it distinctive → now design from there: swap the logo, tweak the typeface and a couple of core colours, ship something in that spirit.
+
+Two surfaces:
+- **The gallery** — browse, see each system rendered faithfully, copy/download the file. (The showcase.)
+- **The extractor** — point at any URL → an accurate, essence-rich `DESIGN.md`. (The product.)
 
 ## Who it's for
 
-The **forward-deployed creative** — the person shipping real products with agents who carries taste into the build. Designers who code, engineers with an eye, solo founders, agency teams. They don't want a token dump; they want "make it look like *this*" to actually work.
+The **forward-deployed creative** — designers who build, engineers with taste, founders, agency teams shipping with agents. They want "give me a head-start that feels like X," not a token file.
 
-## The core insight (validated tonight)
+## The DESIGN.md we author — schema
 
-A generic, token-driven preview **does not** look like the brand. We rendered Steam from extracted tokens and got a *white* site, when Steam is dark navy with a blue-gradient CTA. Fidelity lives in the specifics: the real nav items, the gradient buttons, the hero composition, the actual canvas.
+Built **on top of** Google's spec (so our files are standard-compatible), extended with the essence layer the standard omits. Sections:
 
-So the product has two tiers:
-- **Flagship tier** — brands rendered with real component fidelity (nav, hero, footer, button hierarchy, type), checked against the live site. Proven on **Steam (9/10), Linear (9/10), Stripe (8.5/10), Notion (8/10)**.
-- **Long tail** — token-level approximations, honestly framed as "palette + type impression", not a clone.
+**Foundations (standard, mechanical):**
+- `colors` — palette + semantic roles, with the brand's signature colour called out.
+- `typography` — display + body faces, scale, pairing.
+- `spacing`, `rounded`, elevation, shapes.
 
-Quality over a misleading 256.
+**Components (standard section, but we go deep):**
+- Button hierarchy — **primary / secondary / tertiary**, with real shape + fill + states.
+- The **lockup** (logo + wordmark treatment), **navigation**, **hero**, **footer**.
+- Real component property mappings + variants (hover/active), per the spec.
 
-## What exists today
+**Essence layer (our extension — the differentiator):**
+- **The three distinctives** — the 2-3 things that make this brand unmistakable (e.g. Stripe's gradient flourishes, Linear's keyboard-dense calm, Steam's dark capsule cards). Named, specific.
+- **Tone of voice** — short. How they write: button labels, descriptors, microcopy. A few real examples + the rule.
 
-- **Live gallery** (GitHub Pages): 256 systems, self-styled cards, category filters, search, spec-completeness rating with a transparent breakdown, source-site links.
-- **Atomic detail view**: every system opens to an atomic spec sheet — Voice & type → Colour → Signature blocks (nav/hero/footer) → Components → Foundations → Source. Copy/Download/Visit.
-- **Atomic `DESIGN.md` schema** (`enrich_all.py`): atoms (tokens) → molecules (components) → organisms (nav/hero/footer) → templates (page layouts) → guardrails, with the source URL baked in.
-- **4 flagship brands** rendered faithfully.
+**Guardrails:** Do's and Don'ts.
 
-## The thing to build next: URL → spec
+Everything verified against the real site. Nothing invented — if it's not observable, it's omitted.
 
-The scalable answer, and arguably a product in its own right. Point at a URL, get an accurate `DESIGN.md` + render data:
+## How we build it efficiently
 
-1. **Extract** real tokens from the live site (colours, type, spacing, radius, shadows). Reuse `extract-design-system` (Chromium/DOM scrape) or our own Chrome-driven extractor — no guessing, real CSS.
-2. **Screenshot** the site.
-3. **Author** with Claude vision: read tokens + screenshot → write the atomic `DESIGN.md` and the flagship render JSON (nav, hero, CTA, footer).
-4. **Drop in** → faithful card + modal + a genuine build-from file.
+The lesson from hand-tuning: **never author from memory.** The pipeline:
+1. **Read the rendered site** — headless Chrome → computed DOM + CSS. Real hex, real fonts, real radius, real nav text, real hero copy, real footer, real button styles. (Not raw `curl` — sites are JS-rendered and minified.)
+2. **Screenshot** — for gestalt and the verification diff.
+3. **Author** — Claude reads DOM + screenshot → writes the DESIGN.md to the schema above, observable-only.
+4. **Verify (the moat)** — build a sample screen from the spec alone → screenshot → diff against source → fidelity score → iterate.
+5. **Drop in** — faithful card + modal + a real build-from file.
 
-Packaged as a skill: `/design-extract <url>`. This is how the flagship tier scales from 4 to many.
+Packaged as `/design-extract <url>`. Start with **5–10 brands, get the schema right**, then scale toward the full ~250.
+
+## Differentiators
+
+1. **The extractor is the product; the gallery is the demo.** Generate, don't just curate.
+2. **Verified fidelity** — a spec proven to rebuild the look, with a match score. Nobody does this.
+3. **Essence, not mechanics** — components, three distinctives, tone of voice. The superset above the standard.
+4. **Taste** — a designer's judgment about which few things matter, rendered faithfully. Quality over a 454-entry costume box.
 
 ## Success looks like
 
-- A builder browses, finds a look, copies the file, and their agent ships screens that genuinely look like it.
-- "Paste a URL → get a design.md" works in under a minute and looks like the site.
-- The library is something you scroll and think "yes, I'll use that for this project."
+- Click Monzo → get a head-start that genuinely feels like Monzo, then make it yours.
+- "Paste a URL → essence-rich DESIGN.md" in under a minute, verified to match.
+- A builder ships in a brand's spirit without copying it.
 
-## Differentiators — what makes this defensible (thinking, 2026-06-17)
+## Compatibility
 
-The gallery alone is **not** a differentiator. Scraped design.md repos already exist (voltagent, Khalidabdi), designmd.app has 454, Google Stitch coined the format. A catalogue is a commodity. So the moat has to be elsewhere. Three layers, in order of defensibility:
+Our YAML frontmatter conforms to Google's DESIGN.md spec (`colors`/`typography`/`spacing`/`rounded`/`components`); the essence layer rides in extra prose sections the spec preserves. So our files work in Stitch, Cursor, Claude Code today, and are richer than the baseline.
 
-**1. The extractor is the product; the gallery is the demo.**
-"Paste any URL → get a design.md that rebuilds that look." Generation, not curation. Turning *any* live site into an accurate, AI-buildable spec is genuinely useful and not commoditised. The gallery exists to *prove* the extractor works and to seed trust. Reframe accordingly: we're not building a catalogue, we're building a converter, and showing its output.
+## Roadmap
 
-**2. Verified fidelity — the closed loop nobody does.**
-The real moat: don't just generate a spec, **prove it reproduces the brand.** Extract → author design.md → have an agent build a sample screen *from the spec alone* → screenshot it → diff against the source → score the fidelity → iterate until it matches. A design.md that's *verified to rebuild the look*, with a fidelity score, is something no repo or gallery offers. (This is the same diff-loop discipline as the Mission Control creative agent, applied to brand fidelity.) Trust is the product. "94% match to the source" beats "here's a token file."
-
-**3. Taste + the right six things.**
-A designer's judgment about *which six things make a brand the brand* (canvas, signature colour, typeface, primary button, nav, hero) and rendering only those, faithfully, beats a 454-entry costume box. Curated, opinionated, high-craft. The forward-deployed-creative voice. Quality and trust over quantity.
-
-**Format as a minor moat:** the atomic, AI-native schema (atoms→organisms→templates + source + guardrails) is more buildable than raw token dumps. Worth owning as "the way to write a design.md for agents," but it's copyable, so it's reinforcement, not the moat.
-
-**The honest synthesis:** the differentiator is **fidelity you can trust, generated on demand.** Not a bigger catalogue. The build order that follows: (a) screenshot-fed extractor that pulls the six things accurately, (b) the build→diff→score verification loop, (c) the gallery as the showcase of verified results.
+1. **Now:** schema locked (this doc). DOM extractor v0 (headless Chrome, no untrusted deps).
+2. **Next:** author 5–10 brands to the full schema, verified. Get it right.
+3. **Then:** the build→diff→score verification loop; retune the gallery's completeness score to reward essence over raw token count.
+4. **Scale:** run the extractor across the library toward 250.
+5. **Later:** original starter systems; deploy + domain.
 
 ## Open questions
 
 - Name: keep `design.md`, or brand it (Specimen)?
-- Flagship coverage: how many brands earn the full treatment?
-- Is the URL→spec extractor the headline product, with the gallery as its showcase?
+- Is the extractor the headline product, gallery as showcase? (Leaning yes.)
 - Account/home: JK-D-S-N vs dotjk; custom domain.
-
-## Roadmap
-
-1. **Now:** flagship set proven (done: 4). Atomic schema (done). Source links (done).
-2. **Next:** build `/design-extract <url>` v0 (Chrome extract + vision author), run on 10 brands.
-3. **Then:** scale flagship tier via the extractor; retune the completeness score to reward structure over raw token count.
-4. **Later:** the generator layer (URL/screenshots → original starter systems), shareable permalinks, deploy + domain.
+- How many brands earn full essence treatment vs token-only.

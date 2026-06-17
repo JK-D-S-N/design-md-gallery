@@ -389,8 +389,8 @@ const FLAGSHIP={
       cols:[{h:'Product',links:['AI','Docs','Wikis','Projects','Calendar']},{h:'Company',links:['About us','Careers','Blog','Security']},{h:'Resources',links:['Help centre','Pricing','Templates','Integrations']}]},
   },
   linear:{
-    // verified from linear.app screenshots (hero, nav, buttons). Footer not captured → left generic, not invented.
-    bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter","SF Pro Display",sans-serif', fontName:'Inter',
+    // extracted from linear.app rendered DOM + CSS (canvas #08090A, Inter Variable, footer columns verbatim).
+    bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter Variable","Inter","SF Pro Display",sans-serif', fontName:'Inter Variable',
     navBg:'#08090a', navInk:'#f7f8f8', navCaps:false, wordmark:'Linear',
     navItems:['Product','Resources','Customers','Pricing','Now','Contact'], navActive:'',
     navCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'999px'},
@@ -400,6 +400,9 @@ const FLAGSHIP={
     heroNote:'New · Coding Sessions →',
     btns:{primary:{bg:'#f7f8f8', color:'#08090a', label:'Sign up', radius:'999px'},
       secondary:{text:true, color:'#f7f8f8', label:'Log in'}},
+    footer:{bg:'#08090a', fine:'© 2026 Linear',
+      cols:[{h:'Product',links:['Intake','Plan','Build','Diffs','Monitor','Pricing','Security']},
+            {h:'Features',links:['Asks','Agents','Coding Sessions','Customer Requests','Insights','Mobile','Integrations','Changelog']}]},
   },
 };
 

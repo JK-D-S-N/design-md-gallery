@@ -15,6 +15,9 @@
 <meta name="twitter:title" content="design.md — design systems for AI builders" />
 <meta name="twitter:description" content="Taste, as a file your agent can read." />
 <meta name="twitter:image" content="https://jk-d-s-n.github.io/design-md-gallery/og.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&family=Sora:wght@500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#0a0a0c; --bg-2:#111114; --card:#141417; --line:#222227;
@@ -180,10 +183,10 @@
   .sp-links{display:flex;gap:20px;font-family:Inter,sans-serif;font-size:13px;opacity:.62;flex:1}
   .sp-cta{font-family:Inter,sans-serif;font-size:12.5px;font-weight:600;padding:8px 14px}
   /* hero */
-  .sp-hero{padding:40px 32px}
+  .sp-hero{padding:56px 36px 44px}
   .sp-eyebrow{font-family:Inter,sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-  .sp-display{font-size:clamp(28px,4.4vw,46px);line-height:1.04;margin:14px 0 0;max-width:18ch}
-  .sp-lead{font-family:Inter,sans-serif;font-size:15px;line-height:1.6;margin:14px 0 0;max-width:52ch}
+  .sp-display{font-size:clamp(32px,5.2vw,54px);line-height:1.0;margin:0;max-width:16ch}
+  .sp-lead{font-family:Inter,sans-serif;font-size:15px;line-height:1.55;margin:18px 0 0;max-width:52ch;opacity:.62}
   .sp-actions{display:flex;gap:10px;margin-top:22px}
   /* footer */
   .sp-footer{display:flex;flex-wrap:wrap;gap:28px 48px;padding:32px;border-top:1px solid}
@@ -390,7 +393,7 @@ const FLAGSHIP={
   },
   linear:{
     // extracted from linear.app rendered DOM + CSS (canvas #08090A, Inter Variable, footer columns verbatim).
-    bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter Variable","Inter","SF Pro Display",sans-serif', fontName:'Inter Variable',
+    bg:'#08090a', ink:'#8a8f98', accent:'#5e6ad2', font:'"Inter","SF Pro Display",sans-serif', fontName:'Inter Variable',
     navBg:'#08090a', navInk:'#f7f8f8', navCaps:false, wordmark:'Linear',
     navItems:['Product','Resources','Customers','Pricing','Now','Contact'], navActive:'',
     navCta:{label:'Sign up', bg:'#f7f8f8', color:'#08090a', radius:'999px'},
